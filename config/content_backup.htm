@@ -1,15 +1,32 @@
-<h1>About</h1>
-<p>此內容管理系統以 <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 作為 submodule 運作, 可以選定對應的版本運作, cmsimde 可以持續改版, 不會影響之前設為 submodule, 使用舊版 cmsimde 模組的內容管理相關運作.</p>
-<h4>利用 cmsimde 建立靜態網誌方法:</h4>
-<p>1. 在 github 建立倉儲, git clone 到近端</p>
-<p>2. 參考 <a href="https://github.com/mdecourse/newcms">https://github.com/mdecourse/newcms</a>, 加入除了 cmsimde 目錄外的所有內容</p>
-<p>以 git submodule add <a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> cmsimde</p>
-<p>建立 cmsimde 目錄, 並從 github 取下子模組內容.</p>
-<p>3.在近端維護時, 更換目錄到倉儲中的 cmsimde, 以 python wsgi.py 啟動近端網際伺服器.</p>
-<p>動態內容編輯完成後, 以 generate_pages 轉為靜態內容, 以 git add commit 及 push 將內容推到遠端.</p>
-<p>4. 之後若要以 git clone 取下包含 submodule 的所有內容, 執行:</p>
-<p>git clone --recurse-submodules <a href="https://github.com/mdecourse/newcms.git">https://github.com/mdecourse/newcms.git</a></p>
-<h1>Develop</h1>
-<p><a href="https://github.com/mdecourse/cmsimde">https://github.com/mdecourse/cmsimde</a> 的開發, 可以在一個目錄中放入 cmsimde, 然後將 up_dir 中的內容放到與 cmsimde 目錄同位階的地方, 使用 command 進入 cmsimde 目錄, 執行 python wsgi.py, 就可以啟動, 以瀏覽器 https://localhost:9443 就可以連接, 以 admin 作為管理者密碼, 就可以登入維護內容.</p>
-<p>cmsimde 的開發採用 Leo Editor, 開啟 cmsimde 目錄中的 cmsimde.leo 就可以進行程式修改, 結束後, 若要保留網際內容, 只要將 cmsimde 外部的內容倒回 up_dir 目錄中即可後續對 cmsimde 遠端倉儲進行改版.</p>
-<p>init.py 位於  up_dir 目錄, 可以設定 site_title 與 uwsgi 等變數.</p>
+<h1>W1</h1>
+<h2>Day1(01/16)</h2>
+<h3>Python源起</h3>
+<p>Python是一種程式語言，起源於1990年代初期由Guido van Rossum所研發，最初的想法為傳承ABC程式語言，Guido認為ABC相當優美與強大，非專業的程式設計人員也能夠使用，而ABC程式語言當初因為非開放而導致沒有獲得廣泛的運用，於是他決定以開放策略研發Python。</p>
+<p><img alt="" height="244" src="/images/icon-python-text-color-horz.png" width="580"/></p>
+<p><span>🔼</span>Python 英文原意為蟒蛇，也可發現LOGO由兩隻蟒蛇組成。</p>
+<h3>基本Python程式</h3>
+<p><span>🔽</span>利用下載好的Python IDLE編輯及儲存程式，可存為Python的專用.py檔。</p>
+<p><img alt="" height="596" src="/images/IDLE.png" width="579"/></p>
+<p>1.Hello World!!</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print("Hello World!!")</pre>
+<p>2.基礎四則運算</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print(5-3+2)
+print(5*3/5)</pre>
+<h3>Python程式碼格式重點</h3>
+<p>1.不能使用class作為定義變數或函式，因為它是用來定義類別的關鍵字。</p>
+<p>2.函式名稱後需加小括號()、字串則使用雙引號"、註解則用井字號#、多行註解則為'''。</p>
+<p>3.Python會將英文大小寫視為不同的識別字，所以編寫時需注意大小寫。</p>
+<p>4.每行最大長度為79個字元，若需要分行則用行接續符號\。</p>
+<p>5.程式每層縮排為4個空白鍵或1個Tab鍵，較推薦使用Tab鍵可一步到位。</p>
+<h3>常見程式設計錯誤(bug)</h3>
+<p>1.語法錯誤</p>
+<p>執行後會出現[SyntaxError: unexpected indent][SyntaxError: EOL while scanning string literal]錯誤</p>
+<p>2.執行期間錯誤</p>
+<p>例如以下程式</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">X=1
+Y=0
+print(X/Y)</pre>
+<p>則是因為分母不能為零而發生[ZeroDivisionError: division by zero]錯誤</p>
+<p>3.邏輯錯誤</p>
+<h1>資料參考</h1>
+<p>https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web </p>
