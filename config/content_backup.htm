@@ -1,5 +1,5 @@
 <h1>W1</h1>
-<h2>Day1(01/16)</h2>
+<h2>Day1(0116)</h2>
 <h3>Python源起</h3>
 <p>Python是一種程式語言，起源於1990年代初期由Guido van Rossum所研發，最初的想法為傳承ABC程式語言，Guido認為ABC相當優美與強大，非專業的程式設計人員也能夠使用，而ABC程式語言當初因為非開放而導致沒有獲得廣泛的運用，於是他決定以開放策略研發Python。</p>
 <p><img alt="" height="244" src="/images/icon-python-text-color-horz.png" width="580"/></p>
@@ -28,5 +28,46 @@ Y=0
 print(X/Y)</pre>
 <p>則是因為分母不能為零而發生[ZeroDivisionError: division by zero]錯誤</p>
 <p>3.邏輯錯誤</p>
+<h2>Day2(0117)</h2>
+<h3>型別</h3>
+<p>1.數值型別:int、float、complex、bool。</p>
+<p>    (1)int型別:用來表示整數(integer)，正負整數皆包含在內。</p>
+<p><span>    (2)float型別:用來表示浮點數(float point number)，有小數部分，精確度取決於作業系統平台。</span></p>
+<p><span>    (3)complex型別:用於表示數學中的複數(complex number)，例如5+4j。</span></p>
+<p><span>    (4)bool型別:為int型別的子型別，只有True、False兩種值，多用於判斷對與錯、是與否......等等兩種選擇之情形。</span></p>
+<p>2.文字序列型別:str。</p>
+<p>    (1)str型別:用於處理文字資料，就是所謂的字串(string)，字串又是由字元(character)所組成。</p>
+<p>        a.單引號</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'Hello World!!'</pre>
+<p>        b.雙引號</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">"Hello World!!"</pre>
+<p>        c.三個單引號</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print('''Hello World!!!
+Hello World!!!
+Hello World!!!''')
+
+#下列為結果
+Hello World!!!
+Hello World!!!
+Hello World!!!</pre>
+<p>        d.三個雙引號</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print("""Hello World!!!
+Hello World!!!
+Hello World!!!""")
+
+#下列為結果
+Hello World!!!
+Hello World!!!
+Hello World!!!</pre>
+<p></p>
+<p>3二元序列型別:bytes、bytearray、memoryview。</p>
+<p>4序列型別:list、tuple、range。</p>
+<p>    (1)list型別:用來表示串列，由一連串的資料所組成的，有順序且可改變內容(mutable)的序列(sequence)，list內的資料以逗號隔開，串列前後以中括號標示。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">list = [1,3,5,6]</pre>
+<p>    (2)tuple型別:<span>用來表示序對，由一連串的資料所組成的，有順序且不可改變內容(immutable)的序列(sequence</span><span>)，tuple內的資料以逗號隔開，序列前後以小括號標示。</span></p>
+<p>5集合型別:set、frozenset。</p>
+<p>    (1)<span>set型別:</span></p>
+<p>6對映型別:dict。</p>
+<p>    (1)<span>dict型別:</span></p>
 <h1>資料參考</h1>
 <p>https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web </p>
