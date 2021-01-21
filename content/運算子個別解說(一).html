@@ -133,21 +133,80 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Day3(0118) << <a href='Day3(0118).html'>Previous</a> <a href='Day4(0119).html'>Next</a> >> Day4(0119)<br /><h1>變數</h1>
-<p>1.命名規則:</p>
-<p>    (1)第一個字元可以是英文字母、底線(_)、或中文，因考慮到國際接軌，建議儘量不要使用中文來命名。</p>
-<p>    (2)不能使用關鍵字及內建常數、函式、類別的名稱命名。</p>
-<p>    (3)因不能使用空白格，所以建議每換一個單字都以大寫開頭，例如userName。</p>
-<p>    (4)可以合理的簡寫來命名。</p>
-<p>    (5)命名不能使用特殊符號，除了底線(_)。</p>
-<p>2.指派方式:使用指派運算子(=)(assignment operator)</p>
-<p>    (1)例一:定義為str型別</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">myName = "Simon"</pre>
-<p>    (2)例二:定義為int型別</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">myPhoneNumber = 1234567890</pre>
-<p>    (3)例三:同時指派多個變數</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">X,Y,Z=1,2,"apple"</pre>
-<br />Day3(0118) << <a href='Day3(0118).html'>Previous</a> <a href='Day4(0119).html'>Next</a> >> Day4(0119)</div>
+    <div id="tipue_search_content">Day5(0120) << <a href='Day5(0120).html'>Previous</a> <a href='Day6(0121).html'>Next</a> >> Day6(0121)<br /><h1>運算子個別解說(一)</h1>
+<p><span>1.算數運算子</span></p>
+<p>    (1)+[加法]:表示a加b，語法如下</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">1+2</pre>
+<p>    另外+運算子也能用來連接字串，如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"5"+"apple"</pre>
+<p>    得到以下結果</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"5apple"</pre>
+<p>    (2)-[減法]:表示a減b，語法如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">2-1</pre>
+<p>    (3)*[乘法]:表示a乘b<span>，</span><span>語法如下。</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">2*1</pre>
+<p>    (4)/[浮點數除法]:表示a除以b，結果為float型別，語法如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">12/3</pre>
+<p>    結果為</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">4.0</pre>
+<p>    (5)//[整數除法]:<span>表示a除以b，結果為int型別，小數部分將直接捨去，語法如下。</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">7//3</pre>
+<p>    結果為</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">2</pre>
+<p>    (6)%[餘數]:<span>表示a除以b的餘數，語法如下。</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">12%5</pre>
+<p>    結果為</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">2</pre>
+<p>    (7)**[指數]:表示a的b次方，語法如下。</p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">2**2</pre>
+<p>    結果為</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">4</pre>
+<p>2.位元運算子</p>
+<p>    (1)~[位元 NOT]</p>
+<p>    (2)&amp;[位元 AND]</p>
+<p>    (3)|[位元 OR]</p>
+<p>    (4)^[位元 XOR]</p>
+<p>3.比較運算子</p>
+<table height="132" style="width: 542px;">
+<tbody>
+<tr>
+<td style="width: 86px;">運算子</td>
+<td style="width: 86px;">語法</td>
+<td style="width: 348px;">說明</td>
+</tr>
+<tr>
+<td style="width: 86px;">&gt;</td>
+<td style="width: 86px;">a&gt;b</td>
+<td style="width: 348px;">若a大於b時傳回True，反之則傳回False。</td>
+</tr>
+<tr>
+<td style="width: 86px;">&lt;</td>
+<td style="width: 86px;">a&lt;b</td>
+<td style="width: 348px;"><span>若a小於b時傳回True，反之則傳回False。</span></td>
+</tr>
+<tr>
+<td style="width: 86px;">&gt;=</td>
+<td style="width: 86px;">a&gt;=b</td>
+<td style="width: 348px;"><span>若a大於等於b時傳回True，反之則傳回False。</span></td>
+</tr>
+<tr>
+<td style="width: 86px;">&lt;=</td>
+<td style="width: 86px;">a&lt;=b</td>
+<td style="width: 348px;"><span>若a小於等於</span><span>b</span><span>時傳回True，反之則傳回False。</span></td>
+</tr>
+<tr>
+<td style="width: 86px;">==</td>
+<td style="width: 86px;">a==b</td>
+<td style="width: 348px;"><span>若a等於b</span><span>時傳回True，反之則傳回False。</span></td>
+</tr>
+<tr>
+<td style="width: 86px;">!=</td>
+<td style="width: 86px;">a!=b</td>
+<td style="width: 348px;"><span>若a不等於b</span><span>時傳回True，反之則傳回False。</span></td>
+</tr>
+</tbody>
+</table>
+<br />Day5(0120) << <a href='Day5(0120).html'>Previous</a> <a href='Day6(0121).html'>Next</a> >> Day6(0121)</div>
         
     <!-- footer -->
       <div class="container">
