@@ -303,6 +303,45 @@ Hello World!!!</pre>
 <p><span></span>得到上列字串後，若需進行計算則需使用內建的eval()將字串轉換為數值。</p>
 <p>使用上述函式寫出利用輸入半徑，用來計算圓面積的程式，如下。</p>
 <p><a href="https://drive.google.com/file/d/1CqWMW5cUgcQtZOCpCD51S5JBJLnVHr52/view?usp=sharing" title="CircleArea.py">CircleArea.py</a></p>
-<p></p>
+<h2>Day9(0124)</h2>
+<h3>常用內建數值函數</h3>
+<p>abs(X):傳回X的絕對值。</p>
+<p>min(X1,X2,X3,......)<span>:傳回參數數值中的最小值。</span></p>
+<p>max(<span>X1,X2,X3,......</span>)<span>:傳回參數數值中的最大值。</span></p>
+<p>hex(<span>X</span>)<span>:傳回整數X參數由十進位轉為十六進位的字串，前面會加上0x。</span></p>
+<p>oct(<span>X</span>)<span>:傳回整數X參數由十進位轉為八進位的字串，前面會加上0o。</span></p>
+<p>bin(<span>X</span>)<span>:傳回整數X參數由十進位轉為二進位的字串<span>，前面會加上0b。</span></span></p>
+<p>int(<span>X</span>)<span>:傳回X的整數部分，小數將被直接捨去。</span></p>
+<p>round(<span>X,precision</span>)<span>:傳回與X最接近的整數(四捨五入)，若要設定精確度到小數點後幾位，可利用選擇性參數precision設定。</span></p>
+<p>pow(<span>X,Y</span>)<span>:傳回X的Y次方值。</span></p>
+<p>float("<span>X</span>)<span>:傳回字串X轉換成浮點數的結果。</span></p>
+<p>complex(<span>X</span>)<span>:傳回字串X轉換成複數的結果。</span></p>
+<h2>Day10(0125)</h2>
+<h3>導入數學模組</h3>
+<p>在Python中若需使用數學函式，需先導入數學模組(module)，如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import math</pre>
+<h3>常用數學函式</h3>
+<p>1.math.pi、math.e、math.nan、math.inf:分別表示圓周率、自然對數e、NaN(not a number)、正無限大，負無限大則為-math.inf。</p>
+<p>2.math.ceil(X):傳回<span>大於等於X的最小整數，例如:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.ceil(8.999)
+9</pre>
+<p><span>3.math.fabs(X):傳回X的浮點數絕對值，例如:</span></p>
+<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.fabs(-5)
+5.0</pre>
+<p>4.math.factorial(X):傳回正整數X的階層值，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.factorial(4)    #(即為4!=4*3*2*1=24)
+24</pre>
+<p>5.math.floor(X):傳回<span>小於等於X的最大整數。</span></p>
+<p><span>6.math.radians(X):傳回角度X轉為弳度的結果。</span></p>
+<p><span>7.math.degrees(X):傳回弳度X轉為角度的結果。</span></p>
+<p><span>8.math.sin(X)、math.cos<span>(X)、math.tan<span>(X)、math.as<span>in(X)、math.acos<span>(X)、math.atan<span>(X)三角函式:分別傳回X的正弦值、餘弦值、正切值、反正弦值、反餘弦值、反正切值，需注意的適當中的參數X需為弳度而非角度，可利用上述math.radians函式將角度轉換為弳度。</span></span></span></span></span></span></p>
+<h3>亂數函式</h3>
+<p>首先匯入亂數模組。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import random</pre>
+<p>1.random.randint(X,Y):傳回一個大於等於X並小於等於Y的隨機整數。</p>
+<p>2.<span>random.random():傳回一個大於等於0.0並小於1.0的隨機浮點數。</span></p>
+<p><span>3.random.shuffle(X):將X中的元素進行隨機重排。</span></p>
+<p><span>利用上述函式寫出簡易猜數字的程式如下。</span></p>
+<p><span><a href="https://drive.google.com/file/d/1mG8VUXCxXKMNmqUnpQUgDG3gx7UR2B2M/view?usp=sharing">random.py</a></span></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
