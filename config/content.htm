@@ -466,9 +466,9 @@ th</pre>
 <p>3.str.isalnum(s):<span>若s中所有字元皆為英文字母及阿拉伯數字傳回True，反之則傳回False。</span></p>
 <p>4.str.is<span>upper(s):若s中所有字元皆為大寫英文字母傳回True，反之則傳回False。</span></p>
 <p><span>5.str.islower(s):若s中所有字元皆為小寫英文字母傳回True，反之則傳回False。</span></p>
-<span></span>
+<p><span></span></p>
 <h2><span><span>Day13(0128)</span></span></h2>
-<span><span></span></span>
+<p><span><span></span></span></p>
 <h3><span><span>字串格式化方法</span></span></h3>
 <p>1.str.center(w):傳回欄位寬度為w所指定的字元數，並且為置中的字串。</p>
 <p>2.str.ljust(w):<span>傳回欄位寬度為w所指定的字元數，並且為靠左的字串。</span></p>
@@ -479,6 +479,21 @@ th</pre>
 <p>1.str.strip(X):從字串兩側刪除指定字元。</p>
 <p><span><span>2.str.lstrip(X):從字串左側刪除指定字元。</span></span></p>
 <p><span><span>3.str.rstrip(X):從字串右</span></span><span><span>側刪除指定字元。</span></span></p>
-<p><span><span></span></span></p>
+<h2>Day14(0129)</h2>
+<h3>數值與字串格式化</h3>
+<p>使用format()函式將數值與字串格式化，其語法如下，根據選擇性參數spec所指定的格式將參數value格式化。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">format(value,spec)</pre>
+<p>參數spec的格式如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">[[fill]align][sign][#][0][width][,][.precision][type]</pre>
+<p>1.[align]:設定對齊方式，有'&lt;'、'&gt;'、'^'、'='等值，分別表示靠左、靠右、置中、正負符號和數字之間的空位填滿0，數值預設圍靠右，其他資料預設為靠左。</p>
+<p>2.[fill]:設定填滿空位的字元。</p>
+<p>3.[sign]:設定正負符號，只在負數前加上負號、在正數前則加上一個空白，預設為'-'。</p>
+<p>4.[#]:設定在二、八、十六進位數值前加上'0b'、'0o'或'0x'。</p>
+<p>5.[0]:設定用0填滿空位。</p>
+<p>6.[width]:設定欄寬為幾字元。</p>
+<p>7.[,]:設定加上千分位符號。</p>
+<p>8.[.precision]:設定精確度為小數幾位。</p>
+<p>9.[type]:設定表示法類型，有'b'(二進位)、'c'(字元)、'd'(十進位)、'e'(科學記號)、'E'(科學記號)、'f'(小數點，預設精確度為六位)、'F'(<span>小數點)</span>、'g'(一般格式)、'G'<span>(一般格式)</span>、'n'(數值)、'o'(八進位)、's'(字串)、'x'(十六進位)、'X'<span>(十六進位)</span>、'%'(百分比)等值。</p>
+<p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
