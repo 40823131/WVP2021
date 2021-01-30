@@ -494,6 +494,59 @@ th</pre>
 <p>7.[,]:設定加上千分位符號。</p>
 <p>8.[.precision]:設定精確度為小數幾位。</p>
 <p>9.[type]:設定表示法類型，有'b'(二進位)、'c'(字元)、'd'(十進位)、'e'(科學記號)、'E'(科學記號)、'f'(小數點，預設精確度為六位)、'F'(<span>小數點)</span>、'g'(一般格式)、'G'<span>(一般格式)</span>、'n'(數值)、'o'(八進位)、's'(字串)、'x'(十六進位)、'X'<span>(十六進位)</span>、'%'(百分比)等值。</p>
+<h1>W3</h1>
+<h2>Day15(0130)</h2>
+<h3>認識流程控制</h3>
+<p>流程控制分成下列兩種類型。</p>
+<p>1.選擇結構:用來判斷條件式，根據結果True或False執行不同的敘述，Python支援的選擇結構為if。</p>
+<p>2.迴圈結構:用於重複執行，Python支援的迴圈函數為for與while。</p>
+<p>流程控制中將下列的值判斷為False，如下。</p>
+<p>1.None</p>
+<p>2.False</p>
+<p>3.等於0的數值</p>
+<p>4.空序列，例如:(''空字串)、([]空串列)、(()空序對)。</p>
+<p>5.空對映，例如({}空集合)。</p>
+<h3>if選擇結構</h3>
+<p>1.單向if:意義為「若...就...」，條件式condition若傳回True，就繼續執行statement(s)。語法如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition:
+        statement(s)</pre>
+<p>2.雙向if...else:<span>意義為「若...就...否則...」，屬於雙向選擇，若condition傳回True，執行statement1，否則執行statement2。語法如下:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition:
+        statements1
+else:
+        statements2</pre>
+<p>3.多向if...elif...else:<span>意義為「若...就...否則... 若...」，屬於多向選擇，判斷condition1，若condition1傳回True就執行statement1，否則判斷condition2，若condition2傳回True就執行statement2，否則判斷condition3...依此類推，所以statement1~statementN+1中只有一組會被執行。語法如下:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition1:
+        statements1
+elif condition2:
+        statements2
+elif condition3:
+        statements3
+...
+
+else:
+        statementsN+1</pre>
+<p>4.巢狀if結構:顧名思義指的是if敘述裡包含其他if敘述，且沒有深度限制，但一般還是較常使用多向if...elif...else來做使用較佳。例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">num = eval(input("請您輸入1~5中的任一整數:"))
+if num ==1:
+        print("ONE")
+else:
+        if num ==2:
+                print("TWO")
+        else:
+                if num ==3:
+                        print("THREE")
+                else:
+                        if num ==4:
+                                print("FOUR")
+                        else:
+                                if num ==5:
+                                        print("FIVE")
+                                else:
+                                        print("您輸入的資料超過範圍")
+
+
+</pre>
 <p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>

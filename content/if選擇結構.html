@@ -133,11 +133,49 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">連接運算子 << <a href='連接運算子.html'>Previous</a> <a href='in ,not in運算子.html'>Next</a> >> in ,not in運算子<br /><h1>重複運算子</h1>
-<p>1.*運算子可以用來重複字串，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;5 * "wow!"
-'wow!wow!wow!wow!wow!'</pre>
-<br />連接運算子 << <a href='連接運算子.html'>Previous</a> <a href='in ,not in運算子.html'>Next</a> >> in ,not in運算子</div>
+    <div id="tipue_search_content">認識流程控制 << <a href='認識流程控制.html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>if選擇結構</h1>
+<p>1.單向if:意義為「若...就...」，條件式condition若傳回True，就繼續執行statement(s)。語法如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition:
+        statement(s)</pre>
+<p>2.雙向if...else:<span>意義為「若...就...否則...」，屬於雙向選擇，若condition傳回True，執行statement1，否則執行statement2。語法如下:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition:
+        statements1
+else:
+        statements2</pre>
+<p>3.多向if...elif...else:<span>意義為「若...就...否則... 若...」，屬於多向選擇，判斷condition1，若condition1傳回True就執行statement1，否則判斷condition2，若condition2傳回True就執行statement2，否則判斷condition3...依此類推，所以statement1~statementN+1中只有一組會被執行。語法如下:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition1:
+        statements1
+elif condition2:
+        statements2
+elif condition3:
+        statements3
+...
+
+else:
+        statementsN+1</pre>
+<p>4.巢狀if結構:顧名思義指的是if敘述裡包含其他if敘述，且沒有深度限制，但一般還是較常使用多向if...elif...else來做使用較佳。例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">num = eval(input("請您輸入1~5中的任一整數:"))
+if num ==1:
+        print("ONE")
+else:
+        if num ==2:
+                print("TWO")
+        else:
+                if num ==3:
+                        print("THREE")
+                else:
+                        if num ==4:
+                                print("FOUR")
+                        else:
+                                if num ==5:
+                                        print("FIVE")
+                                else:
+                                        print("您輸入的資料超過範圍")
+
+
+</pre>
+<p></p>
+<br />認識流程控制 << <a href='認識流程控制.html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
