@@ -494,6 +494,7 @@ th</pre>
 <p>7.[,]:設定加上千分位符號。</p>
 <p>8.[.precision]:設定精確度為小數幾位。</p>
 <p>9.[type]:設定表示法類型，有'b'(二進位)、'c'(字元)、'd'(十進位)、'e'(科學記號)、'E'(科學記號)、'f'(小數點，預設精確度為六位)、'F'(<span>小數點)</span>、'g'(一般格式)、'G'<span>(一般格式)</span>、'n'(數值)、'o'(八進位)、's'(字串)、'x'(十六進位)、'X'<span>(十六進位)</span>、'%'(百分比)等值。</p>
+<h1>W3</h1>
 <h2>Day15(0130)</h2>
 <h3>認識流程控制</h3>
 <p>流程控制分成下列兩種類型。</p>
@@ -546,6 +547,29 @@ else:
 
 
 </pre>
+<h2>Day16(0131)</h2>
+<h3>for迴圈(for loop)</h3>
+<p>for迴圈主要用來解決重複執行的問題。例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for var in iterator:
+        statements1
+[else:
+        statements2]</pre>
+<h3>使用range物件作為迴圈迭代的物件</h3>
+<p>range語法，如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">range(stop)
+range(start,stop,step)</pre>
+<p>1.stop:為終止值。</p>
+<p>2.start:為起始值。</p>
+<p>3.step:為間隔值。</p>
+<p>在for迴圈中使用range進行迭代，如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(5)
+        print(i)</pre>
+<p>上述程式結果為</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">0
+1
+2
+3
+4</pre>
 <p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
