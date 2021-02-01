@@ -570,6 +570,39 @@ range(start,stop,step)</pre>
 2
 3
 4</pre>
+<h2>Day17(0201)</h2>
+<h3>使用list作為迴圈迭代的物件</h3>
+<p>可以藉由list加上迴圈來算出list內的數字總和，如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">list1 = [15,30,40,60]
+sum = 0
+for i in list1:
+        sum = sum + i
+print("總合為",sum)</pre>
+<h3>使用字串作為迴圈迭代的物件</h3>
+<p>在for迴圈中使用字串進行迭代，如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">str1 = "hello"
+for i in str1:
+        print(i)
+# 結果如下
+	
+h
+e
+l
+l
+o
+</pre>
+<h3>巢狀for迴圈</h3>
+<p>使用巢狀for迴圈列出九九乘法表，如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">result1,result2 = '' , ''
+for i in range (1,10):
+	result1 = ''
+	for j in range(1,10):
+		result1 = result1 + str(i) + '*' + str(j) + '=' + str(i*j) + '\t'
+	result2 = result2 + result1 + '\n'
+
+	
+print (result2)</pre>
 <p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
