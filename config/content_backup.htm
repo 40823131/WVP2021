@@ -594,14 +594,24 @@ o
 <h3>巢狀for迴圈</h3>
 <p>使用巢狀for迴圈列出九九乘法表，如下。</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">result1,result2 = '' , ''
+
 for i in range (1,10):
 	result1 = ''
 	for j in range(1,10):
-		result1 = result1 + str(i) + '*' + str(j) + '=' + str(i*j) + '\t'
+                result1 = result1 + str(i) + '*' + str(j) + '=' + str(i*j) + '\t'
 	result2 = result2 + result1 + '\n'
 
 	
 print (result2)</pre>
+<h2>Day18(0202)</h2>
+<h3>while迴圈</h3>
+<p>while迴圈是以條件式是否成立成立作為是否執行迴圈的根據，又稱為條件式迴圈，語法如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">while condition:
+        statements1
+[else:
+        statements2]</pre>
+<p>流程在進入迴圈時會先檢查condition是否成立，若成立則執行迴圈主體statements1，然後再次跳回while檢查condition是否成立，若成立則執行statements1，<span>然後再次跳回while檢查condition是否成立，就如此週而復始，直到condition為不成立時，執行statements2，最後跳出while迴圈。</span></p>
+<p><span></span></p>
 <p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
 <h1>資料參考</h1>
