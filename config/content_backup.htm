@@ -611,7 +611,31 @@ print (result2)</pre>
 [else:
         statements2]</pre>
 <p>流程在進入迴圈時會先檢查condition是否成立，若成立則執行迴圈主體statements1，然後再次跳回while檢查condition是否成立，若成立則執行statements1，<span>然後再次跳回while檢查condition是否成立，就如此週而復始，直到condition為不成立時，執行statements2，最後跳出while迴圈。</span></p>
-<p><span></span></p>
+<p><br/><span></span>pass、break與continue敘述</p>
+<p><span>pass：不做任何事情，所有的程式都將繼續。</span></p>
+<p><span>break：強制跳出 [整個] 迴圈。</span></p>
+<p><span>continue：強制跳出 [本次] 迴圈，繼續進入下一圈。</span></p>
+<h2><span>Day19(0203)</span></h2>
+<h3><span>認識函式</span></h3>
+<p><span>函式是將功能或重複使用的敘述寫成獨立之程式單元，然後給予名稱，以利後續呼叫即可使用，使用函式的優點為:</span></p>
+<p><span>1.利用呼叫，可不必重複撰寫相同的敘述。</span></p>
+<p><span>2.使用函式後程式將更加精簡。</span></p>
+<p><span>3.程式可讀性提高。</span></p>
+<p><span>4.邏輯性和正確性提高，較容易理解，也較好除錯、修改及維護。</span></p>
+<p><span>而缺點為:</span></p>
+<p><span>1.使用函是會使程式之執行速度減慢，因為相較直接將敘述寫進程式裡的方式還要再多一道呼叫的手續。</span></p>
+<h3>定義函式</h3>
+<p>除了先前提到的內建函式外，若要客製化的功能需要自定義函式。</p>
+<p>可以利用def關鍵字定義函式，語法如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def functionName(parameters):
+        statements
+        [return|return value]
+        [statements]</pre>
+<p>1.def:此關鍵字表示用來定義函式。</p>
+<p>2.functionName:函式名稱命名，可使用英文字母(大小寫有所區分)及底線(_)、數字及中文，但不建議使用中文命名。</p>
+<p>3.parameters:函式參數，可以有0到無數個，若無參數需保留小括號，若有參數，參數間以逗號(,)隔開，可利用參數傳遞資料給函式。</p>
+<p>4.statements:函式主體，用來執行指定動作。</p>
+<p>5.[return|return value]:若要將程式的控制權由函式內部轉至呼叫函式的地方可使用return敘述。value式函式之傳回值，若程式無傳回值return可省略。</p>
 <p></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
 <h1>資料參考</h1>
