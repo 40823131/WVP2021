@@ -636,7 +636,38 @@ print (result2)</pre>
 <p>3.parameters:函式參數，可以有0到無數個，若無參數需保留小括號，若有參數，參數間以逗號(,)隔開，可利用參數傳遞資料給函式。</p>
 <p>4.statements:函式主體，用來執行指定動作。</p>
 <p>5.[return|return value]:若要將程式的控制權由函式內部轉至呼叫函式的地方可使用return敘述。value式函式之傳回值，若程式無傳回值return可省略。</p>
-<p></p>
+<h2>Day20(0204)</h2>
+<h3>呼叫函式</h3>
+<p>函式定義後需呼叫才會執行，若函式有參數時，參數數量及順序需正確無誤，即使沒有參數，還是需將小括號()保留，語法如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">functionName(parameters)</pre>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
+<h3>函式參數</h3>
+<p>參數(parameter)用來傳遞資料進入函式。</p>
+<p>1.參數傳遞方式</p>
+<p>    (1)傳值呼叫:當參數屬於不可改變內容的物件，如數值、字串、tuple(序對)，就會採取傳值呼叫。</p>
+<p>    (2)傳址呼叫:<span>當參數屬於可改變內容的物件，如list(串列)、set(集合)、dict(字典)，就會採取傳址呼叫，傳遞給函式的為參數位址，而非參數值。</span></p>
+<p>2.關鍵字引數</p>
+<p>    Python內預設採取位置引數，函式呼叫中的引數順序需對應函式定義中的參數順序，如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#定義函式trapezoidArea
+
+def trapezoidArea(top,bottom,height)
+
+#呼叫時應該寫為
+
+trapezoidArea(10,20,5)
+
+#此時的
+#10為top(上底)
+#20為bottom(下底)
+#5為height(高)</pre>
+<p>3.預設引數值</p>
+<p>可以在定義函式時設定預設引數值，當呼叫時沒有提供某個引數時，將採用預先設定好的預設引數值，如下。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def myName(name,gender = "男"):
+        print("我的名字是",name,"，性別",gender,"。")
+
+myName("Simon")
+#輸出為
+我的名字是Simon，性別男。</pre>
+<p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
