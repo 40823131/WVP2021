@@ -668,6 +668,26 @@ trapezoidArea(10,20,5)
 myName("Simon")
 #輸出為
 我的名字是Simon，性別男。</pre>
+<h2>Day21(0205)</h2>
+<h3>函式的傳回值</h3>
+<p>在def區塊內的敘述執行完畢之前，程式控制權都不會離開函式，若我們可能需要提早離開函式，返回呼叫函式的地方，此時可以使用return敘述或在return後加上傳回值，如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def divmod(a,b)
+        div = a//b
+        mod = a%b
+        return div,mod
+
+x,y = divmod(300,3)
+print("300除以3的商數為",x,"，餘數為",y,"。")
+
+#得到以下結果
+#300除以3的商數為100，餘數為0。</pre>
+<h3>全域變數與區域變數</h3>
+<p>變數的有效範圍(scope)，這指的是程式的哪些敘述皆能存取變數的值，大部分的變數都只有一種有效範圍，就是程式所有敘述皆可存取的變數之值，稱為全域變數(global variable)，但在函式內定義的變數則稱為區域變數(local variable)，只有函式內的敘述能夠存取區域變數的值。例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def f1()
+        x = 1
+        print(x)
+
+f1()</pre>
 <p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
