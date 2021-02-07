@@ -133,10 +133,21 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Day10(0125) << <a href='Day10(0125).html'>Previous</a> <a href='常用數學函式.html'>Next</a> >> 常用數學函式<br /><h1>導入數學模組</h1>
-<p>在Python中若需使用數學函式，需先導入數學模組(module)，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import math</pre>
-<br />Day10(0125) << <a href='Day10(0125).html'>Previous</a> <a href='常用數學函式.html'>Next</a> >> 常用數學函式</div>
+    <div id="tipue_search_content">日期時間函式(2) << <a href='日期時間函式(2).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>calendar模組</h1>
+<p>匯入calendar模組</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import calendar</pre>
+<p>1.<span>calendar.firstweekday():傳回一周的第一個工作天，預設值為0表示星期一。</span></p>
+<p>2.<span>calendar.setfirstweekday(weekday):將一週的第一個工作天設定為參數weekday所指定的日子，0~6表示星期一~星期日，例如:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#將第一個工作天設為星期二
+&gt;&gt;&gt;calendar.setfirstweekday(1)
+&gt;&gt;&gt;calendar.firstweekday()
+1</pre>
+<p>3.<span>calendar.isleap(year):若指定之year參數為閏年，就傳回True，否則傳回False。</span></p>
+<p>4.<span>calendar.weekday(year,month,day):傳回參數year、month、day所指定的年月日是星期幾，0~6表示星期一到星期日。</span></p>
+<p>5.<span>calendar.monthrange(year,month):傳回兩個整數，第一個整數為year年month月的第一天是星期幾，第二個整數為該月份有幾天。</span></p>
+<p>6.<span>calendar.calendar(year):傳回參數year所指定之年份月曆。</span></p>
+<p><span>7.calendar.month(year,month):傳回參數year和參數month所指定之年份與月份的日曆。</span></p>
+<br />日期時間函式(2) << <a href='日期時間函式(2).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
