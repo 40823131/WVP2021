@@ -706,7 +706,7 @@ print("5! =",result)</pre>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;mul = lambda x,y:x * y
 &gt;&gt;&gt;print(add(50,100))
 5000</pre>
-<h3>日期時間函式(1)</h3>
+<h3>日期時間函式(一)</h3>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#導入time模組
 &gt;&gt;&gt;import time</pre>
 <p>1.time.daylight:此屬性表示本地時間是否使用日光節約時間，1表示是，0表示否，以台灣為例，值為0。</p>
@@ -716,7 +716,7 @@ print("5! =",result)</pre>
 <p>5.time.clock():第一次呼叫會傳回此函式的執行時間，第二次呼叫會傳回這一次和上一次呼叫此函數相差多少秒。</p>
 <p>6.time.gmtime:(secs):傳回從<span>1970年1月1日上午12時00分經過time.time()或選擇性參數secs所指定之秒數的時間，即目前的UTC時間。</span></p>
 <h2>Day23(0207)</h2>
-<h3>日期時間函式(2)</h3>
+<h3>日期時間函式(二)</h3>
 <p>7.time.localtime(secs):與<span>time.gmtime相似，但傳回的是目前的本地時間。</span></p>
 <p>8.<span>time.asctime(t):以str型別傳回目前的本地時間或選擇性參數t指定的時間。</span></p>
 <p>9.<span>time.ctime(secs):與time.asctime，但選擇性參數secs是從1970年1月1日上午12時00分所經過的秒數。</span></p>
@@ -737,5 +737,38 @@ print("5! =",result)</pre>
 <p>5.<span>calendar.monthrange(year,month):傳回兩個整數，第一個整數為year年month月的第一天是星期幾，第二個整數為該月份有幾天。</span></p>
 <p>6.<span>calendar.calendar(year):傳回參數year所指定之年份月曆。</span></p>
 <p><span>7.calendar.month(year,month):傳回參數year和參數month所指定之年份與月份的日曆。</span></p>
+<h2>Day24(0208)</h2>
+<h3>list串列(一)</h3>
+<p>list串列是由一連串資料所組成、有順序且可改變內容(mutable)的序列(sequence)，前後以中括號標示，串列中的資料以逗號分開。</p>
+<p>建立串列:可以使用Python內建的list()函式建立串列，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list1 = list()
+&gt;&gt;&gt;list1
+[] #空串列
+
+&gt;&gt;&gt;list2 = ([1,2,3])
+&gt;&gt;&gt;list2
+[1,2,3]</pre>
+<p>利用range物件建立串列，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list3 = list(range(6))
+&gt;&gt;&gt;list3
+[0,1,2,3,4,5]</pre>
+<p>也可使用str.split([sep])方法，根據sep選擇性參數所指定的分隔字串將字串分隔成串列，然後傳回串列，若sep省略則表示分隔字串為空白，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; '1,2,3'.split(',')
+['1', '2', '3']</pre>
+<p>內建函式</p>
+<p>我在Day9(0124)中有提到過的內建函式中有些亦適用於串列，例如:</p>
+<p>1.len(L):傳回串列參數L的長度，也就是包含幾個元素。</p>
+<p>2.max(L):傳回串列<span>參數L中</span>最大的元素。</p>
+<p>3.min(L)<span>:傳回串列參數L中最小的元素。</span></p>
+<p>4.sum(L):傳回串列參數L中元素的總和。</p>
+<p>連接運算子</p>
+<p>1.+運算子可以用來連接串列，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;[1,2,3]+["Taiwan","Japan","korea"]
+[1,2,3,'taiwan','Japan','korea']</pre>
+<p>重複運算子</p>
+<p>1.*運算子也可以用來重複串列，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;3*[1,2,3]
+[1,2,3,1,2,3,1,2,3]</pre>
+<p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>

@@ -133,8 +133,39 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">全域變數與區域變數 << <a href='全域變數與區域變數.html'>Previous</a> <a href='Day22(0206).html'>Next</a> >> Day22(0206)<br /><h1>W4</h1>
-<br />全域變數與區域變數 << <a href='全域變數與區域變數.html'>Previous</a> <a href='Day22(0206).html'>Next</a> >> Day22(0206)</div>
+    <div id="tipue_search_content">Day24(0208) << <a href='Day24(0208).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>list串列(一)</h1>
+<p>list串列是由一連串資料所組成、有順序且可改變內容(mutable)的序列(sequence)，前後以中括號標示，串列中的資料以逗號分開。</p>
+<p>建立串列:可以使用Python內建的list()函式建立串列，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list1 = list()
+&gt;&gt;&gt;list1
+[] #空串列
+
+&gt;&gt;&gt;list2 = ([1,2,3])
+&gt;&gt;&gt;list2
+[1,2,3]</pre>
+<p>利用range物件建立串列，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list3 = list(range(6))
+&gt;&gt;&gt;list3
+[0,1,2,3,4,5]</pre>
+<p>也可使用str.split([sep])方法，根據sep選擇性參數所指定的分隔字串將字串分隔成串列，然後傳回串列，若sep省略則表示分隔字串為空白，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; '1,2,3'.split(',')
+['1', '2', '3']</pre>
+<p>內建函式</p>
+<p>我在Day9(0124)中有提到過的內建函式中有些亦適用於串列，例如:</p>
+<p>1.len(L):傳回串列參數L的長度，也就是包含幾個元素。</p>
+<p>2.max(L):傳回串列<span>參數L中</span>最大的元素。</p>
+<p>3.min(L)<span>:傳回串列參數L中最小的元素。</span></p>
+<p>4.sum(L):傳回串列參數L中元素的總和。</p>
+<p>連接運算子</p>
+<p>1.+運算子可以用來連接串列，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;[1,2,3]+["Taiwan","Japan","korea"]
+[1,2,3,'taiwan','Japan','korea']</pre>
+<p>重複運算子</p>
+<p>1.*運算子也可以用來重複串列，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;3*[1,2,3]
+[1,2,3,1,2,3,1,2,3]</pre>
+<p></p>
+<br />Day24(0208) << <a href='Day24(0208).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
