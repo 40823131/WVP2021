@@ -133,19 +133,46 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Day9(0124) << <a href='Day9(0124).html'>Previous</a> <a href='Day10(0125).html'>Next</a> >> Day10(0125)<br /><h1>常用內建數值函數</h1>
-<p>abs(X):傳回X的絕對值。</p>
-<p>min(X1,X2,X3,......)<span>:傳回參數數值中的最小值。</span></p>
-<p>max(<span>X1,X2,X3,......</span>)<span>:傳回參數數值中的最大值。</span></p>
-<p>hex(<span>X</span>)<span>:傳回整數X參數由十進位轉為十六進位的字串，前面會加上0x。</span></p>
-<p>oct(<span>X</span>)<span>:傳回整數X參數由十進位轉為八進位的字串，前面會加上0o。</span></p>
-<p>bin(<span>X</span>)<span>:傳回整數X參數由十進位轉為二進位的字串<span>，前面會加上0b。</span></span></p>
-<p>int(<span>X</span>)<span>:傳回X的整數部分，小數將被直接捨去。</span></p>
-<p>round(<span>X,precision</span>)<span>:傳回與X最接近的整數(四捨五入)，若要設定精確度到小數點後幾位，可利用選擇性參數precision設定。</span></p>
-<p>pow(<span>X,Y</span>)<span>:傳回X的Y次方值。</span></p>
-<p>float("<span>X</span>)<span>:傳回字串X轉換成浮點數的結果。</span></p>
-<p>complex(<span>X</span>)<span>:傳回字串X轉換成複數的結果。</span></p>
-<br />Day9(0124) << <a href='Day9(0124).html'>Previous</a> <a href='Day10(0125).html'>Next</a> >> Day10(0125)</div>
+    <div id="tipue_search_content">Day25(0209) << <a href='Day25(0209).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>list串列(二)</h1>
+<p>比較運算子</p>
+<p>    1.比較運算子(&gt;、&lt;、&gt;=、&lt;=、==、!=)也可以用來比較兩個串列的串列的大小或相等與否，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;[1,2,3] != [1,2,3,4]
+True
+&gt;&gt;&gt;[1,2,3] == [3,2,1]
+False
+</pre>
+<p>in &amp; not in運算子</p>
+<p>    1.in運算子:用來檢查某個元素是否存在於串列中，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"taiwan" in [1,"taiwan",2]
+True</pre>
+<p>    2.not <span>in運算子:用來檢查某個元素是否不</span><span>存在於串列中，例如:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"thailand" not in [1,taiwan,2]
+True</pre>
+<p>索引 &amp; 片段運算子</p>
+<p>    1.索引運算子[]:用於取得串列中的元素，舉例來說，假設變數L值為[1,2,3,4,5]，索引0表示由左端開始，索引-1則由右端開始索引，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5]
+&gt;&gt;&gt;L[0]
+1
+&gt;&gt;&gt;L = [1,2,3,4,5]
+&gt;&gt;&gt;L[-1]
+5</pre>
+<p>    2.片段運算子[strat:end]:用來指定索引範圍，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5]
+&gt;&gt;&gt;L[2:4]
+[3,4]</pre>
+<p>串列處理方法</p>
+<p>    1.list.append(x):將參數x所指定的元素加入串列尾端。</p>
+<p>    2.<span>list.extend(L):將參數L所指定的串列的所有元素加入串列。</span></p>
+<p>    3.<span>list.insert(i,x):將參數x所指定的元素插入串列中所引為參數i的位置。</span></p>
+<p>    4.<span>list.remove(x):從串列中刪除第一個值為參數為x的元素。</span></p>
+<p>    5.<span>list.pop[i]:從串列中刪除索引為選擇型參數i的元素並傳回該元素，若未指定i，則刪除最後一個元素，並傳回該元素。</span></p>
+<p>    6.<span>list.index(x):傳回參數x所指定的元素第一次出現在串列中的索引。</span></p>
+<p>    7.<span>list.count(x):傳回參數x所指定的元素出現在串列中的次數。</span></p>
+<p>    8.<span>list.sort():將串列中的元素由小到大排序。</span></p>
+<p>    9.<span>list.reverse():將串列中元素順序反轉過來。</span></p>
+<p>    10.<span>list.copy():複製串列。</span></p>
+<p><span>    11.list.clear:從串列中刪除所有元素。</span></p>
+<br />Day25(0209) << <a href='Day25(0209).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
