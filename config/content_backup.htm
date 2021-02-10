@@ -757,18 +757,57 @@ print("5! =",result)</pre>
 ['1', '2', '3']</pre>
 <p>內建函式</p>
 <p>我在Day9(0124)中有提到過的內建函式中有些亦適用於串列，例如:</p>
-<p>1.len(L):傳回串列參數L的長度，也就是包含幾個元素。</p>
-<p>2.max(L):傳回串列<span>參數L中</span>最大的元素。</p>
-<p>3.min(L)<span>:傳回串列參數L中最小的元素。</span></p>
-<p>4.sum(L):傳回串列參數L中元素的總和。</p>
+<p>    1.len(L):傳回串列參數L的長度，也就是包含幾個元素。</p>
+<p>    2.max(L):傳回串列<span>參數L中</span>最大的元素。</p>
+<p>    3.min(L)<span>:傳回串列參數L中最小的元素。</span></p>
+<p>    4.sum(L):傳回串列參數L中元素的總和。</p>
 <p>連接運算子</p>
-<p>1.+運算子可以用來連接串列，例如:</p>
+<p>    1.+運算子可以用來連接串列，例如:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;[1,2,3]+["Taiwan","Japan","korea"]
 [1,2,3,'taiwan','Japan','korea']</pre>
 <p>重複運算子</p>
-<p>1.*運算子也可以用來重複串列，例如:</p>
+<p>    1.*運算子也可以用來重複串列，例如:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;3*[1,2,3]
 [1,2,3,1,2,3,1,2,3]</pre>
-<p></p>
+<h2>Day25(0209)</h2>
+<h3>list串列(二)</h3>
+<p>比較運算子</p>
+<p>    1.比較運算子(&gt;、&lt;、&gt;=、&lt;=、==、!=)也可以用來比較兩個串列的串列的大小或相等與否，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;[1,2,3] != [1,2,3,4]
+True
+&gt;&gt;&gt;[1,2,3] == [3,2,1]
+False
+</pre>
+<p>in &amp; not in運算子</p>
+<p>    1.in運算子:用來檢查某個元素是否存在於串列中，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"taiwan" in [1,"taiwan",2]
+True</pre>
+<p>    2.not <span>in運算子:用來檢查某個元素是否不</span><span>存在於串列中，例如:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"thailand" not in [1,taiwan,2]
+True</pre>
+<p>索引 &amp; 片段運算子</p>
+<p>    1.索引運算子[]:用於取得串列中的元素，舉例來說，假設變數L值為[1,2,3,4,5]，索引0表示由左端開始，索引-1則由右端開始索引，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5]
+&gt;&gt;&gt;L[0]
+1
+&gt;&gt;&gt;L = [1,2,3,4,5]
+&gt;&gt;&gt;L[-1]
+5</pre>
+<p>    2.片段運算子[strat:end]:用來指定索引範圍，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5]
+&gt;&gt;&gt;L[2:4]
+[3,4]</pre>
+<p>串列處理方法</p>
+<p>    1.list.append(x):將參數x所指定的元素加入串列尾端。</p>
+<p>    2.<span>list.extend(L):將參數L所指定的串列的所有元素加入串列。</span></p>
+<p>    3.<span>list.insert(i,x):將參數x所指定的元素插入串列中所引為參數i的位置。</span></p>
+<p>    4.<span>list.remove(x):從串列中刪除第一個值為參數為x的元素。</span></p>
+<p>    5.<span>list.pop[i]:從串列中刪除索引為選擇型參數i的元素並傳回該元素，若未指定i，則刪除最後一個元素，並傳回該元素。</span></p>
+<p>    6.<span>list.index(x):傳回參數x所指定的元素第一次出現在串列中的索引。</span></p>
+<p>    7.<span>list.count(x):傳回參數x所指定的元素出現在串列中的次數。</span></p>
+<p>    8.<span>list.sort():將串列中的元素由小到大排序。</span></p>
+<p>    9.<span>list.reverse():將串列中元素順序反轉過來。</span></p>
+<p>    10.<span>list.copy():複製串列。</span></p>
+<p><span>    11.list.clear:從串列中刪除所有元素。</span></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>

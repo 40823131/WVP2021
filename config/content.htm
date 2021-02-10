@@ -809,5 +809,94 @@ True</pre>
 <p>    9.<span>list.reverse():將串列中元素順序反轉過來。</span></p>
 <p>    10.<span>list.copy():複製串列。</span></p>
 <p><span>    11.list.clear:從串列中刪除所有元素。</span></p>
+<h2><span>Day26(0210)</span></h2>
+<h3>list串列(三)</h3>
+<p>串列解析</p>
+<p>串列解析提供了更簡潔有力的方式來建立串列，利用for or if來進行串列的建立，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list1 = [i for i in range(10) if i &lt; 8]
+&gt;&gt;&gt;list1
+[0,1,2,3,4,5,6,7]</pre>
+<p>del敘述</p>
+<p>del敘述可用來從串列中刪除指定索引之元素，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5,6,7]
+&gt;&gt;&gt;del L[0]
+&gt;&gt;&gt;L
+[2,3,4,5,6,7]</pre>
+<p>此外del敘述也可用來刪除變數，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; L = [1,2,3,4,5]
+&gt;&gt;&gt; del L
+&gt;&gt;&gt; L
+Traceback (most recent call last):
+  File "&lt;pyshell#3&gt;", line 1, in &lt;module&gt;
+    L
+NameError: name 'L' is not defined</pre>
+<p>二維串列</p>
+<p>二維串列其實就是巢狀串列，串列中的元素也是串列，以下列成績表格為例:</p>
+<table height="84" width="401">
+<tbody>
+<tr>
+<td style="width: 93.6px;"></td>
+<td style="width: 93.6px;">math</td>
+<td style="width: 93.6px;">english</td>
+<td style="width: 94.4px;"><span>Chinese</span></td>
+</tr>
+<tr>
+<td style="width: 93.6px;">student A</td>
+<td style="width: 93.6px;">90</td>
+<td style="width: 93.6px;">80</td>
+<td style="width: 94.4px;">60</td>
+</tr>
+<tr>
+<td style="width: 93.6px;"><span>student B</span></td>
+<td style="width: 93.6px;">60</td>
+<td style="width: 93.6px;">98</td>
+<td style="width: 94.4px;">97</td>
+</tr>
+<tr>
+<td style="width: 93.6px;"><span>student C</span></td>
+<td style="width: 93.6px;">95</td>
+<td style="width: 93.6px;">75</td>
+<td style="width: 94.4px;">75</td>
+</tr>
+</tbody>
+</table>
+<p></p>
+<p>上列成績表格寫為串列:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;grades = [[90,80,60],[60,98,97],[95,75,75]]</pre>
+<p>若要存取此二維串列，必須使用兩個索引，第一個索引為列索引(row index)，第二個為行索引，如下列表格所示:</p>
+<table height="84" width="401">
+<tbody>
+<tr>
+<td style="width: 93.6px;"></td>
+<td style="width: 93.6px;">math</td>
+<td style="width: 93.6px;">english</td>
+<td style="width: 94.4px;"><span>Chinese</span></td>
+</tr>
+<tr>
+<td style="width: 93.6px;">student A</td>
+<td style="width: 93.6px;">[0][0]</td>
+<td style="width: 93.6px;">[0][1]</td>
+<td style="width: 94.4px;">[0][2]</td>
+</tr>
+<tr>
+<td style="width: 93.6px;"><span>student B</span></td>
+<td style="width: 93.6px;">[1][0]</td>
+<td style="width: 93.6px;">[1][1]</td>
+<td style="width: 94.4px;">[1][2]</td>
+</tr>
+<tr>
+<td style="width: 93.6px;"><span>student C</span></td>
+<td style="width: 93.6px;">[2][0]</td>
+<td style="width: 93.6px;">[2][1]</td>
+<td style="width: 94.4px;">[2][2]</td>
+</tr>
+</tbody>
+</table>
+<p>利用此二索引檢驗是否正確，如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;grades = [[90,80,60],[60,98,97],[95,75,75]]
+&gt;&gt;&gt;grades[0]
+[90,80,60]
+&gt;&gt;&gt;grades[0][0]
+90</pre>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
