@@ -133,8 +133,60 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">W1 << <a href='W1.html'>Previous</a> <a href='Python源起.html'>Next</a> >> Python源起<br /><h1>Day1(0116)</h1>
-<br />W1 << <a href='W1.html'>Previous</a> <a href='Python源起.html'>Next</a> >> Python源起</div>
+    <div id="tipue_search_content">Day27(0211) << <a href='Day27(0211).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>tuple序對</h1>
+<p>tuple序對是由一連串資料所組成、不可改變內容(immutable)且有順序的序列(sequence)。序對中的資料以逗號隔開，前後已中括號標示，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;(1,"Taiwan",2,"Japan")
+(1,'Taiwan',2,'Japan')</pre>
+<p><strong>建立序對</strong></p>
+<p>利用Python內建的tuple()函式來建立序對，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;tuple1 = tuple()
+&gt;&gt;&gt;tuple1
+()
+&gt;&gt;&gt;tuple2 = tuple((1,2,3))
+&gt;&gt;&gt;tuple2
+(1,2,3)</pre>
+<p><strong>序對的運算</strong></p>
+<p>序對支援所有共同的序列運算，len()、max()、min()和sum()等內建函示均適用於序對，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = (1,2,3,4,5)
+&gt;&gt;&gt;len(L)
+5 #序對參數L長度為5</pre>
+<p>另外也可利用連接運算子(+)、重複運算子(*)、比較運算子<span>(&gt;、&lt;、&gt;=、&lt;=、==、!=)、in &amp; not in運算子、索引運算子([])、片段運算子([start:end])，例如:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;(1,2,3)+("Taiwan","Japan","Korea")
+(1,2,3,'Taiwan','Japan','Korea')
+&gt;&gt;&gt;
+&gt;&gt;&gt;5*(1,2,3)
+(1,2,3,1,2,3,1,2,3,1,2,3,1,2,3)
+&gt;&gt;&gt;
+&gt;&gt;&gt;(1,2,3) == (3,2,1)
+False
+&gt;&gt;&gt;
+&gt;&gt;&gt;(1,2,3) != (1,2,3,4)
+Ture
+&gt;&gt;&gt;
+&gt;&gt;&gt;(1,2,3) &lt; (1,2,3,4)
+Ture
+&gt;&gt;&gt;
+&gt;&gt;&gt;"Taiwan" in (1,"Taiwan",2)
+True
+&gt;&gt;&gt;
+&gt;&gt;&gt;"Thailand" not in (1,Taiwan,2)
+True
+&gt;&gt;&gt;
+&gt;&gt;&gt;L = (1,2,3,4,5)
+&gt;&gt;&gt;L[0]
+1
+&gt;&gt;&gt;L[1:3]
+(2,3)</pre>
+<p>序對亦支援如下方法:</p>
+<p>1.tuple.index(x):傳回參數x所指定的元素第一次出現在序對中的索引，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;T = (1,2,3,4,5,6,7,8,9,10)
+&gt;&gt;&gt;T.index(3)
+2</pre>
+<p>2.<span>tuple.count(x):傳回參數x所指定的元素第一次出現在序對中的次數，例如:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;T = (1,2,3,2,5,6,2,8,9,2)
+&gt;&gt;&gt;T.count(2)
+4</pre>
+<br />Day27(0211) << <a href='Day27(0211).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
