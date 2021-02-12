@@ -943,5 +943,26 @@ True
 1
 &gt;&gt;&gt;L[1:3]
 (2,3)</pre>
+<p>序對亦支援如下方法:</p>
+<p>1.tuple.index(x):傳回參數x所指定的元素第一次出現在序對中的索引，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;T = (1,2,3,4,5,6,7,8,9,10)
+&gt;&gt;&gt;T.index(3)
+2</pre>
+<p>2.<span>tuple.count(x):傳回參數x所指定的元素第一次出現在序對中的次數，例如:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;T = (1,2,3,2,5,6,2,8,9,2)
+&gt;&gt;&gt;T.count(2)
+4</pre>
+<h2><span>Day28(0212)</span></h2>
+<h3><span>set集合</span></h3>
+<p>set型別用來表示集合，包含無順序不重複且可改變內容的多個資料，前後以大括號標示，資料以逗號隔開，資料型別可以不同，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;{1,"apple",2,"banana"}
+{1,2,"apple","banana"}
+&gt;&gt;&gt;{2,1,"banana","apple"}
+{1,2,"apple","banana"}</pre>
+<p>set集合及list串列一樣可以用來存放多個資料，差別在於集合並無順序且不可重，執行效率較list串列好。</p>
+<p><strong>建立集合</strong></p>
+<p>可使用Python內建set()函式或{}建立集合，例如:</p>
+<p></p>
+<p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
