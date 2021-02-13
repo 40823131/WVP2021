@@ -912,7 +912,7 @@ NameError: name 'L' is not defined</pre>
 &gt;&gt;&gt;tuple2
 (1,2,3)</pre>
 <p><strong>序對的運算</strong></p>
-<p>序對支援所有共同的序列運算，len()、max()、min()和sum()等內建函示均適用於序對，例如:</p>
+<p>序對支援所有共同的序列運算，len()、max()、min()和sum()等內建函式均適用於序對，例如:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = (1,2,3,4,5)
 &gt;&gt;&gt;len(L)
 5 #序對參數L長度為5</pre>
@@ -953,7 +953,7 @@ True
 &gt;&gt;&gt;T.count(2)
 4</pre>
 <h2><span>Day28(0212)</span></h2>
-<h3><span>set集合</span></h3>
+<h3><span>set集合(一)</span></h3>
 <p>set型別用來表示集合，包含無順序不重複且可改變內容的多個資料，前後以大括號標示，資料以逗號隔開，資料型別可以不同，例如:</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;{1,"apple",2,"banana"}
 {1,2,"apple","banana"}
@@ -962,7 +962,58 @@ True
 <p>set集合及list串列一樣可以用來存放多個資料，差別在於集合並無順序且不可重，執行效率較list串列好。</p>
 <p><strong>建立集合</strong></p>
 <p>可使用Python內建set()函式或{}建立集合，例如:</p>
-<p></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;set1 = set({1,2,3})
+&gt;&gt;&gt;set1
+{1,2,3}
+&gt;&gt;&gt;set2 = set(range(6))
+&gt;&gt;&gt;set2
+{0,1,2,3,4,5}</pre>
+<p><strong>內建函式</strong></p>
+<p><span>之前介紹過的len()、max()、min()和sum()等內建函式皆適用於集合，例如:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; S = {1,2,3,4}
+&gt;&gt;&gt;len(S)
+4
+&gt;&gt;&gt;
+&gt;&gt;&gt;max(S)
+4
+&gt;&gt;&gt;
+&gt;&gt;&gt;min(S)
+1
+&gt;&gt;&gt;
+&gt;&gt;&gt;sum(S)
+10</pre>
+<p><strong>運算子</strong></p>
+<p>集合僅支援in &amp; not in、比較運算子，其餘不支援，原因為集合無順序之分，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"Taiwan" in {"Taiwan",1,2}
+True
+&gt;&gt;&gt; 3 not in {"Taiwan",1,2}
+True</pre>
+<p>而比較運算子在此處有不同的定義，如下:</p>
+<p>    1.S1 == S2:若S1與S2包含的元素相同，將傳回True，否則傳回False。</p>
+<p>    2.S1 != S2:<span>若S1與S2包含的元素不同，將傳回True，</span><span>否則傳回False。</span></p>
+<p>    3.S1 &lt;= S2:<span>若S1是S2的子集合(subset)，將傳回True，</span><span>否則傳回False。</span></p>
+<p><span>    4.S1 &lt; S2:<span>若S1是S2的真子集合(proper subset)，將傳回True，</span><span>否則傳回False。</span></span></p>
+<p><span>    5.S1 &gt;= S2:<span>若S1是S2的超集合(superset)，將傳回True，</span><span>否則傳回False。</span></span></p>
+<p><span>    6.S1 &gt; S2:<span>若S1是S2的真超集合(proper superset)，將傳回True，</span><span>否則傳回False。</span></span></p>
+<h1><span><span>W5</span></span></h1>
+<h2><span><span>Day29(0213)</span></span></h2>
+<h3><span>set集合(二)</span></h3>
+<p><strong>集合處理方法</strong></p>
+<p><span>集合隸屬於set類別，常用之處理方式如下:</span></p>
+<p><strong>新增/刪除/複製</strong></p>
+<p>    1.set.add(x):將參數x指定之元素加入集合。</p>
+<p>    2.set.remove(x):從集合中刪除x所指定之元素。</p>
+<p>    3.set.pop():從集合中隨機刪除一個元素，並傳回該元素。</p>
+<p>    4.set.copy():傳回集合的複本，和原來的集合為兩個不同的物件。</p>
+<p>    5.set.clear():刪除集合中的所有元素。</p>
+<p><strong>子集合/超集合</strong></p>
+<p><b>    </b>1.set.issubset(S):若集合為參數S的子集合，<span>將傳回True，</span><span>否則傳回False。</span></p>
+<p>    2.<span>set.issuperset(S):若集合為參數S的超集合，<span>將傳回True，</span><span>否則傳回False。</span></span></p>
+<p><strong>常用集合運算</strong></p>
+<p><strong><span>   </span></strong> 1.set.isdisjoint(S):<span>若集合和參數S所指定的集合沒有相同的元素，</span><span>將傳回True，</span><span>否則傳回False。</span></p>
+<p>    2.<span>set.update(S):將</span><span>集合和參數S所指定的集合進行聯集，結果將更新到集合。</span></p>
+<p>    3.<span>set.intersection_update(S):將</span><span>集合和參數S所指定的集合進行交集，結果將更新到集合。</span></p>
+<p>    4.<span>set.difference_update(S):將</span><span>集合和參數S所指定的集合進行差集，結果將更新到集合。</span></p>
 <p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
