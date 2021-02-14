@@ -133,22 +133,56 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">導入數學模組 << <a href='導入數學模組.html'>Previous</a> <a href='亂數函式.html'>Next</a> >> 亂數函式<br /><h1>常用數學函式</h1>
-<p>1.math.pi、math.e、math.nan、math.inf:分別表示圓周率、自然對數e、NaN(not a number)、正無限大，負無限大則為-math.inf。</p>
-<p>2.math.ceil(X):傳回<span>大於等於X的最小整數，例如:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.ceil(8.999)
-9</pre>
-<p><span>3.math.fabs(X):傳回X的浮點數絕對值，例如:</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.fabs(-5)
-5.0</pre>
-<p>4.math.factorial(X):傳回正整數X的階層值，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.factorial(4)    #(即為4!=4*3*2*1=24)
-24</pre>
-<p>5.math.floor(X):傳回<span>小於等於X的最大整數。</span></p>
-<p><span>6.math.radians(X):傳回角度X轉為弳度的結果。</span></p>
-<p><span>7.math.degrees(X):傳回弳度X轉為角度的結果。</span></p>
-<p><span>8.math.sin(X)、math.cos<span>(X)、math.tan<span>(X)、math.as<span>in(X)、math.acos<span>(X)、math.atan<span>(X)三角函式:分別傳回X的正弦值、餘弦值、正切值、反正弦值、反餘弦值、反正切值，需注意的適當中的參數X需為弳度而非角度，可利用上述math.radians函式將角度轉換為弳度。</span></span></span></span></span></span></p>
-<br />導入數學模組 << <a href='導入數學模組.html'>Previous</a> <a href='亂數函式.html'>Next</a> >> 亂數函式</div>
+    <div id="tipue_search_content">Day30(0214) << <a href='Day30(0214).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>dict字典(一)</h1>
+<p>dict型別用來表示字典，包含無順序、無重複且可改變內容的多個鍵:值對(key:value pair)，簡單來說就是以鍵做為索引來取得字典裡的值，字典前後以大括號標示，各個鍵:值對以逗號隔開，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;{"ID":"40823131","name":"Simon"}
+{'ID':'40823131','name':'Simon'}</pre>
+<p><strong>建立字典</strong></p>
+<p>可使用Python內建的dict()函式或{}建立字典，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;A = {"one":1,"two":2,"three":3}
+&gt;&gt;&gt;B = dict({"one":1,"two":2,"three":3})   #同上
+&gt;&gt;&gt;C = dict(one=1,two=2,three=3)   #同上
+&gt;&gt;&gt;D = {}   #空字典</pre>
+<p><strong>取得/新增/變更/刪除鍵:值對</strong></p>
+<p>    1.取得:建立字典後可利用鍵取得對映的值，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;A = {"one":1,"two":2,"three":3}
+&gt;&gt;&gt;x = A["one"]
+&gt;&gt;&gt;x
+1</pre>
+<p>    2.新增/變更:當key尚未存在於字典時，就新增一個鍵為key、值為value的鍵:值對;相反的，當key已經存在時則改變鍵:值隊的值為value，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3})
+&gt;&gt;&gt; B["three"] = 4
+&gt;&gt;&gt; B
+{'one': 1, 'two': 2, 'three': 4}
+&gt;&gt;&gt; B["four"] = 4 #新增鍵:值對
+&gt;&gt;&gt; B["three"] = 3 #變更
+&gt;&gt;&gt; B
+{'one': 1, 'two': 2, 'three': 3, 'four': 4}
+&gt;&gt;&gt; </pre>
+<p>    3.刪除:可利用del敘述刪除鍵為key的鍵:值對，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3,"four":4})
+&gt;&gt;&gt; del B["four"]
+&gt;&gt;&gt; B
+{'one': 1, 'two': 2, 'three': 3}</pre>
+<p><strong>內建函式</strong></p>
+<p>眾多內建函式僅有len()函式適用於字典，用於傳回字典包含幾個鍵:值對，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3,"four":4})
+&gt;&gt;&gt;len(B)
+4</pre>
+<h4><strong>運算子</strong></h4>
+<p>字典僅支援in &amp; not in及部分比較運算子(==、!=)，例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3,"four":4})
+&gt;&gt;&gt;"two" in B
+True
+&gt;&gt;&gt;"five" not in B
+True
+&gt;&gt;&gt; A = dict({"one":1,"two":2,"three":3,"four":4,"five":5})
+&gt;&gt;&gt; A == B
+False
+&gt;&gt;&gt; A != B
+True</pre>
+<p><strong> </strong></p>
+<br />Day30(0214) << <a href='Day30(0214).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
