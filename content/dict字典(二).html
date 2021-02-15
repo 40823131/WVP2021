@@ -133,49 +133,18 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Day28(0212) << <a href='Day28(0212).html'>Previous</a> <a href='W5.html'>Next</a> >> W5<br /><h1>set集合(一)</h1>
-<p>set型別用來表示集合，包含無順序不重複且可改變內容的多個資料，前後以大括號標示，資料以逗號隔開，資料型別可以不同，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;{1,"apple",2,"banana"}
-{1,2,"apple","banana"}
-&gt;&gt;&gt;{2,1,"banana","apple"}
-{1,2,"apple","banana"}</pre>
-<p>set集合及list串列一樣可以用來存放多個資料，差別在於集合並無順序且不可重，執行效率較list串列好。</p>
-<h4><strong>建立集合</strong></h4>
-<p>可使用Python內建set()函式或{}建立集合，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;set1 = set({1,2,3})
-&gt;&gt;&gt;set1
-{1,2,3}
-&gt;&gt;&gt;set2 = set(range(6))
-&gt;&gt;&gt;set2
-{0,1,2,3,4,5}</pre>
-<h4><strong>內建函式</strong></h4>
-<p><span>之前介紹過的len()、max()、min()和sum()等內建函式皆適用於集合，例如:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; S = {1,2,3,4}
-&gt;&gt;&gt;len(S)
-4
-&gt;&gt;&gt;
-&gt;&gt;&gt;max(S)
-4
-&gt;&gt;&gt;
-&gt;&gt;&gt;min(S)
-1
-&gt;&gt;&gt;
-&gt;&gt;&gt;sum(S)
-10</pre>
-<h4><strong>運算子</strong></h4>
-<p>集合僅支援in &amp; not in、比較運算子，其餘不支援，原因為集合無順序之分，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"Taiwan" in {"Taiwan",1,2}
-True
-&gt;&gt;&gt; 3 not in {"Taiwan",1,2}
-True</pre>
-<p>而比較運算子在此處有不同的定義，如下:</p>
-<p>    1.S1 == S2:若S1與S2包含的元素相同，將傳回True，否則傳回False。</p>
-<p>    2.S1 != S2:<span>若S1與S2包含的元素不同，將傳回True，</span><span>否則傳回False。</span></p>
-<p>    3.S1 &lt;= S2:<span>若S1是S2的子集合(subset)，將傳回True，</span><span>否則傳回False。</span></p>
-<p><span>    4.S1 &lt; S2:<span>若S1是S2的真子集合(proper subset)，將傳回True，</span><span>否則傳回False。</span></span></p>
-<p><span>    5.S1 &gt;= S2:<span>若S1是S2的超集合(superset)，將傳回True，</span><span>否則傳回False。</span></span></p>
-<p><span>    6.S1 &gt; S2:<span>若S1是S2的真超集合(proper superset)，將傳回True，</span><span>否則傳回False。</span></span></p>
-<br />Day28(0212) << <a href='Day28(0212).html'>Previous</a> <a href='W5.html'>Next</a> >> W5</div>
+    <div id="tipue_search_content">Day31(0215) << <a href='Day31(0215).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>dict字典(二)</h1>
+<p><strong>字典處理方法</strong></p>
+<p><strong>  </strong>  1.dict.get(key,default):傳回字典中鍵為key所對映的值，若該件不存在，則傳回選擇性參數default，若無<span>default參數，</span><span>則傳回None。</span></p>
+<p><strong> <span> </span></strong><span>  2.dict.pop(key,default):從字典中刪除鍵為key的鍵:值對並傳回所對映的值，若該件不存在，則傳回選擇性參數default，若無<span>default參數，會發生KeyError。</span></span></p>
+<p><span><strong>  </strong><span>  3.dict.popitem():從字典中隨機刪除一個鍵:值對並傳回該鍵:值對，<span>若要刪除的目標是空字典，會發生KeyError。</span></span></span></p>
+<p><span><span><strong>  </strong><span>  4.dict.keys():傳回字典所有的鍵。</span></span></span></p>
+<p><span><span><span><strong>  </strong><span>  5.dict.values():傳回字典所有的值。</span></span></span></span></p>
+<p><span><span><span><span><strong>  </strong><span>  6.dict.items():傳回字典所有的鍵:值對。</span></span></span></span></span></p>
+<p><span><span><span><span><span><strong>  </strong><span>  7.dict.copy():傳回字典的複本。</span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><strong>  </strong><span>  8.dict.clear():從字典中刪除所有鍵:值對。</span></span></span></span></span></span></span></p>
+<p><span><span><span><span><span><span><span><strong>  </strong><span>  9.dict.update(other):根據參數other所指定的字典更新目前的字典，將兩個字典合併，若有重複的鍵，將以參數other中的鍵:值對取代。</span></span></span></span></span></span></span></span></p>
+<br />Day31(0215) << <a href='Day31(0215).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
