@@ -1075,5 +1075,44 @@ True</pre>
 <p><span><span><span><span><span><strong>  </strong><span>  7.dict.copy():傳回字典的複本。</span></span></span></span></span></span></p>
 <p><span><span><span><span><span><span><strong>  </strong><span>  8.dict.clear():從字典中刪除所有鍵:值對。</span></span></span></span></span></span></span></p>
 <p><span><span><span><span><span><span><span><strong>  </strong><span>  9.dict.update(other):根據參數other所指定的字典更新目前的字典，將兩個字典合併，若有重複的鍵，將以參數other中的鍵:值對取代。</span></span></span></span></span></span></span></span></p>
+<h2><span>Day32(0216)</span></h2>
+<h3>turtle模組(繪圖)</h3>
+<p>匯入turtle模組，如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import turtle</pre>
+<p>輸入以下指令，會出現視窗如圖(一)，起始之中心點箭頭代表海龜，座標為(0,0)，方向向右。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;turtle.showturtle()</pre>
+<p><img alt="" height="853" src="/images/showturtle.png" width="961"/></p>
+<h4 style="text-align: center;">圖(一)</h4>
+<p>基本turtle指令如下:</p>
+<p>    1.turtle.forward(x):向前走x步，即是向前x像素。</p>
+<p>    2.<span>turtle.left(x):向左轉x度。</span></p>
+<p>    3.turtle.right<span>(x):向右轉<span>x度。</span></span></p>
+<p>    4.<span>turtle.hideturtle():隱藏箭頭。</span></p>
+<p>    5.<span>turtle.showturtle():顯示箭頭。</span></p>
+<p>    6.<span>turtle.clear():清除圖形。</span></p>
+<p>    7.<span>turtle.reset():重設為起始狀態，包含清除圖形及箭頭復歸。</span></p>
+<p><strong>控制箭頭與畫圖</strong></p>
+<p>判斷箭頭狀態</p>
+<p>turtle模組提供了一些方法用來判斷箭頭目前的狀態，常用的如下:</p>
+<p>    1.<span>turtle.position()、turtle.pos():傳回箭頭座標。</span></p>
+<p>    2.<span>turtle.xcor():傳回箭頭在X軸的座標。</span></p>
+<p>    3.<span>turtle.ycor():傳回箭頭在Y軸的座標。</span></p>
+<p>    4.<span>turtle.heading():傳回箭頭的方向。</span></p>
+<p>    5.<span>turtle.towards(x,y):傳回從箭頭的位置到參數(x,y)所指定的位置之間的角度。</span></p>
+<p>    6.<span>turtle.distance(x,y):傳回從箭頭的位置到參數(x,y)所指定的位置之間的距離。</span></p>
+<p><span>移動箭頭與畫圖</span></p>
+<p>    1.<span>turtle.forward(x):向前走x步，即是向前x像素，x若為負數則向後退。</span></p>
+<p>    2.<span>turtle.back(x):向後</span><span>走x步，即是向後x像素，x若為負數則向前進。</span></p>
+<p>    3.<span>turtle.left(x)、turtle.lt(x):向左轉<span>x度。</span></span></p>
+<p>    4.<span>turtle.right</span><span>(x)、<span>turtle.rt(x)</span>:向右轉<span>x度。</span></span></p>
+<p>    5.<span>turtle.home</span><span>():將箭頭移至座標(0,0)，方向為向右。</span></p>
+<p>    6.<span>turtle.undo(</span><span>):取消箭頭上一個工作。</span></p>
+<p>    7.<span>turtle.setx(x</span><span>):將箭頭移至X軸上參數x所指定的位置，Y軸保持不變。</span></p>
+<p>    8.<span>turtle.sety(y</span><span>):將箭頭移至Y軸上參數y所指定的位置，X軸保持不變。</span></p>
+<p>    9.turtle.goto(x,y)、turtle.setpos(x,y)、turtle.setposition(x,y):將箭頭移至(x,y)，箭頭方向保持不變。</p>
+<p>    10.<span>turtle.setheading(x):將箭頭的方向設定為參數x所指定的角度，0表示東方，90表示北方，180表示西方，270表示南方。</span></p>
+<p>    11.<span>turtle.speed(x</span><span>):使用參數x設定箭頭的移動速度，範圍為1~10數字愈大，速度愈快，若未設定參數x則傳回目前箭頭的移動速度。</span></p>
+<p>    12.<span>turtle.dot(size,color</span><span>):根據參數size所指定的畫筆寬度及參數color所指定的顏色畫出原點。</span></p>
+<p>    13.<span>turtle.circle(rad,extent = None,steps = None</span><span>):根據參數畫圓，其中參數rad是圓的半徑；選擇性參數extent是角度，用來決定畫出圓的哪些部分，未指定則畫出全圓；選擇性參數steps是邊數，決定要在圓內畫出幾邊形，若未指定，則表示僅畫圓。</span></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
