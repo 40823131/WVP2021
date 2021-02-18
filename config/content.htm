@@ -1142,5 +1142,55 @@ True</pre>
 <p>    2.move:設定是否將箭頭移到文字的右下角，預設值為False，表示不移動箭頭。</p>
 <p>    3.align:設定對齊方式，有"left"、"center"或"right"，預設值為"left"</p>
 <p>    4.font:設定文字的字型、大小與樣式，預設值為("arial",8,"normal")</p>
+<h2><span>Day34(0218)</span></h2>
+<h3><strong>檔案存取</strong></h3>
+<h4><span>寫入檔案</span></h4>
+<p><span>使用內建的open()函式建立檔案物件。語法如下，建立成功時，會傳回檔案物件，相反的，建立失敗時，會發生錯誤:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">open(file,mode)</pre>
+<p>1.file:設定欲存取的檔案，包含檔案路徑及名稱。</p>
+<p>2.mode:設定檔案物件的存取模式，常用的如下表:</p>
+<table height="307" style="width: 732px;">
+<tbody>
+<tr>
+<td style="width: 78.9091px;">模式</td>
+<td style="width: 638.909px;">說明</td>
+</tr>
+<tr>
+<td style="width: 78.9091px;">"r"</td>
+<td style="width: 638.909px;">讀取模式開啟檔案，檔案指標指向檔案開頭，若檔案不存在，會發生錯誤，此為預設值。</td>
+</tr>
+<tr>
+<td style="width: 78.9091px;">"w"</td>
+<td style="width: 638.909px;">寫入模式開啟檔案並清除原先檔案內容<span>，檔案指標指向檔案開頭</span>，若檔案不存在，則建立新檔案。</td>
+</tr>
+<tr>
+<td style="width: 78.9091px;">"a"</td>
+<td style="width: 638.909px;"><span>寫入模式開啟檔案</span><span>，檔案指標指向檔案結尾，寫入的資料會新增至原檔案內容後面</span><span>，若檔案不存在，則建立新檔案。</span></td>
+</tr>
+<tr>
+<td style="width: 78.9091px;">"r+"</td>
+<td style="width: 638.909px;"><span>讀寫模式開啟檔案，檔案指標指向檔案開頭，寫入資料會覆蓋原先檔案的內容，若檔案不存在，就會建立新檔案。</span></td>
+</tr>
+<tr>
+<td style="width: 78.9091px;">"w+"</td>
+<td style="width: 638.909px;"><span>讀寫模式開啟檔案並清除原先檔案內容</span><span>，檔案指標指向檔案開頭</span><span>，若檔案不存在，則建立新檔案。</span></td>
+</tr>
+<tr>
+<td style="width: 78.9091px;">"a+"</td>
+<td style="width: 638.909px;"><span>讀寫模式開啟檔案</span><span>，檔案指標指向檔案結尾，寫入的資料會新增至原檔案內容後面</span><span>，若檔案不存在，則建立新檔案。</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>將資料寫入檔案</strong></p>
+<p>1.開啟檔案:使用open()函式建立檔案物件。</p>
+<p>2.寫入檔案:使用write(s)方法將參數s所指定的的字串寫進檔案，後傳回寫入文字的個數。</p>
+<p>3.關閉檔案:使用close()方法關閉檔案。</p>
+<p>例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","w")  #開啟檔案或新增檔案
+&gt;&gt;&gt; fileObject.write("白日依山盡")  #寫入檔案
+5
+&gt;&gt;&gt; fileObject.close()  #關閉檔案
+&gt;&gt;&gt;</pre>
+<p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>

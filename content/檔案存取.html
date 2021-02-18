@@ -133,87 +133,56 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Day6(0121) << <a href='Day6(0121).html'>Previous</a> <a href='Day7(0122).html'>Next</a> >> Day7(0122)<br /><h1>運算子個別解說(二)</h1>
-<p><span>4.指派運算子</span></p>
-<table style="width: 538px;">
+    <div id="tipue_search_content">Day34(0218) << <a href='Day34(0218).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>檔案存取</h1>
+<h4><span>寫入檔案</span></h4>
+<p><span>使用內建的open()函式建立檔案物件。語法如下，建立成功時，會傳回檔案物件，相反的，建立失敗時，會發生錯誤:</span></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">open(file,mode)</pre>
+<p>1.file:設定欲存取的檔案，包含檔案路徑及名稱。</p>
+<p>2.mode:設定檔案物件的存取模式，常用的如下表:</p>
+<table height="307" style="width: 732px;">
 <tbody>
-<tr style="height: 16px;">
-<td style="width: 85px; height: 16px;">運算子</td>
-<td style="width: 84px; height: 16px;">語法</td>
-<td style="width: 347px; height: 16px;">說明</td>
+<tr>
+<td style="width: 78.9091px;">模式</td>
+<td style="width: 638.909px;">說明</td>
 </tr>
-<tr style="height: 14.0625px;">
-<td style="width: 85px; height: 14.0625px;">=</td>
-<td style="width: 84px; height: 14.0625px;">a=b</td>
-<td style="width: 347px; height: 14.0625px;">將b指派給a，將a的值設定為b的值。</td>
+<tr>
+<td style="width: 78.9091px;">"r"</td>
+<td style="width: 638.909px;">讀取模式開啟檔案，檔案指標指向檔案開頭，若檔案不存在，會發生錯誤，此為預設值。</td>
 </tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">+=</td>
-<td style="width: 84px; height: 15px;">a+=b</td>
-<td style="width: 347px; height: 15px;">相當於a=a+b。</td>
+<tr>
+<td style="width: 78.9091px;">"w"</td>
+<td style="width: 638.909px;">寫入模式開啟檔案並清除原先檔案內容<span>，檔案指標指向檔案開頭</span>，若檔案不存在，則建立新檔案。</td>
 </tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">-=</td>
-<td style="width: 84px; height: 15px;">a-=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a-b。</span></td>
+<tr>
+<td style="width: 78.9091px;">"a"</td>
+<td style="width: 638.909px;"><span>寫入模式開啟檔案</span><span>，檔案指標指向檔案結尾，寫入的資料會新增至原檔案內容後面</span><span>，若檔案不存在，則建立新檔案。</span></td>
 </tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">*=</td>
-<td style="width: 84px; height: 15px;">a*=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a*b。</span></td>
+<tr>
+<td style="width: 78.9091px;">"r+"</td>
+<td style="width: 638.909px;"><span>讀寫模式開啟檔案，檔案指標指向檔案開頭，寫入資料會覆蓋原先檔案的內容，若檔案不存在，就會建立新檔案。</span></td>
 </tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">/=</td>
-<td style="width: 84px; height: 15px;">a/=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a/b。</span></td>
+<tr>
+<td style="width: 78.9091px;">"w+"</td>
+<td style="width: 638.909px;"><span>讀寫模式開啟檔案並清除原先檔案內容</span><span>，檔案指標指向檔案開頭</span><span>，若檔案不存在，則建立新檔案。</span></td>
 </tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">//=</td>
-<td style="width: 84px; height: 15px;">a//=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a//b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">%=</td>
-<td style="width: 84px; height: 15px;">a%=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a%b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">**=</td>
-<td style="width: 84px; height: 15px;">a**=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a**b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">&lt;&lt;=</td>
-<td style="width: 84px; height: 15px;"><span>a&lt;&lt;=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a&lt;&lt;b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">&gt;&gt;=</td>
-<td style="width: 84px; height: 15px;"><span>a&gt;&gt;=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a&gt;&gt;b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">&amp;=</td>
-<td style="width: 84px; height: 15px;"><span>a&amp;=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a&amp;b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">|=</td>
-<td style="width: 84px; height: 15px;"><span>a|=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a|b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">^=</td>
-<td style="width: 84px; height: 15px;"><span>a^=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a^b。</span></td>
+<tr>
+<td style="width: 78.9091px;">"a+"</td>
+<td style="width: 638.909px;"><span>讀寫模式開啟檔案</span><span>，檔案指標指向檔案結尾，寫入的資料會新增至原檔案內容後面</span><span>，若檔案不存在，則建立新檔案。</span></td>
 </tr>
 </tbody>
 </table>
-<p>5.邏輯運算子</p>
-<p>    (1)and:若a and b，<span>表示</span>a與b皆為True則傳回True，反之傳回False。</p>
-<p>    (2)or:<span>若a or b，表示a與b皆為False則傳回False，反之傳回True。</span></p>
-<p><span>    (3)not:若not a，表示將a進行邏輯否定，若a的值為True，傳回False，反之傳回True。</span></p>
-<br />Day6(0121) << <a href='Day6(0121).html'>Previous</a> <a href='Day7(0122).html'>Next</a> >> Day7(0122)</div>
+<p><strong>將資料寫入檔案</strong></p>
+<p>1.開啟檔案:使用open()函式建立檔案物件。</p>
+<p>2.寫入檔案:使用write(s)方法將參數s所指定的的字串寫進檔案，後傳回寫入文字的個數。</p>
+<p>3.關閉檔案:使用close()方法關閉檔案。</p>
+<p>例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","w")  #開啟檔案或新增檔案
+&gt;&gt;&gt; fileObject.write("白日依山盡")  #寫入檔案
+5
+&gt;&gt;&gt; fileObject.close()  #關閉檔案
+&gt;&gt;&gt;</pre>
+<p></p>
+<br />Day34(0218) << <a href='Day34(0218).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
