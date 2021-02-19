@@ -1129,7 +1129,6 @@ True</pre>
 <p>    1.<span>turtle.pencolor(r,g,b)、turtle.pencolor("ColorName"):根據參數設定畫筆色彩，若未設定則傳回目前畫筆的色彩，(r,g,b)中的三個字母分別代表(紅,綠,藍)。</span></p>
 <p>    2.turtle.fillcolor():根據參數填滿色彩，參數指定方式與<span>turtle.pencolor()相同。</span></p>
 <p>    3.<span>turtle.color():根據參數設定畫筆色彩與填滿色彩<span>，若未指定則傳回目前畫筆的色彩及填滿色彩。</span></span></p>
-<p></p>
 <p><strong>填滿色彩</strong></p>
 <p>turtle模組提供了一些方法用來填滿色彩，常用的如下:</p>
 <p>    1.turtle.filling():傳回填滿色彩狀態，True表示正在填滿色彩，False表示否。</p>
@@ -1186,6 +1185,11 @@ True</pre>
 <p>2.寫入檔案:使用write(s)方法將參數s所指定的的字串寫進檔案，後傳回寫入文字的個數。</p>
 <p>3.關閉檔案:使用close()方法關閉檔案。</p>
 <p>例如:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","w")  #開啟檔案或新增檔案
+&gt;&gt;&gt; fileObject.write("白日依山盡")  #寫入檔案
+5
+&gt;&gt;&gt; fileObject.close()  #關閉檔案
+&gt;&gt;&gt;</pre>
 <p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>

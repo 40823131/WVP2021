@@ -1129,7 +1129,6 @@ True</pre>
 <p>    1.<span>turtle.pencolor(r,g,b)、turtle.pencolor("ColorName"):根據參數設定畫筆色彩，若未設定則傳回目前畫筆的色彩，(r,g,b)中的三個字母分別代表(紅,綠,藍)。</span></p>
 <p>    2.turtle.fillcolor():根據參數填滿色彩，參數指定方式與<span>turtle.pencolor()相同。</span></p>
 <p>    3.<span>turtle.color():根據參數設定畫筆色彩與填滿色彩<span>，若未指定則傳回目前畫筆的色彩及填滿色彩。</span></span></p>
-<p></p>
 <p><strong>填滿色彩</strong></p>
 <p>turtle模組提供了一些方法用來填滿色彩，常用的如下:</p>
 <p>    1.turtle.filling():傳回填滿色彩狀態，True表示正在填滿色彩，False表示否。</p>
@@ -1143,7 +1142,7 @@ True</pre>
 <p>    3.align:設定對齊方式，有"left"、"center"或"right"，預設值為"left"</p>
 <p>    4.font:設定文字的字型、大小與樣式，預設值為("arial",8,"normal")</p>
 <h2><span>Day34(0218)</span></h2>
-<h3><strong>檔案存取</strong></h3>
+<h3><strong>檔案存取(一)</strong></h3>
 <h4><span>寫入檔案</span></h4>
 <p><span>使用內建的open()函式建立檔案物件。語法如下，建立成功時，會傳回檔案物件，相反的，建立失敗時，會發生錯誤:</span></p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">open(file,mode)</pre>
@@ -1191,6 +1190,33 @@ True</pre>
 5
 &gt;&gt;&gt; fileObject.close()  #關閉檔案
 &gt;&gt;&gt;</pre>
+<h2>Day35(0219)</h2>
+<h3>檔案存取(二)</h3>
+<p><strong>讀取檔案</strong></p>
+<p>1.<span>開啟檔案:使用open()函式建立檔案物件。</span></p>
+<p>2.<span>寫入檔案:使用read()、readline()或readlines()方法讀取資料。</span></p>
+<p>3.關閉檔案:<span>使用close()方法關閉檔案。</span></p>
+<p><strong>使用read()方法從檔案讀取資料</strong></p>
+<p>利用read()方法讀取資料，語法如下，將從檔案指標處讀取參數n所指定之數量的文字，若n未指定，則傳回所有資料。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">read(n)</pre>
+<p>實際使用例子如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","r")
+&gt;&gt;&gt; content = fileObject.read()
+&gt;&gt;&gt; print(content)
+白日依山盡
+&gt;&gt;&gt; content1 = fileObject.read(3)
+&gt;&gt;&gt; print(content1)
+白日依
+&gt;&gt;&gt; fileObject.close()
+&gt;&gt;&gt;</pre>
+<p><strong>移動檔案指標</strong></p>
+<p>檔案指標會指向目前讀取或星增至哪個位置，若要自行移動需使用seek(offset)方法，將指標移至offset+1個位元組，例如seek(2)是將檔案指標移至第3個位元組，實例如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","r")
+&gt;&gt;&gt; fileObject.seek(0)
+0
+&gt;&gt;&gt; fileObject.read(1)
+白</pre>
 <p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>

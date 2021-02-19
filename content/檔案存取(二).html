@@ -133,77 +133,34 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Day11(0126) << <a href='Day11(0126).html'>Previous</a> <a href='常用內建字串函式.html'>Next</a> >> 常用內建字串函式<br /><h1>逸脫序列</h1>
-<p><span></span>對於一些無法顯示在螢幕上的符號，可以利用<span>逸脫序列在這些符號前加上反斜線(\)，便能顯示出來。</span></p>
-<table style="width: 524px;">
-<tbody>
-<tr style="height: 15px;">
-<td style="width: 105.6px; height: 15px;">逸脫序列</td>
-<td style="width: 403.4px; height: 15px;">意義</td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\\</td>
-<td style="width: 403.4px; height: 14px;">印出反斜線(\)。</td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\'</td>
-<td style="width: 403.4px; height: 14px;"><span>印出單引號(')。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\"</td>
-<td style="width: 403.4px; height: 14px;"><span>印出雙引號(")。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\a</td>
-<td style="width: 403.4px; height: 14px;"><span>響鈴(Bell)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\b</td>
-<td style="width: 403.4px; height: 14px;"><span>倒退鍵(Backspace)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\f</td>
-<td style="width: 403.4px; height: 14px;"><span>換頁(Formfeed)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\n</td>
-<td style="width: 403.4px; height: 14px;"><span>換行(Linefeed)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\r</td>
-<td style="width: 403.4px; height: 14px;">歸位(Carriage Return)。</td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\t</td>
-<td style="width: 403.4px; height: 14px;"><span>[Tab]鍵(Horizontal)。</span></td>
-</tr>
-<tr style="height: 14.3998px;">
-<td style="width: 105.6px; height: 14.3998px;">\v</td>
-<td style="width: 403.4px; height: 14.3998px;"><span>垂直定位(Vertical Tab)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\ooo</td>
-<td style="width: 403.4px; height: 14px;"><span>ASCII字元，ooo為八進位整數。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\x<em><strong>hh</strong></em></td>
-<td style="width: 403.4px; height: 14px;"><span>ASCII字元，<em><strong>hh</strong></em>為十六進位整數。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\N{<em><strong>name</strong></em>}</td>
-<td style="width: 403.4px; height: 14px;"><span>Unicode字元，<em><strong>name</strong></em>為字元名稱。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\u<em><strong>xxxx</strong></em></td>
-<td style="width: 403.4px; height: 14px;"><span>Unicode字元，<em><strong>xxxx</strong></em>為16-bit十六進位整數。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\U<em><strong>xxxxxxxx</strong></em></td>
-<td style="width: 403.4px; height: 14px;"><span>Unicode字元，<em><strong>xxxxxxxx</strong></em>為32-bit十六進位整數。</span></td>
-</tr>
-</tbody>
-</table>
-<br />Day11(0126) << <a href='Day11(0126).html'>Previous</a> <a href='常用內建字串函式.html'>Next</a> >> 常用內建字串函式</div>
+    <div id="tipue_search_content">Day35(0219) << <a href='Day35(0219).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>檔案存取(二)</h1>
+<p><strong>讀取檔案</strong></p>
+<p>1.<span>開啟檔案:使用open()函式建立檔案物件。</span></p>
+<p>2.<span>寫入檔案:使用read()、readline()或readlines()方法讀取資料。</span></p>
+<p>3.關閉檔案:<span>使用close()方法關閉檔案。</span></p>
+<p><strong>使用read()方法從檔案讀取資料</strong></p>
+<p>利用read()方法讀取資料，語法如下，將從檔案指標處讀取參數n所指定之數量的文字，若n未指定，則傳回所有資料。</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">read(n)</pre>
+<p>實際使用例子如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","r")
+&gt;&gt;&gt; content = fileObject.read()
+&gt;&gt;&gt; print(content)
+白日依山盡
+&gt;&gt;&gt; content1 = fileObject.read(3)
+&gt;&gt;&gt; print(content1)
+白日依
+&gt;&gt;&gt; fileObject.close()
+&gt;&gt;&gt;</pre>
+<p><strong>移動檔案指標</strong></p>
+<p>檔案指標會指向目前讀取或星增至哪個位置，若要自行移動需使用seek(offset)方法，將指標移至offset+1個位元組，例如seek(2)是將檔案指標移至第3個位元組，實例如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","r")
+&gt;&gt;&gt; fileObject.seek(0)
+0
+&gt;&gt;&gt; fileObject.read(1)
+白</pre>
+<p></p>
+<br />Day35(0219) << <a href='Day35(0219).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
