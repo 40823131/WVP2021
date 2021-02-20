@@ -133,21 +133,51 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Day3(0118) << <a href='Day3(0118).html'>Previous</a> <a href='Day4(0119).html'>Next</a> >> Day4(0119)<br /><h1>變數</h1>
-<p>1.命名規則:</p>
-<p>    (1)第一個字元可以是英文字母、底線(_)、或中文，因考慮到國際接軌，建議儘量不要使用中文來命名。</p>
-<p>    (2)不能使用關鍵字及內建常數、函式、類別的名稱命名。</p>
-<p>    (3)因不能使用空白格，所以建議每換一個單字都以大寫開頭，例如userName。</p>
-<p>    (4)可以合理的簡寫來命名。</p>
-<p>    (5)命名不能使用特殊符號，除了底線(_)。</p>
-<p>2.指派方式:使用指派運算子(=)(assignment operator)</p>
-<p>    (1)例一:定義為str型別</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">myName = "Simon"</pre>
-<p>    (2)例二:定義為int型別</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">myPhoneNumber = 1234567890</pre>
-<p>    (3)例三:同時指派多個變數</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">X,Y,Z=1,2,"apple"</pre>
-<br />Day3(0118) << <a href='Day3(0118).html'>Previous</a> <a href='Day4(0119).html'>Next</a> >> Day4(0119)</div>
+    <div id="tipue_search_content">Day36(0220) << <a href='Day36(0220).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>檔案存取(三)</h1>
+<p><strong>使用readline()方法從檔案讀取資料</strong></p>
+<p>可利用使用readline()方法從檔案讀取一行資料，然後傳回該字串，若傳回空字串，表示抵達檔案結尾，實例如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">fileObject = open("test1.txt","r")
+
+line = fileObject.readline()
+while line != '':
+        print(line)
+        line = fileObject.readline()
+
+fileObject.close()</pre>
+<p></p>
+<p>使用<strong>readlines()方法從檔案讀取資料</strong></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("test.txt","r")
+
+&gt;&gt;&gt; content = fileObject.readline()
+&gt;&gt;&gt; print(content)
+['登鸛雀樓\n','白日依山盡，黃河入海流。\n','欲窮千里目，更上一層樓。']
+&gt;&gt;&gt; for line in content:
+               print(line)
+
+登鸛雀樓
+白日依山盡，黃河入海流。
+欲窮千里目，更上一層樓。
+
+&gt;&gt;&gt; fileObject.close()
+&gt;&gt;&gt;</pre>
+<p><strong>檢查檔案是否存在</strong></p>
+<p>可利用os.path模組提供的isfile(file)函式檢查參數file所指定的檔案是否存在，是就傳回True，否則傳回False。實例如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#匯入 os.path 模組
+import os.path
+
+#檢查檔案是否存在，是就讀取所有內容，否則印出「此檔案不存在」
+if os.path.isfile("test.txt"):
+        fileObject = open("test.txt","r")
+        for line in fileObject:
+                print(line)
+        fileObject.close()
+else:
+        print("此檔案不存在")</pre>
+<p><strong>with敘述</strong></p>
+<p>利用with敘述可自動關閉檔案無須額外呼叫close()，語法如下:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open(file,mode) as 檔案物件名稱:
+        ......         #存取檔案的動作</pre>
+<br />Day36(0220) << <a href='Day36(0220).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">

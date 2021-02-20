@@ -1,1195 +1,1 @@
-<h1>W1</h1>
-<h2>Day1(0116)</h2>
-<h3>Python源起</h3>
-<p>Python是一種程式語言，起源於1990年代初期由Guido van Rossum所研發，最初的想法為傳承ABC程式語言，Guido認為ABC相當優美與強大，非專業的程式設計人員也能夠使用，而ABC程式語言當初因為非開放而導致沒有獲得廣泛的運用，於是他決定以開放策略研發Python。</p>
-<p><img alt="" height="244" src="/images/icon-python-text-color-horz.png" width="580"/></p>
-<p><span>🔼</span>Python 英文原意為蟒蛇，也可發現LOGO由兩隻蟒蛇組成。</p>
-<h3>基本Python程式</h3>
-<p><span>🔽</span>利用下載好的Python IDLE編輯及儲存程式，可存為Python的專用.py檔。</p>
-<p><img alt="" height="596" src="/images/IDLE.png" width="579"/></p>
-<p>1.Hello World!!</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print("Hello World!!")</pre>
-<p>2.基礎四則運算</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print(5-3+2)
-print(5*3/5)</pre>
-<h3>Python程式碼格式重點</h3>
-<p>1.不能使用class作為定義變數或函式，因為它是用來定義類別的關鍵字。</p>
-<p>2.函式名稱後需加小括號()、字串則使用雙引號"、註解則用井字號#、多行註解則為'''。</p>
-<p>3.Python會將英文大小寫視為不同的識別字，所以編寫時需注意大小寫。</p>
-<p>4.每行最大長度為79個字元，若需要分行則用行接續符號\。</p>
-<p>5.程式每層縮排為4個空白鍵或1個Tab鍵，較推薦使用Tab鍵可一步到位。</p>
-<h3>常見程式設計錯誤(bug)</h3>
-<p>1.語法錯誤</p>
-<p>執行後會出現[SyntaxError: unexpected indent][SyntaxError: EOL while scanning string literal]錯誤</p>
-<p>2.執行期間錯誤</p>
-<p>例如以下程式</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">X=1
-Y=0
-print(X/Y)</pre>
-<p>則是因為分母不能為零而發生[ZeroDivisionError: division by zero]錯誤</p>
-<p>3.邏輯錯誤</p>
-<h2>Day2(0117)</h2>
-<h3>型別</h3>
-<p>1.數值型別:int、float、complex、bool。</p>
-<p>    (1)int型別:用來表示整數(integer)，正負整數皆包含在內。</p>
-<p><span>    (2)float型別:用來表示浮點數(float point number)，有小數部分，精確度取決於作業系統平台。</span></p>
-<p><span>    (3)complex型別:用於表示數學中的複數(complex number)，例如5+4j。</span></p>
-<p><span>    (4)bool型別:為int型別的子型別，只有True、False兩種值，多用於判斷對與錯、是與否......等等兩種選擇之情形。</span></p>
-<p>2.文字序列型別:str。</p>
-<p>    (1)str型別:用於處理文字資料，就是所謂的字串(string)，字串又是由字元(character)所組成。</p>
-<p>        a.單引號</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'Hello World!!'</pre>
-<p>        b.雙引號</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">"Hello World!!"</pre>
-<p>        c.三個單引號</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print('''Hello World!!!
-Hello World!!!
-Hello World!!!''')
-
-#下列為結果
-Hello World!!!
-Hello World!!!
-Hello World!!!</pre>
-<p>        d.三個雙引號</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print("""Hello World!!!
-Hello World!!!
-Hello World!!!""")
-
-#下列為結果
-Hello World!!!
-Hello World!!!
-Hello World!!!</pre>
-<p></p>
-<p>3.二元序列型別:bytes、bytearray、memoryview。</p>
-<p>4.序列型別:list、tuple、range。</p>
-<p>    (1)list型別:用來表示串列，由一連串的資料所組成的，有順序且可改變內容(mutable)的序列(sequence)，list內的資料以逗號隔開，串列前後以中括號標示。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">[1,3,5,6]</pre>
-<p>    (2)tuple型別:<span>用來表示序對，由一連串的資料所組成的，有順序且不可改變內容(immutable)的序列(sequence</span><span>)，tuple內的資料以逗號隔開，序列前後以小括號標示。</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">(1,3,5,6)</pre>
-<p>5.集合型別:set、frozenset。</p>
-<p>    (1)<span>set型別:用來表示集合，包含沒有順序、沒有重複且內容可變得多個資料，前後已大括號表示，資料以逗號隔開。</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">{"a",3,"b",2}</pre>
-<p>6.對映型別:dict。</p>
-<p>    (1)<span>dict型別:用來表示字典，包含沒有順序、沒有重複且內容可變得多個資料，前後已大括號表示，資料以逗號隔開。使用鍵(key)作為索引來存取字典中的數值(value)。</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">{"ID":"123456","name":"simon"}</pre>
-<h2>Day3(0118)</h2>
-<h3>變數</h3>
-<p>1.命名規則:</p>
-<p>    (1)第一個字元可以是英文字母、底線(_)、或中文，因考慮到國際接軌，建議儘量不要使用中文來命名。</p>
-<p>    (2)不能使用關鍵字及內建常數、函式、類別的名稱命名。</p>
-<p>    (3)因不能使用空白格，所以建議每換一個單字都以大寫開頭，例如userName。</p>
-<p>    (4)可以合理的簡寫來命名。</p>
-<p>    (5)命名不能使用特殊符號，除了底線(_)。</p>
-<p>2.指派方式:使用指派運算子(=)(assignment operator)</p>
-<p>    (1)例一:定義為str型別</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">myName = "Simon"</pre>
-<p>    (2)例二:定義為int型別</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">myPhoneNumber = 1234567890</pre>
-<p>    (3)例三:同時指派多個變數</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">X,Y,Z=1,2,"apple"</pre>
-<h2>Day4(0119)</h2>
-<h3>常數</h3>
-<p>常數是一個有意義的名稱，它不會隨程式的執行而改變，同時也無法人為使它改變。例:</p>
-<p>    (1)True:bool型別的真(True)值，作為int型別時值為1。</p>
-<p>    (2)False<span>:bool型別的假(False)值，作為int型別時值為0。</span></p>
-<p>    (3)None:表示空值，若將變數設為None，則表示此變數沒有值。</p>
-<p>使用名詞為常數命名的優點:</p>
-<p>    (1)提高程式可讀性。</p>
-<p>    (2)若為常用常數，就不必重複輸入其值。</p>
-<p>    (3)常數定義需變更時，只需修改一個地方即可。</p>
-<h3>運算子</h3>
-<p>1.算術運算子(arithmetic operator):+、-、*、/、//、%、**。</p>
-<p>2.移位<span>運算子(shifting operator):&lt;&lt;、&gt;&gt;。</span></p>
-<p>3.位元<span>運算子(bitwise operator):~、&amp;、|、^。</span></p>
-<p>4.比較<span>運算子(comparison operator):&gt;、&lt;、&gt;=、&lt;=、==、!=。</span></p>
-<p>5.邏輯<span>運算子(logical operator):and、or、not。</span></p>
-<p>6.指派<span>運算子(assignment operator)=、+=、-=、*=、/=、//=、%=、**=、&lt;&lt;=、&gt;&gt;=、&amp;=、|=、^=。</span></p>
-<p>7.其他特殊符號()、[]、{}、,、:、.、;。</p>
-<p>8.單位運算子:+、-和~，此時的+、-是用來表達正負數值，只有單個運算元，採前置記法，例如:-5、+5。</p>
-<p>9.二元運算子:<span>+、-和~以外的運算子屬於二元運算子，有兩個運算元，採中置記法，例如:1.3*62、60/2.6。</span></p>
-<h2><span>Day5(0120)</span></h2>
-<h3><span>運算子個別解說(一)</span></h3>
-<p><span>1.算數運算子</span></p>
-<p>    (1)+[加法]:表示a加b，語法如下</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">1+2</pre>
-<p>    另外+運算子也能用來連接字串，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"5"+"apple"</pre>
-<p>    得到以下結果</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"5apple"</pre>
-<p>    (2)-[減法]:表示a減b，語法如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">2-1</pre>
-<p>    (3)*[乘法]:表示a乘b<span>，</span><span>語法如下。</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">2*1</pre>
-<p>    (4)/[浮點數除法]:表示a除以b，結果為float型別，語法如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">12/3</pre>
-<p>    結果為</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">4.0</pre>
-<p>    (5)//[整數除法]:<span>表示a除以b，結果為int型別，小數部分將直接捨去，語法如下。</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">7//3</pre>
-<p>    結果為</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">2</pre>
-<p>    (6)%[餘數]:<span>表示a除以b的餘數，語法如下。</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">12%5</pre>
-<p>    結果為</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">2</pre>
-<p>    (7)**[指數]:表示a的b次方，語法如下。</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">2**2</pre>
-<p>    結果為</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">4</pre>
-<p>2.位元運算子</p>
-<p>    (1)~[位元 NOT]</p>
-<p>    (2)&amp;[位元 AND]</p>
-<p>    (3)|[位元 OR]</p>
-<p>    (4)^[位元 XOR]</p>
-<p>3.比較運算子</p>
-<table height="132" style="width: 542px;">
-<tbody>
-<tr>
-<td style="width: 86px;">運算子</td>
-<td style="width: 86px;">語法</td>
-<td style="width: 348px;">說明</td>
-</tr>
-<tr>
-<td style="width: 86px;">&gt;</td>
-<td style="width: 86px;">a&gt;b</td>
-<td style="width: 348px;">若a大於b時傳回True，反之則傳回False。</td>
-</tr>
-<tr>
-<td style="width: 86px;">&lt;</td>
-<td style="width: 86px;">a&lt;b</td>
-<td style="width: 348px;"><span>若a小於b時傳回True，反之則傳回False。</span></td>
-</tr>
-<tr>
-<td style="width: 86px;">&gt;=</td>
-<td style="width: 86px;">a&gt;=b</td>
-<td style="width: 348px;"><span>若a大於等於b時傳回True，反之則傳回False。</span></td>
-</tr>
-<tr>
-<td style="width: 86px;">&lt;=</td>
-<td style="width: 86px;">a&lt;=b</td>
-<td style="width: 348px;"><span>若a小於等於</span><span>b</span><span>時傳回True，反之則傳回False。</span></td>
-</tr>
-<tr>
-<td style="width: 86px;">==</td>
-<td style="width: 86px;">a==b</td>
-<td style="width: 348px;"><span>若a等於b</span><span>時傳回True，反之則傳回False。</span></td>
-</tr>
-<tr>
-<td style="width: 86px;">!=</td>
-<td style="width: 86px;">a!=b</td>
-<td style="width: 348px;"><span>若a不等於b</span><span>時傳回True，反之則傳回False。</span></td>
-</tr>
-</tbody>
-</table>
-<h2>Day6(0121)</h2>
-<h3><span>運算子個別解說(二)</span></h3>
-<p><span>4.指派運算子</span></p>
-<table style="width: 538px;">
-<tbody>
-<tr style="height: 16px;">
-<td style="width: 85px; height: 16px;">運算子</td>
-<td style="width: 84px; height: 16px;">語法</td>
-<td style="width: 347px; height: 16px;">說明</td>
-</tr>
-<tr style="height: 14.0625px;">
-<td style="width: 85px; height: 14.0625px;">=</td>
-<td style="width: 84px; height: 14.0625px;">a=b</td>
-<td style="width: 347px; height: 14.0625px;">將b指派給a，將a的值設定為b的值。</td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">+=</td>
-<td style="width: 84px; height: 15px;">a+=b</td>
-<td style="width: 347px; height: 15px;">相當於a=a+b。</td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">-=</td>
-<td style="width: 84px; height: 15px;">a-=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a-b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">*=</td>
-<td style="width: 84px; height: 15px;">a*=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a*b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">/=</td>
-<td style="width: 84px; height: 15px;">a/=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a/b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">//=</td>
-<td style="width: 84px; height: 15px;">a//=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a//b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">%=</td>
-<td style="width: 84px; height: 15px;">a%=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a%b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">**=</td>
-<td style="width: 84px; height: 15px;">a**=b</td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a**b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">&lt;&lt;=</td>
-<td style="width: 84px; height: 15px;"><span>a&lt;&lt;=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a&lt;&lt;b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">&gt;&gt;=</td>
-<td style="width: 84px; height: 15px;"><span>a&gt;&gt;=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a&gt;&gt;b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">&amp;=</td>
-<td style="width: 84px; height: 15px;"><span>a&amp;=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a&amp;b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">|=</td>
-<td style="width: 84px; height: 15px;"><span>a|=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a|b。</span></td>
-</tr>
-<tr style="height: 15px;">
-<td style="width: 85px; height: 15px;">^=</td>
-<td style="width: 84px; height: 15px;"><span>a^=b</span></td>
-<td style="width: 347px; height: 15px;"><span>相當於a=a^b。</span></td>
-</tr>
-</tbody>
-</table>
-<p>5.邏輯運算子</p>
-<p>    (1)and:若a and b，<span>表示</span>a與b皆為True則傳回True，反之傳回False。</p>
-<p>    (2)or:<span>若a or b，表示a與b皆為False則傳回False，反之傳回True。</span></p>
-<p><span>    (3)not:若not a，表示將a進行邏輯否定，若a的值為True，傳回False，反之傳回True。</span></p>
-<h2><span>Day7(0122)</span></h2>
-<h3><span>運算子的優先順序</span></h3>
-<p><span>運算子的優先順序由高到低為:</span></p>
-<p><span>1.()、[]、{}。</span></p>
-<p><span>2.a[i]、a[i:j]、a()、a.b、a.b()。</span></p>
-<p><span>3.a**b。</span></p>
-<p><span>4.+a、-a、~a。</span></p>
-<p><span>5.a*b、a/b、a//b、a%b。</span></p>
-<p><span>6.a+b、a-b。</span></p>
-<p><span>7.a&lt;&lt;b、a&gt;&gt;b。</span></p>
-<p><span>8.a&amp;b。</span></p>
-<p><span>9.a^b。</span></p>
-<p><span>10.a|b。</span></p>
-<p><span>11.&gt;、&lt;、&gt;=、&lt;=、==、!=。</span></p>
-<p><span>12.not a。</span></p>
-<p><span>13.a and b。</span></p>
-<p><span>14.a or b。</span></p>
-<h3><span>輸出</span></h3>
-<p><span>大多數程式在執行完畢後，會將結果輸出到螢幕。可利用Python內建的print()函數來印出指定的字串。</span></p>
-<p>print()函式的語法如下:</p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">print(value,...,sep='',end='\n',file=sys.stdout)</pre>
-<p>value:用來設定要印出的值。</p>
-<p>sep:<span>用來設定隔開兩個值的字串，可省略，省略代表使用預設值''(一個空白)</span></p>
-<p><span>end:用來設定印出最後一個值後所要加上的字串，可省略，省略代表使用預設值'\n'(換行)</span></p>
-<p><span>file:用來設定輸出裝置，可省略，省略代表使用預設值sys.stdout(輸出至螢幕)。</span></p>
-<h1><span>W2</span></h1>
-<h2><span>Day8(0123)</span></h2>
-<h3><span>輸入</span></h3>
-<p><span>使用內建的input()函式取得輸入的資料</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;userNumber = input("請輸入學號:")
-請輸入學號: 40823131
-##上列按下enter後將會跳回
-&gt;&gt;&gt;</pre>
-<p><span>之後檢驗</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;userNumber
-##按下enter後則出現
-'40823131'
-&gt;&gt;&gt;</pre>
-<p><span></span>得到上列字串後，若需進行計算則需使用內建的eval()將字串轉換為數值。</p>
-<p>使用上述函式寫出利用輸入半徑，用來計算圓面積的程式，如下。</p>
-<p><a href="https://drive.google.com/file/d/1CqWMW5cUgcQtZOCpCD51S5JBJLnVHr52/view?usp=sharing" title="CircleArea.py">CircleArea.py</a></p>
-<h2>Day9(0124)</h2>
-<h3>常用內建數值函數</h3>
-<p>abs(X):傳回X的絕對值。</p>
-<p>min(X1,X2,X3,......)<span>:傳回參數數值中的最小值。</span></p>
-<p>max(<span>X1,X2,X3,......</span>)<span>:傳回參數數值中的最大值。</span></p>
-<p>hex(<span>X</span>)<span>:傳回整數X參數由十進位轉為十六進位的字串，前面會加上0x。</span></p>
-<p>oct(<span>X</span>)<span>:傳回整數X參數由十進位轉為八進位的字串，前面會加上0o。</span></p>
-<p>bin(<span>X</span>)<span>:傳回整數X參數由十進位轉為二進位的字串<span>，前面會加上0b。</span></span></p>
-<p>int(<span>X</span>)<span>:傳回X的整數部分，小數將被直接捨去。</span></p>
-<p>round(<span>X,precision</span>)<span>:傳回與X最接近的整數(四捨五入)，若要設定精確度到小數點後幾位，可利用選擇性參數precision設定。</span></p>
-<p>pow(<span>X,Y</span>)<span>:傳回X的Y次方值。</span></p>
-<p>float("<span>X</span>)<span>:傳回字串X轉換成浮點數的結果。</span></p>
-<p>complex(<span>X</span>)<span>:傳回字串X轉換成複數的結果。</span></p>
-<h2>Day10(0125)</h2>
-<h3>導入數學模組</h3>
-<p>在Python中若需使用數學函式，需先導入數學模組(module)，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import math</pre>
-<h3>常用數學函式</h3>
-<p>1.math.pi、math.e、math.nan、math.inf:分別表示圓周率、自然對數e、NaN(not a number)、正無限大，負無限大則為-math.inf。</p>
-<p>2.math.ceil(X):傳回<span>大於等於X的最小整數，例如:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.ceil(8.999)
-9</pre>
-<p><span>3.math.fabs(X):傳回X的浮點數絕對值，例如:</span></p>
-<pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.fabs(-5)
-5.0</pre>
-<p>4.math.factorial(X):傳回正整數X的階層值，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.factorial(4)    #(即為4!=4*3*2*1=24)
-24</pre>
-<p>5.math.floor(X):傳回<span>小於等於X的最大整數。</span></p>
-<p><span>6.math.radians(X):傳回角度X轉為弳度的結果。</span></p>
-<p><span>7.math.degrees(X):傳回弳度X轉為角度的結果。</span></p>
-<p><span>8.math.sin(X)、math.cos<span>(X)、math.tan<span>(X)、math.as<span>in(X)、math.acos<span>(X)、math.atan<span>(X)三角函式:分別傳回X的正弦值、餘弦值、正切值、反正弦值、反餘弦值、反正切值，需注意的適當中的參數X需為弳度而非角度，可利用上述math.radians函式將角度轉換為弳度。</span></span></span></span></span></span></p>
-<h3>亂數函式</h3>
-<p>首先匯入亂數模組。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import random</pre>
-<p>1.random.randint(X,Y):傳回一個大於等於X並小於等於Y的隨機整數。</p>
-<p>2.<span>random.random():傳回一個大於等於0.0並小於1.0的隨機浮點數。</span></p>
-<p><span>3.random.shuffle(X):將X中的元素進行隨機重排。</span></p>
-<p><span>利用上述函式寫出簡易猜數字的程式如下。</span></p>
-<p><span><a href="https://drive.google.com/file/d/1mG8VUXCxXKMNmqUnpQUgDG3gx7UR2B2M/view?usp=sharing">random.py</a></span></p>
-<h2><span>Day11(0126)</span></h2>
-<h3><span>逸脫序列</span></h3>
-<p><span></span>對於一些無法顯示在螢幕上的符號，可以利用<span>逸脫序列在這些符號前加上反斜線(\)，便能顯示出來。</span></p>
-<table style="width: 524px;">
-<tbody>
-<tr style="height: 15px;">
-<td style="width: 105.6px; height: 15px;">逸脫序列</td>
-<td style="width: 403.4px; height: 15px;">意義</td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\\</td>
-<td style="width: 403.4px; height: 14px;">印出反斜線(\)。</td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\'</td>
-<td style="width: 403.4px; height: 14px;"><span>印出單引號(')。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\"</td>
-<td style="width: 403.4px; height: 14px;"><span>印出雙引號(")。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\a</td>
-<td style="width: 403.4px; height: 14px;"><span>響鈴(Bell)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\b</td>
-<td style="width: 403.4px; height: 14px;"><span>倒退鍵(Backspace)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\f</td>
-<td style="width: 403.4px; height: 14px;"><span>換頁(Formfeed)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\n</td>
-<td style="width: 403.4px; height: 14px;"><span>換行(Linefeed)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\r</td>
-<td style="width: 403.4px; height: 14px;">歸位(Carriage Return)。</td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\t</td>
-<td style="width: 403.4px; height: 14px;"><span>[Tab]鍵(Horizontal)。</span></td>
-</tr>
-<tr style="height: 14.3998px;">
-<td style="width: 105.6px; height: 14.3998px;">\v</td>
-<td style="width: 403.4px; height: 14.3998px;"><span>垂直定位(Vertical Tab)。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\ooo</td>
-<td style="width: 403.4px; height: 14px;"><span>ASCII字元，ooo為八進位整數。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\x<em><strong>hh</strong></em></td>
-<td style="width: 403.4px; height: 14px;"><span>ASCII字元，<em><strong>hh</strong></em>為十六進位整數。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\N{<em><strong>name</strong></em>}</td>
-<td style="width: 403.4px; height: 14px;"><span>Unicode字元，<em><strong>name</strong></em>為字元名稱。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\u<em><strong>xxxx</strong></em></td>
-<td style="width: 403.4px; height: 14px;"><span>Unicode字元，<em><strong>xxxx</strong></em>為16-bit十六進位整數。</span></td>
-</tr>
-<tr style="height: 14px;">
-<td style="width: 105.6px; height: 14px;">\U<em><strong>xxxxxxxx</strong></em></td>
-<td style="width: 403.4px; height: 14px;"><span>Unicode字元，<em><strong>xxxxxxxx</strong></em>為32-bit十六進位整數。</span></td>
-</tr>
-</tbody>
-</table>
-<h3>常用內建字串函式</h3>
-<p>1.len(x):傳回s字串的長度，也就是s總共包含幾個字元，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;len("hello")
-5     #hello總共由5個字元組成</pre>
-<p>2.str(n):傳回數值參數n轉為字串的結果，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;str(125.5)
-'125.5'</pre>
-<h3>連接運算子</h3>
-<p>1.+運算子可用來將字串串起來，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"我為"+"人人"+"，"+"人人"+"為我"+"。"
-我為人人，人人為我。</pre>
-<h3>重複運算子</h3>
-<p>1.*運算子可以用來重複字串，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;5 * "wow!"
-'wow!wow!wow!wow!wow!'</pre>
-<h3>in ,not in運算子</h3>
-<p>1.in運算子:可以利用它來檢查字串中是否有我們指定的字串在其中，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"go" in "good"
-True</pre>
-<p><span>2.not in運算子:與in運算子相反，可以利用它來檢查字串中是否沒有我們指定的字串在其中，如下。</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"go" not in "good"
-False</pre>
-<h3>索引運算子[]與片段運算子</h3>
-<p>利用索引運算子[]可以取得字串中的字元，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;s = "Python程式設計"
-&gt;&gt;&gt;s[3]
-h</pre>
-<p>也可使用片段運算子來指定範圍索引，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;s = "Python程式設計"
-&gt;&gt;&gt;s[2:4] #不包含第四字元(只索引2~3字元)
-th</pre>
-<h2>Day12(0127)</h2>
-<h3>字串處理方法</h3>
-<p>1.id(X):取得X指向之物件的id編號。</p>
-<p>2.type(X):取得X之型別。</p>
-<p>3.print(X):印出X的值。</p>
-<h3>常用字串轉換方法</h3>
-<p>1.str.upper(s):傳回s的所有字元轉為大寫的字串。</p>
-<p>2.str.lower(s):<span>傳回s的所有字元轉為小寫的字串。</span></p>
-<p>3.str.replace(old,new):<span>傳回將字串參數old取代為字串參數new的字串。</span></p>
-<p>4.str.capitalize(s):<span>傳回s的第一個字元轉換為大寫的字串。</span></p>
-<p>5.str.title(s):<span>傳回s的每一個單字的第一個字元</span><span>轉換為大寫的字串。</span></p>
-<h3><span>搜尋字串方法</span></h3>
-<p><span>1.str.count(s):傳回目標字串中出現s字串的次數。</span></p>
-<p><span>2.str.startswith(s):若目標字串中的開頭為s字串傳回True，反之則傳回False。</span></p>
-<p><span>3.str.endswith(s):若目標字串中的結尾為s字串傳回<span>True</span><span>，反之則傳回False。</span></span></p>
-<h3>常用字串測試方法</h3>
-<p>1.str.isalpha(s):若s中所有字元皆為英文字母傳回True，反之則傳回False。</p>
-<p>2.str.isdigit(s):<span>若s中所有字元皆為阿拉伯數字傳回True，反之則傳回False。</span></p>
-<p>3.str.isalnum(s):<span>若s中所有字元皆為英文字母及阿拉伯數字傳回True，反之則傳回False。</span></p>
-<p>4.str.is<span>upper(s):若s中所有字元皆為大寫英文字母傳回True，反之則傳回False。</span></p>
-<p><span>5.str.islower(s):若s中所有字元皆為小寫英文字母傳回True，反之則傳回False。</span></p>
-<p><span></span></p>
-<h2><span><span>Day13(0128)</span></span></h2>
-<p><span><span></span></span></p>
-<h3><span><span>字串格式化方法</span></span></h3>
-<p>1.str.center(w):傳回欄位寬度為w所指定的字元數，並且為置中的字串。</p>
-<p>2.str.ljust(w):<span>傳回欄位寬度為w所指定的字元數，並且為靠左的字串。</span></p>
-<p>3.str.rjust(w):<span>傳回欄位寬度為w所指定的字元數，並且為靠右的字串。</span></p>
-<p><span>4.str.zfill(w):傳回欄位寬度為w所指定的字元數，並且<span>左側填上0、正負號(+,-)皆保留在開頭的字串。</span></span></p>
-<p><span>5.str.format(spec):利用spec所指定的格式將字串格式化。</span></p>
-<h3><span>刪除指定字元方法</span></h3>
-<p>1.str.strip(X):從字串兩側刪除指定字元。</p>
-<p><span><span>2.str.lstrip(X):從字串左側刪除指定字元。</span></span></p>
-<p><span><span>3.str.rstrip(X):從字串右</span></span><span><span>側刪除指定字元。</span></span></p>
-<h2>Day14(0129)</h2>
-<h3>數值與字串格式化</h3>
-<p>使用format()函式將數值與字串格式化，其語法如下，根據選擇性參數spec所指定的格式將參數value格式化。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">format(value,spec)</pre>
-<p>參數spec的格式如下:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">[[fill]align][sign][#][0][width][,][.precision][type]</pre>
-<p>1.[align]:設定對齊方式，有'&lt;'、'&gt;'、'^'、'='等值，分別表示靠左、靠右、置中、正負符號和數字之間的空位填滿0，數值預設圍靠右，其他資料預設為靠左。</p>
-<p>2.[fill]:設定填滿空位的字元。</p>
-<p>3.[sign]:設定正負符號，只在負數前加上負號、在正數前則加上一個空白，預設為'-'。</p>
-<p>4.[#]:設定在二、八、十六進位數值前加上'0b'、'0o'或'0x'。</p>
-<p>5.[0]:設定用0填滿空位。</p>
-<p>6.[width]:設定欄寬為幾字元。</p>
-<p>7.[,]:設定加上千分位符號。</p>
-<p>8.[.precision]:設定精確度為小數幾位。</p>
-<p>9.[type]:設定表示法類型，有'b'(二進位)、'c'(字元)、'd'(十進位)、'e'(科學記號)、'E'(科學記號)、'f'(小數點，預設精確度為六位)、'F'(<span>小數點)</span>、'g'(一般格式)、'G'<span>(一般格式)</span>、'n'(數值)、'o'(八進位)、's'(字串)、'x'(十六進位)、'X'<span>(十六進位)</span>、'%'(百分比)等值。</p>
-<h1>W3</h1>
-<h2>Day15(0130)</h2>
-<h3>認識流程控制</h3>
-<p>流程控制分成下列兩種類型。</p>
-<p>1.選擇結構:用來判斷條件式，根據結果True或False執行不同的敘述，Python支援的選擇結構為if。</p>
-<p>2.迴圈結構:用於重複執行，Python支援的迴圈函數為for與while。</p>
-<p>流程控制中將下列的值判斷為False，如下。</p>
-<p>1.None</p>
-<p>2.False</p>
-<p>3.等於0的數值</p>
-<p>4.空序列，例如:(''空字串)、([]空串列)、(()空序對)。</p>
-<p>5.空對映，例如({}空集合)。</p>
-<h3>if選擇結構</h3>
-<p>1.單向if:意義為「若...就...」，條件式condition若傳回True，就繼續執行statement(s)。語法如下:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition:
-        statement(s)</pre>
-<p>2.雙向if...else:<span>意義為「若...就...否則...」，屬於雙向選擇，若condition傳回True，執行statement1，否則執行statement2。語法如下:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition:
-        statements1
-else:
-        statements2</pre>
-<p>3.多向if...elif...else:<span>意義為「若...就...否則... 若...」，屬於多向選擇，判斷condition1，若condition1傳回True就執行statement1，否則判斷condition2，若condition2傳回True就執行statement2，否則判斷condition3...依此類推，所以statement1~statementN+1中只有一組會被執行。語法如下:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition1:
-        statements1
-elif condition2:
-        statements2
-elif condition3:
-        statements3
-...
-
-else:
-        statementsN+1</pre>
-<p>4.巢狀if結構:顧名思義指的是if敘述裡包含其他if敘述，且沒有深度限制，但一般還是較常使用多向if...elif...else來做使用較佳。例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">num = eval(input("請您輸入1~5中的任一整數:"))
-if num ==1:
-        print("ONE")
-else:
-        if num ==2:
-                print("TWO")
-        else:
-                if num ==3:
-                        print("THREE")
-                else:
-                        if num ==4:
-                                print("FOUR")
-                        else:
-                                if num ==5:
-                                        print("FIVE")
-                                else:
-                                        print("您輸入的資料超過範圍")
-
-
-</pre>
-<h2>Day16(0131)</h2>
-<h3>for迴圈(for loop)</h3>
-<p>for迴圈主要用來解決重複執行的問題。例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for var in iterator:
-        statements1
-[else:
-        statements2]</pre>
-<h3>使用range物件作為迴圈迭代的物件</h3>
-<p>range語法，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">range(stop)
-range(start,stop,step)</pre>
-<p>1.stop:為終止值。</p>
-<p>2.start:為起始值。</p>
-<p>3.step:為間隔值。</p>
-<p>在for迴圈中使用range進行迭代，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(5)
-        print(i)</pre>
-<p>上述程式結果為</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">0
-1
-2
-3
-4</pre>
-<h2>Day17(0201)</h2>
-<h3>使用list作為迴圈迭代的物件</h3>
-<p>可以藉由list加上迴圈來算出list內的數字總和，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">list1 = [15,30,40,60]
-sum = 0
-for i in list1:
-        sum = sum + i
-print("總合為",sum)</pre>
-<h3>使用字串作為迴圈迭代的物件</h3>
-<p>在for迴圈中使用字串進行迭代，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">str1 = "hello"
-for i in str1:
-        print(i)
-# 結果如下
-	
-h
-e
-l
-l
-o
-</pre>
-<h3>巢狀for迴圈</h3>
-<p>使用巢狀for迴圈列出九九乘法表，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">result1,result2 = '' , ''
-
-for i in range (1,10):
-	result1 = ''
-	for j in range(1,10):
-                result1 = result1 + str(i) + '*' + str(j) + '=' + str(i*j) + '\t'
-	result2 = result2 + result1 + '\n'
-
-	
-print (result2)</pre>
-<h2>Day18(0202)</h2>
-<h3>while迴圈</h3>
-<p>while迴圈是以條件式是否成立成立作為是否執行迴圈的根據，又稱為條件式迴圈，語法如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">while condition:
-        statements1
-[else:
-        statements2]</pre>
-<p>流程在進入迴圈時會先檢查condition是否成立，若成立則執行迴圈主體statements1，然後再次跳回while檢查condition是否成立，若成立則執行statements1，<span>然後再次跳回while檢查condition是否成立，就如此週而復始，直到condition為不成立時，執行statements2，最後跳出while迴圈。</span></p>
-<p><br/><span></span>pass、break與continue敘述</p>
-<p><span>pass：不做任何事情，所有的程式都將繼續。</span></p>
-<p><span>break：強制跳出 [整個] 迴圈。</span></p>
-<p><span>continue：強制跳出 [本次] 迴圈，繼續進入下一圈。</span></p>
-<h2><span>Day19(0203)</span></h2>
-<h3><span>認識函式</span></h3>
-<p><span>函式是將功能或重複使用的敘述寫成獨立之程式單元，然後給予名稱，以利後續呼叫即可使用，使用函式的優點為:</span></p>
-<p><span>1.利用呼叫，可不必重複撰寫相同的敘述。</span></p>
-<p><span>2.使用函式後程式將更加精簡。</span></p>
-<p><span>3.程式可讀性提高。</span></p>
-<p><span>4.邏輯性和正確性提高，較容易理解，也較好除錯、修改及維護。</span></p>
-<p><span>而缺點為:</span></p>
-<p><span>1.使用函是會使程式之執行速度減慢，因為相較直接將敘述寫進程式裡的方式還要再多一道呼叫的手續。</span></p>
-<h3>定義函式</h3>
-<p>除了先前提到的內建函式外，若要客製化的功能需要自定義函式。</p>
-<p>可以利用def關鍵字定義函式，語法如下:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def functionName(parameters):
-        statements
-        [return|return value]
-        [statements]</pre>
-<p>1.def:此關鍵字表示用來定義函式。</p>
-<p>2.functionName:函式名稱命名，可使用英文字母(大小寫有所區分)及底線(_)、數字及中文，但不建議使用中文命名。</p>
-<p>3.parameters:函式參數，可以有0到無數個，若無參數需保留小括號，若有參數，參數間以逗號(,)隔開，可利用參數傳遞資料給函式。</p>
-<p>4.statements:函式主體，用來執行指定動作。</p>
-<p>5.[return|return value]:若要將程式的控制權由函式內部轉至呼叫函式的地方可使用return敘述。value式函式之傳回值，若程式無傳回值return可省略。</p>
-<h2>Day20(0204)</h2>
-<h3>呼叫函式</h3>
-<p>函式定義後需呼叫才會執行，若函式有參數時，參數數量及順序需正確無誤，即使沒有參數，還是需將小括號()保留，語法如下:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">functionName(parameters)</pre>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
-<h3>函式參數</h3>
-<p>參數(parameter)用來傳遞資料進入函式。</p>
-<p>1.參數傳遞方式</p>
-<p>    (1)傳值呼叫:當參數屬於不可改變內容的物件，如數值、字串、tuple(序對)，就會採取傳值呼叫。</p>
-<p>    (2)傳址呼叫:<span>當參數屬於可改變內容的物件，如list(串列)、set(集合)、dict(字典)，就會採取傳址呼叫，傳遞給函式的為參數位址，而非參數值。</span></p>
-<p>2.關鍵字引數</p>
-<p>    Python內預設採取位置引數，函式呼叫中的引數順序需對應函式定義中的參數順序，如下:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#定義函式trapezoidArea
-
-def trapezoidArea(top,bottom,height)
-
-#呼叫時應該寫為
-
-trapezoidArea(10,20,5)
-
-#此時的
-#10為top(上底)
-#20為bottom(下底)
-#5為height(高)</pre>
-<p>3.預設引數值</p>
-<p>可以在定義函式時設定預設引數值，當呼叫時沒有提供某個引數時，將採用預先設定好的預設引數值，如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def myName(name,gender = "男"):
-        print("我的名字是",name,"，性別",gender,"。")
-
-myName("Simon")
-#輸出為
-我的名字是Simon，性別男。</pre>
-<h2>Day21(0205)</h2>
-<h3>函式的傳回值</h3>
-<p>在def區塊內的敘述執行完畢之前，程式控制權都不會離開函式，若我們可能需要提早離開函式，返回呼叫函式的地方，此時可以使用return敘述或在return後加上傳回值，如下:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def divmod(a,b)
-        div = a//b
-        mod = a%b
-        return div,mod
-
-x,y = divmod(300,3)
-print("300除以3的商數為",x,"，餘數為",y,"。")
-
-#得到以下結果
-#300除以3的商數為100，餘數為0。</pre>
-<h3>全域變數與區域變數</h3>
-<p>變數的有效範圍(scope)，這指的是程式的哪些敘述皆能存取變數的值，大部分的變數都只有一種有效範圍，就是程式所有敘述皆可存取的變數之值，稱為全域變數(global variable)，但在函式內定義的變數則稱為區域變數(local variable)，只有函式內的敘述能夠存取區域變數的值。例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def f1()
-        x = 1
-        print(x)
-
-f1()</pre>
-<h1>W4</h1>
-<h2>Day22(0206)</h2>
-<h3>遞迴函式</h3>
-<p>遞迴函式為可以呼叫自己本身的函式，若函式f1()呼叫函式f2()，而函式f2()又在某種情況下呼叫f1()，此情況函式f1()也可算是一個遞迴程式。例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">result = 1
-
-for i in range(1,7):
-        result = result * i
-
-
-print("5! =",result)</pre>
-<h3>lambda 運算式</h3>
-<p>lambda關鍵字可以用來建立較小的匿名函式，它指的即是沒有名稱的函式，語法如下，arg1,arg2,...的後面須加上括號:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">lambda arg1,arg2,...:expression</pre>
-<p>expression相當於函式定義主體，可在expression中使用arg1,arg2...這些參數，如下為將lambda運算是產生的匿名函式指派給變數<span>mul</span>，此匿名函數將傳回參數x,y相乘的結果:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;mul = lambda x,y:x * y
-&gt;&gt;&gt;print(add(50,100))
-5000</pre>
-<h3>日期時間函式(一)</h3>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#導入time模組
-&gt;&gt;&gt;import time</pre>
-<p>1.time.daylight:此屬性表示本地時間是否使用日光節約時間，1表示是，0表示否，以台灣為例，值為0。</p>
-<p>2.time.timezone:<span>此屬性表示本地時間與UTC時間相差多少秒。</span></p>
-<p>3.time.altzone:<span>此屬性表示本地時間與UTC日光節約時間相差多少秒。</span></p>
-<p>4.time.time():傳回從1970年1月1日上午12時00分到目前的UTC時間總共經過多少秒，Python示已tick作為時間計數單位，1 tick等於1微秒(10^-6秒)。</p>
-<p>5.time.clock():第一次呼叫會傳回此函式的執行時間，第二次呼叫會傳回這一次和上一次呼叫此函數相差多少秒。</p>
-<p>6.time.gmtime:(secs):傳回從<span>1970年1月1日上午12時00分經過time.time()或選擇性參數secs所指定之秒數的時間，即目前的UTC時間。</span></p>
-<h2>Day23(0207)</h2>
-<h3>日期時間函式(二)</h3>
-<p>7.time.localtime(secs):與<span>time.gmtime相似，但傳回的是目前的本地時間。</span></p>
-<p>8.<span>time.asctime(t):以str型別傳回目前的本地時間或選擇性參數t指定的時間。</span></p>
-<p>9.<span>time.ctime(secs):與time.asctime，但選擇性參數secs是從1970年1月1日上午12時00分所經過的秒數。</span></p>
-<p>10.<span>time.mktime(t):傳回從1970年1月1日上午12時00分到參數t指定的時間所經過的秒數。</span></p>
-<p>11.time.sleep(secs):另Python暫停參數secs所指定的秒數。</p>
-<p>12.time.strftime(format,t):根據參數format所指定的格式，將time.gmtime()或time.localtime()函式傳回目前的時間，轉換為字串。</p>
-<h3>calendar模組</h3>
-<p>匯入calendar模組</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import calendar</pre>
-<p>1.<span>calendar.firstweekday():傳回一周的第一個工作天，預設值為0表示星期一。</span></p>
-<p>2.<span>calendar.setfirstweekday(weekday):將一週的第一個工作天設定為參數weekday所指定的日子，0~6表示星期一~星期日，例如:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#將第一個工作天設為星期二
-&gt;&gt;&gt;calendar.setfirstweekday(1)
-&gt;&gt;&gt;calendar.firstweekday()
-1</pre>
-<p>3.<span>calendar.isleap(year):若指定之year參數為閏年，就傳回True，否則傳回False。</span></p>
-<p>4.<span>calendar.weekday(year,month,day):傳回參數year、month、day所指定的年月日是星期幾，0~6表示星期一到星期日。</span></p>
-<p>5.<span>calendar.monthrange(year,month):傳回兩個整數，第一個整數為year年month月的第一天是星期幾，第二個整數為該月份有幾天。</span></p>
-<p>6.<span>calendar.calendar(year):傳回參數year所指定之年份月曆。</span></p>
-<p><span>7.calendar.month(year,month):傳回參數year和參數month所指定之年份與月份的日曆。</span></p>
-<h2>Day24(0208)</h2>
-<h3>list串列(一)</h3>
-<p>list串列是由一連串資料所組成、有順序且可改變內容(mutable)的序列(sequence)，前後以中括號標示，串列中的資料以逗號分開。</p>
-<p>建立串列:可以使用Python內建的list()函式建立串列，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list1 = list()
-&gt;&gt;&gt;list1
-[] #空串列
-
-&gt;&gt;&gt;list2 = ([1,2,3])
-&gt;&gt;&gt;list2
-[1,2,3]</pre>
-<p>利用range物件建立串列，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list3 = list(range(6))
-&gt;&gt;&gt;list3
-[0,1,2,3,4,5]</pre>
-<p>也可使用str.split([sep])方法，根據sep選擇性參數所指定的分隔字串將字串分隔成串列，然後傳回串列，若sep省略則表示分隔字串為空白，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; '1,2,3'.split(',')
-['1', '2', '3']</pre>
-<p>內建函式</p>
-<p>我在Day9(0124)中有提到過的內建函式中有些亦適用於串列，例如:</p>
-<p>    1.len(L):傳回串列參數L的長度，也就是包含幾個元素。</p>
-<p>    2.max(L):傳回串列<span>參數L中</span>最大的元素。</p>
-<p>    3.min(L)<span>:傳回串列參數L中最小的元素。</span></p>
-<p>    4.sum(L):傳回串列參數L中元素的總和。</p>
-<p>連接運算子</p>
-<p>    1.+運算子可以用來連接串列，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;[1,2,3]+["Taiwan","Japan","Korea"]
-[1,2,3,'Taiwan','Japan','Korea']</pre>
-<p>重複運算子</p>
-<p>    1.*運算子也可以用來重複串列，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;3*[1,2,3]
-[1,2,3,1,2,3,1,2,3]</pre>
-<h2>Day25(0209)</h2>
-<h3>list串列(二)</h3>
-<p>比較運算子</p>
-<p>    1.比較運算子(&gt;、&lt;、&gt;=、&lt;=、==、!=)也可以用來比較兩個串列的串列的大小或相等與否，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;[1,2,3] != [1,2,3,4]
-True
-&gt;&gt;&gt;[1,2,3] == [3,2,1]
-False
-</pre>
-<p>in &amp; not in運算子</p>
-<p>    1.in運算子:用來檢查某個元素是否存在於串列中，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"Taiwan" in [1,"Taiwan",2]
-True</pre>
-<p>    2.not <span>in運算子:用來檢查某個元素是否不</span><span>存在於串列中，例如:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"Thailand" not in [1,Taiwan,2]
-True</pre>
-<p>索引 &amp; 片段運算子</p>
-<p>    1.索引運算子[]:用於取得串列中的元素，舉例來說，假設變數L值為[1,2,3,4,5]，索引0表示由左端開始，索引-1則由右端開始索引，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5]
-&gt;&gt;&gt;L[0]
-1
-&gt;&gt;&gt;L = [1,2,3,4,5]
-&gt;&gt;&gt;L[-1]
-5</pre>
-<p>    2.片段運算子[strat:end]:用來指定索引範圍，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5]
-&gt;&gt;&gt;L[2:4]
-[3,4]</pre>
-<p>串列處理方法</p>
-<p>    1.list.append(x):將參數x所指定的元素加入串列尾端。</p>
-<p>    2.<span>list.extend(L):將參數L所指定的串列的所有元素加入串列。</span></p>
-<p>    3.<span>list.insert(i,x):將參數x所指定的元素插入串列中所引為參數i的位置。</span></p>
-<p>    4.<span>list.remove(x):從串列中刪除第一個值為參數為x的元素。</span></p>
-<p>    5.<span>list.pop[i]:從串列中刪除索引為選擇型參數i的元素並傳回該元素，若未指定i，則刪除最後一個元素，並傳回該元素。</span></p>
-<p>    6.<span>list.index(x):傳回參數x所指定的元素第一次出現在串列中的索引。</span></p>
-<p>    7.<span>list.count(x):傳回參數x所指定的元素出現在串列中的次數。</span></p>
-<p>    8.<span>list.sort():將串列中的元素由小到大排序。</span></p>
-<p>    9.<span>list.reverse():將串列中元素順序反轉過來。</span></p>
-<p>    10.<span>list.copy():複製串列。</span></p>
-<p><span>    11.list.clear:從串列中刪除所有元素。</span></p>
-<h2><span>Day26(0210)</span></h2>
-<h3>list串列(三)</h3>
-<p>串列解析</p>
-<p>串列解析提供了更簡潔有力的方式來建立串列，利用for or if來進行串列的建立，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list1 = [i for i in range(10) if i &lt; 8]
-&gt;&gt;&gt;list1
-[0,1,2,3,4,5,6,7]</pre>
-<p><strong>del敘述</strong></p>
-<p>del敘述可用來從串列中刪除指定索引之元素，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5,6,7]
-&gt;&gt;&gt;del L[0]
-&gt;&gt;&gt;L
-[2,3,4,5,6,7]</pre>
-<p>此外del敘述也可用來刪除變數，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; L = [1,2,3,4,5]
-&gt;&gt;&gt; del L
-&gt;&gt;&gt; L
-Traceback (most recent call last):
-  File "&lt;pyshell#3&gt;", line 1, in &lt;module&gt;
-    L
-NameError: name 'L' is not defined</pre>
-<p><strong>二維串列</strong></p>
-<p>二維串列其實就是巢狀串列，串列中的元素也是串列，以下列成績表格為例:</p>
-<table height="84" width="401">
-<tbody>
-<tr>
-<td style="width: 93.6px;"></td>
-<td style="width: 93.6px;">math</td>
-<td style="width: 93.6px;">english</td>
-<td style="width: 94.4px;"><span>Chinese</span></td>
-</tr>
-<tr>
-<td style="width: 93.6px;">student A</td>
-<td style="width: 93.6px;">90</td>
-<td style="width: 93.6px;">80</td>
-<td style="width: 94.4px;">60</td>
-</tr>
-<tr>
-<td style="width: 93.6px;"><span>student B</span></td>
-<td style="width: 93.6px;">60</td>
-<td style="width: 93.6px;">98</td>
-<td style="width: 94.4px;">97</td>
-</tr>
-<tr>
-<td style="width: 93.6px;"><span>student C</span></td>
-<td style="width: 93.6px;">95</td>
-<td style="width: 93.6px;">75</td>
-<td style="width: 94.4px;">75</td>
-</tr>
-</tbody>
-</table>
-<p></p>
-<p>上列成績表格寫為串列:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;grades = [[90,80,60],[60,98,97],[95,75,75]]</pre>
-<p>若要存取此二維串列，必須使用兩個索引，第一個索引為列索引(row index)，第二個為行索引，如下列表格所示:</p>
-<table height="84" width="401">
-<tbody>
-<tr>
-<td style="width: 93.6px;"></td>
-<td style="width: 93.6px;">math</td>
-<td style="width: 93.6px;">english</td>
-<td style="width: 94.4px;"><span>Chinese</span></td>
-</tr>
-<tr>
-<td style="width: 93.6px;">student A</td>
-<td style="width: 93.6px;">[0][0]</td>
-<td style="width: 93.6px;">[0][1]</td>
-<td style="width: 94.4px;">[0][2]</td>
-</tr>
-<tr>
-<td style="width: 93.6px;"><span>student B</span></td>
-<td style="width: 93.6px;">[1][0]</td>
-<td style="width: 93.6px;">[1][1]</td>
-<td style="width: 94.4px;">[1][2]</td>
-</tr>
-<tr>
-<td style="width: 93.6px;"><span>student C</span></td>
-<td style="width: 93.6px;">[2][0]</td>
-<td style="width: 93.6px;">[2][1]</td>
-<td style="width: 94.4px;">[2][2]</td>
-</tr>
-</tbody>
-</table>
-<p>利用此二索引檢驗是否正確，如下:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;grades = [[90,80,60],[60,98,97],[95,75,75]]
-&gt;&gt;&gt;grades[0]
-[90,80,60]
-&gt;&gt;&gt;grades[0][0]
-90</pre>
-<h2><span>Day27(0211)</span></h2>
-<h3><span>tuple序對</span></h3>
-<p>tuple序對是由一連串資料所組成、不可改變內容(immutable)且有順序的序列(sequence)。序對中的資料以逗號隔開，前後已中括號標示，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;(1,"Taiwan",2,"Japan")
-(1,'Taiwan',2,'Japan')</pre>
-<p><strong>建立序對</strong></p>
-<p>利用Python內建的tuple()函式來建立序對，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;tuple1 = tuple()
-&gt;&gt;&gt;tuple1
-()
-&gt;&gt;&gt;tuple2 = tuple((1,2,3))
-&gt;&gt;&gt;tuple2
-(1,2,3)</pre>
-<p><strong>序對的運算</strong></p>
-<p>序對支援所有共同的序列運算，len()、max()、min()和sum()等內建函式均適用於序對，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = (1,2,3,4,5)
-&gt;&gt;&gt;len(L)
-5 #序對參數L長度為5</pre>
-<p>另外也可利用連接運算子(+)、重複運算子(*)、比較運算子<span>(&gt;、&lt;、&gt;=、&lt;=、==、!=)、in &amp; not in運算子、索引運算子([])、片段運算子([start:end])，例如:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;(1,2,3)+("Taiwan","Japan","Korea")
-(1,2,3,'Taiwan','Japan','Korea')
-&gt;&gt;&gt;
-&gt;&gt;&gt;5*(1,2,3)
-(1,2,3,1,2,3,1,2,3,1,2,3,1,2,3)
-&gt;&gt;&gt;
-&gt;&gt;&gt;(1,2,3) == (3,2,1)
-False
-&gt;&gt;&gt;
-&gt;&gt;&gt;(1,2,3) != (1,2,3,4)
-Ture
-&gt;&gt;&gt;
-&gt;&gt;&gt;(1,2,3) &lt; (1,2,3,4)
-Ture
-&gt;&gt;&gt;
-&gt;&gt;&gt;"Taiwan" in (1,"Taiwan",2)
-True
-&gt;&gt;&gt;
-&gt;&gt;&gt;"Thailand" not in (1,Taiwan,2)
-True
-&gt;&gt;&gt;
-&gt;&gt;&gt;L = (1,2,3,4,5)
-&gt;&gt;&gt;L[0]
-1
-&gt;&gt;&gt;L[1:3]
-(2,3)</pre>
-<p>序對亦支援如下方法:</p>
-<p>1.tuple.index(x):傳回參數x所指定的元素第一次出現在序對中的索引，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;T = (1,2,3,4,5,6,7,8,9,10)
-&gt;&gt;&gt;T.index(3)
-2</pre>
-<p>2.<span>tuple.count(x):傳回參數x所指定的元素第一次出現在序對中的次數，例如:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;T = (1,2,3,2,5,6,2,8,9,2)
-&gt;&gt;&gt;T.count(2)
-4</pre>
-<h2><span>Day28(0212)</span></h2>
-<h3><span>set集合(一)</span></h3>
-<p>set型別用來表示集合，包含無順序不重複且可改變內容的多個資料，前後以大括號標示，資料以逗號隔開，資料型別可以不同，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;{1,"apple",2,"banana"}
-{1,2,"apple","banana"}
-&gt;&gt;&gt;{2,1,"banana","apple"}
-{1,2,"apple","banana"}</pre>
-<p>set集合及list串列一樣可以用來存放多個資料，差別在於集合並無順序且不可重，執行效率較list串列好。</p>
-<h4><strong>建立集合</strong></h4>
-<p>可使用Python內建set()函式或{}建立集合，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;set1 = set({1,2,3})
-&gt;&gt;&gt;set1
-{1,2,3}
-&gt;&gt;&gt;set2 = set(range(6))
-&gt;&gt;&gt;set2
-{0,1,2,3,4,5}</pre>
-<h4><strong>內建函式</strong></h4>
-<p><span>之前介紹過的len()、max()、min()和sum()等內建函式皆適用於集合，例如:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; S = {1,2,3,4}
-&gt;&gt;&gt;len(S)
-4
-&gt;&gt;&gt;
-&gt;&gt;&gt;max(S)
-4
-&gt;&gt;&gt;
-&gt;&gt;&gt;min(S)
-1
-&gt;&gt;&gt;
-&gt;&gt;&gt;sum(S)
-10</pre>
-<h4><strong>運算子</strong></h4>
-<p>集合僅支援in &amp; not in、比較運算子，其餘不支援，原因為集合無順序之分，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"Taiwan" in {"Taiwan",1,2}
-True
-&gt;&gt;&gt; 3 not in {"Taiwan",1,2}
-True</pre>
-<p>而比較運算子在此處有不同的定義，如下:</p>
-<p>    1.S1 == S2:若S1與S2包含的元素相同，將傳回True，否則傳回False。</p>
-<p>    2.S1 != S2:<span>若S1與S2包含的元素不同，將傳回True，</span><span>否則傳回False。</span></p>
-<p>    3.S1 &lt;= S2:<span>若S1是S2的子集合(subset)，將傳回True，</span><span>否則傳回False。</span></p>
-<p><span>    4.S1 &lt; S2:<span>若S1是S2的真子集合(proper subset)，將傳回True，</span><span>否則傳回False。</span></span></p>
-<p><span>    5.S1 &gt;= S2:<span>若S1是S2的超集合(superset)，將傳回True，</span><span>否則傳回False。</span></span></p>
-<p><span>    6.S1 &gt; S2:<span>若S1是S2的真超集合(proper superset)，將傳回True，</span><span>否則傳回False。</span></span></p>
-<h1><span><span>W5</span></span></h1>
-<h2><span><span>Day29(0213)</span></span></h2>
-<h3><span>set集合(二)</span></h3>
-<p><strong>集合處理方法</strong></p>
-<p><span>集合隸屬於set類別，常用之處理方式如下:</span></p>
-<h4><strong>新增/刪除/複製</strong></h4>
-<p>    1.set.add(x):將參數x指定之元素加入集合。</p>
-<p>    2.set.remove(x):從集合中刪除x所指定之元素。</p>
-<p>    3.set.pop():從集合中隨機刪除一個元素，並傳回該元素。</p>
-<p>    4.set.copy():傳回集合的複本，和原來的集合為兩個不同的物件。</p>
-<p>    5.set.clear():刪除集合中的所有元素。</p>
-<h4><strong>子集合/超集合</strong></h4>
-<p><b>    </b>1.set.issubset(S):若集合為參數S的子集合，<span>將傳回True，</span><span>否則傳回False。</span></p>
-<p>    2.<span>set.issuperset(S):若集合為參數S的超集合，<span>將傳回True，</span><span>否則傳回False。</span></span></p>
-<h4><strong>常用集合運算</strong></h4>
-<p><strong><span>   </span></strong> 1.set.isdisjoint(S):<span>若集合和參數S所指定的集合沒有相同的元素，</span><span>將傳回True，</span><span>否則傳回False。</span></p>
-<p>    2.<span>set.update(S):將</span><span>集合和參數S所指定的集合進行聯集，結果將更新到集合。</span></p>
-<p>    3.<span>set.intersection_update(S):將</span><span>集合和參數S所指定的集合進行交集，結果將更新到集合。</span></p>
-<p>    4.<span>set.difference_update(S):將</span><span>集合和參數S所指定的集合進行差集，結果將更新到集合。</span></p>
-<h2><span>Day30(0214)</span></h2>
-<h3><span>dict字典(一)</span></h3>
-<p>dict型別用來表示字典，包含無順序、無重複且可改變內容的多個鍵:值對(key:value pair)，簡單來說就是以鍵做為索引來取得字典裡的值，字典前後以大括號標示，各個鍵:值對以逗號隔開，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;{"ID":"40823131","name":"Simon"}
-{'ID':'40823131','name':'Simon'}</pre>
-<p><strong>建立字典</strong></p>
-<p>可使用Python內建的dict()函式或{}建立字典，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;A = {"one":1,"two":2,"three":3}
-&gt;&gt;&gt;B = dict({"one":1,"two":2,"three":3})   #同上
-&gt;&gt;&gt;C = dict(one=1,two=2,three=3)   #同上
-&gt;&gt;&gt;D = {}   #空字典</pre>
-<p><strong>取得/新增/變更/刪除鍵:值對</strong></p>
-<p>    1.取得:建立字典後可利用鍵取得對映的值，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;A = {"one":1,"two":2,"three":3}
-&gt;&gt;&gt;x = A["one"]
-&gt;&gt;&gt;x
-1</pre>
-<p>    2.新增/變更:當key尚未存在於字典時，就新增一個鍵為key、值為value的鍵:值對;相反的，當key已經存在時則改變鍵:值隊的值為value，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3})
-&gt;&gt;&gt; B["three"] = 4
-&gt;&gt;&gt; B
-{'one': 1, 'two': 2, 'three': 4}
-&gt;&gt;&gt; B["four"] = 4 #新增鍵:值對
-&gt;&gt;&gt; B["three"] = 3 #變更
-&gt;&gt;&gt; B
-{'one': 1, 'two': 2, 'three': 3, 'four': 4}
-&gt;&gt;&gt; </pre>
-<p>    3.刪除:可利用del敘述刪除鍵為key的鍵:值對，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3,"four":4})
-&gt;&gt;&gt; del B["four"]
-&gt;&gt;&gt; B
-{'one': 1, 'two': 2, 'three': 3}</pre>
-<p><strong>內建函式</strong></p>
-<p>眾多內建函式僅有len()函式適用於字典，用於傳回字典包含幾個鍵:值對，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3,"four":4})
-&gt;&gt;&gt;len(B)
-4</pre>
-<h4><strong>運算子</strong></h4>
-<p>字典僅支援in &amp; not in及部分比較運算子(==、!=)，例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3,"four":4})
-&gt;&gt;&gt;"two" in B
-True
-&gt;&gt;&gt;"five" not in B
-True
-&gt;&gt;&gt; A = dict({"one":1,"two":2,"three":3,"four":4,"five":5})
-&gt;&gt;&gt; A == B
-False
-&gt;&gt;&gt; A != B
-True</pre>
-<h2><span>Day31(0215)</span></h2>
-<h3><span>dict字典(二)</span></h3>
-<p><strong>字典處理方法</strong></p>
-<p><strong>  </strong>  1.dict.get(key,default):傳回字典中鍵為key所對映的值，若該件不存在，則傳回選擇性參數default，若無<span>default參數，</span><span>則傳回None。</span></p>
-<p><strong> <span> </span></strong><span>  2.dict.pop(key,default):從字典中刪除鍵為key的鍵:值對並傳回所對映的值，若該件不存在，則傳回選擇性參數default，若無<span>default參數，會發生KeyError。</span></span></p>
-<p><span><strong>  </strong><span>  3.dict.popitem():從字典中隨機刪除一個鍵:值對並傳回該鍵:值對，<span>若要刪除的目標是空字典，會發生KeyError。</span></span></span></p>
-<p><span><span><strong>  </strong><span>  4.dict.keys():傳回字典所有的鍵。</span></span></span></p>
-<p><span><span><span><strong>  </strong><span>  5.dict.values():傳回字典所有的值。</span></span></span></span></p>
-<p><span><span><span><span><strong>  </strong><span>  6.dict.items():傳回字典所有的鍵:值對。</span></span></span></span></span></p>
-<p><span><span><span><span><span><strong>  </strong><span>  7.dict.copy():傳回字典的複本。</span></span></span></span></span></span></p>
-<p><span><span><span><span><span><span><strong>  </strong><span>  8.dict.clear():從字典中刪除所有鍵:值對。</span></span></span></span></span></span></span></p>
-<p><span><span><span><span><span><span><span><strong>  </strong><span>  9.dict.update(other):根據參數other所指定的字典更新目前的字典，將兩個字典合併，若有重複的鍵，將以參數other中的鍵:值對取代。</span></span></span></span></span></span></span></span></p>
-<h2><span>Day32(0216)</span></h2>
-<h3>turtle模組繪圖(一)</h3>
-<p>匯入turtle模組，如下:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import turtle</pre>
-<p>輸入以下指令，會出現視窗如圖(一)，起始之中心點箭頭代表海龜，座標為(0,0)，方向向右。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;turtle.showturtle()</pre>
-<p><img alt="" height="853" src="/images/showturtle.png" width="961"/></p>
-<h4 style="text-align: center;">圖(一)</h4>
-<p>基本turtle指令如下:</p>
-<p>    1.turtle.forward(x):向前走x步，即是向前x像素。</p>
-<p>    2.<span>turtle.left(x):向左轉x度。</span></p>
-<p>    3.turtle.right<span>(x):向右轉<span>x度。</span></span></p>
-<p>    4.<span>turtle.hideturtle():隱藏箭頭。</span></p>
-<p>    5.<span>turtle.showturtle():顯示箭頭。</span></p>
-<p>    6.<span>turtle.clear():清除圖形。</span></p>
-<p>    7.<span>turtle.reset():重設為起始狀態，包含清除圖形及箭頭復歸。</span></p>
-<p><strong>控制箭頭與畫圖</strong></p>
-<p>判斷箭頭狀態</p>
-<p>turtle模組提供了一些方法用來判斷箭頭目前的狀態，常用的如下:</p>
-<p>    1.<span>turtle.position()、turtle.pos():傳回箭頭座標。</span></p>
-<p>    2.<span>turtle.xcor():傳回箭頭在X軸的座標。</span></p>
-<p>    3.<span>turtle.ycor():傳回箭頭在Y軸的座標。</span></p>
-<p>    4.<span>turtle.heading():傳回箭頭的方向。</span></p>
-<p>    5.<span>turtle.towards(x,y):傳回從箭頭的位置到參數(x,y)所指定的位置之間的角度。</span></p>
-<p>    6.<span>turtle.distance(x,y):傳回從箭頭的位置到參數(x,y)所指定的位置之間的距離。</span></p>
-<p><span>移動箭頭與畫圖</span></p>
-<p>    1.<span>turtle.forward(x):向前走x步，即是向前x像素，x若為負數則向後退。</span></p>
-<p>    2.<span>turtle.back(x):向後</span><span>走x步，即是向後x像素，x若為負數則向前進。</span></p>
-<p>    3.<span>turtle.left(x)、turtle.lt(x):向左轉<span>x度。</span></span></p>
-<p>    4.<span>turtle.right</span><span>(x)、<span>turtle.rt(x)</span>:向右轉<span>x度。</span></span></p>
-<p>    5.<span>turtle.home</span><span>():將箭頭移至座標(0,0)，方向為向右。</span></p>
-<p>    6.<span>turtle.undo(</span><span>):取消箭頭上一個工作。</span></p>
-<p>    7.<span>turtle.setx(x</span><span>):將箭頭移至X軸上參數x所指定的位置，Y軸保持不變。</span></p>
-<p>    8.<span>turtle.sety(y</span><span>):將箭頭移至Y軸上參數y所指定的位置，X軸保持不變。</span></p>
-<p>    9.turtle.goto(x,y)、turtle.setpos(x,y)、turtle.setposition(x,y):將箭頭移至(x,y)，箭頭方向保持不變。</p>
-<p>    10.<span>turtle.setheading(x):將箭頭的方向設定為參數x所指定的角度，0表示東方，90表示北方，180表示西方，270表示南方。</span></p>
-<p>    11.<span>turtle.speed(x</span><span>):使用參數x設定箭頭的移動速度，範圍為1~10數字愈大，速度愈快，若未設定參數x則傳回目前箭頭的移動速度。</span></p>
-<p>    12.<span>turtle.dot(size,color</span><span>):根據參數size所指定的畫筆寬度及參數color所指定的顏色畫出原點。</span></p>
-<p>    13.<span>turtle.circle(rad,extent = None,steps = None</span><span>):根據參數畫圓，其中參數rad是圓的半徑；選擇性參數extent是角度，用來決定畫出圓的哪些部分，未指定則畫出全圓；選擇性參數steps是邊數，決定要在圓內畫出幾邊形，若未指定，則表示僅畫圓。</span></p>
-<h2><span>Day33(0217)</span></h2>
-<h3>turtle模組繪圖(二)</h3>
-<p><strong>控制畫筆、色彩與填滿色彩</strong></p>
-<p>主要為如何提起畫筆、放下畫筆、設定畫筆寬度、畫筆色彩、填充色彩和畫文字。</p>
-<p><strong>設定畫筆狀態</strong></p>
-<p>turtle模組提供了一些方法用來設定畫筆狀態，常用的如下:</p>
-<p>    1.turtle.pensize(width = None)、turtle.width(width = None):根據參數width設定畫筆寬度，若沒有指定參數width，則傳回目前畫筆的寬度。</p>
-<p>    2.<span>turtle.penup()、</span><span>turtle.up():提起畫筆，在移動箭頭時不畫線。</span></p>
-<p>    3.<span>turtle.pendown()、turtle.down():放下畫筆，接下來移動則會畫線。</span></p>
-<p>    4.<span>turtle.isdown():若畫筆是放下的，就傳回True、否則傳回False。</span></p>
-<p><strong>設定色彩</strong></p>
-<p><span>常用的畫筆色彩與填滿色彩設定如下:</span></p>
-<p>    1.<span>turtle.pencolor(r,g,b)、turtle.pencolor("ColorName"):根據參數設定畫筆色彩，若未設定則傳回目前畫筆的色彩，(r,g,b)中的三個字母分別代表(紅,綠,藍)。</span></p>
-<p>    2.turtle.fillcolor():根據參數填滿色彩，參數指定方式與<span>turtle.pencolor()相同。</span></p>
-<p>    3.<span>turtle.color():根據參數設定畫筆色彩與填滿色彩<span>，若未指定則傳回目前畫筆的色彩及填滿色彩。</span></span></p>
-<p><strong>填滿色彩</strong></p>
-<p>turtle模組提供了一些方法用來填滿色彩，常用的如下:</p>
-<p>    1.turtle.filling():傳回填滿色彩狀態，True表示正在填滿色彩，False表示否。</p>
-<p>    2.turtle.begin_fill():在開始填滿色彩之前要呼叫此方法。</p>
-<p>    3.<span>turtle.end_fill():在結束填滿色彩之前要呼叫此方法。</span></p>
-<p><strong>畫文字</strong></p>
-<p>我們可以使用turtle模組提供的turtle.write()方法畫文字，其語法如下。</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">turtle.write(arg,move = False,align = "left",font = ("Arial",8,"normal"))</pre>
-<p>    1.arg:設定要畫的文字。</p>
-<p>    2.move:設定是否將箭頭移到文字的右下角，預設值為False，表示不移動箭頭。</p>
-<p>    3.align:設定對齊方式，有"left"、"center"或"right"，預設值為"left"</p>
-<p>    4.font:設定文字的字型、大小與樣式，預設值為("arial",8,"normal")</p>
-<h2><span>Day34(0218)</span></h2>
-<h3><strong>檔案存取</strong></h3>
-<h4><span>寫入檔案</span></h4>
-<p><span>使用內建的open()函式建立檔案物件。語法如下，建立成功時，會傳回檔案物件，相反的，建立失敗時，會發生錯誤:</span></p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">open(file,mode)</pre>
-<p>1.file:設定欲存取的檔案，包含檔案路徑及名稱。</p>
-<p>2.mode:設定檔案物件的存取模式，常用的如下表:</p>
-<table height="307" style="width: 732px;">
-<tbody>
-<tr>
-<td style="width: 78.9091px;">模式</td>
-<td style="width: 638.909px;">說明</td>
-</tr>
-<tr>
-<td style="width: 78.9091px;">"r"</td>
-<td style="width: 638.909px;">讀取模式開啟檔案，檔案指標指向檔案開頭，若檔案不存在，會發生錯誤，此為預設值。</td>
-</tr>
-<tr>
-<td style="width: 78.9091px;">"w"</td>
-<td style="width: 638.909px;">寫入模式開啟檔案並清除原先檔案內容<span>，檔案指標指向檔案開頭</span>，若檔案不存在，則建立新檔案。</td>
-</tr>
-<tr>
-<td style="width: 78.9091px;">"a"</td>
-<td style="width: 638.909px;"><span>寫入模式開啟檔案</span><span>，檔案指標指向檔案結尾，寫入的資料會新增至原檔案內容後面</span><span>，若檔案不存在，則建立新檔案。</span></td>
-</tr>
-<tr>
-<td style="width: 78.9091px;">"r+"</td>
-<td style="width: 638.909px;"><span>讀寫模式開啟檔案，檔案指標指向檔案開頭，寫入資料會覆蓋原先檔案的內容，若檔案不存在，就會建立新檔案。</span></td>
-</tr>
-<tr>
-<td style="width: 78.9091px;">"w+"</td>
-<td style="width: 638.909px;"><span>讀寫模式開啟檔案並清除原先檔案內容</span><span>，檔案指標指向檔案開頭</span><span>，若檔案不存在，則建立新檔案。</span></td>
-</tr>
-<tr>
-<td style="width: 78.9091px;">"a+"</td>
-<td style="width: 638.909px;"><span>讀寫模式開啟檔案</span><span>，檔案指標指向檔案結尾，寫入的資料會新增至原檔案內容後面</span><span>，若檔案不存在，則建立新檔案。</span></td>
-</tr>
-</tbody>
-</table>
-<p><strong>將資料寫入檔案</strong></p>
-<p>1.開啟檔案:使用open()函式建立檔案物件。</p>
-<p>2.寫入檔案:使用write(s)方法將參數s所指定的的字串寫進檔案，後傳回寫入文字的個數。</p>
-<p>3.關閉檔案:使用close()方法關閉檔案。</p>
-<p>例如:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","w")  #開啟檔案或新增檔案
-&gt;&gt;&gt; fileObject.write("白日依山盡")  #寫入檔案
-5
-&gt;&gt;&gt; fileObject.close()  #關閉檔案
-&gt;&gt;&gt;</pre>
-<p></p>
-<h1>資料參考</h1>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
+<h1>W1</h1><h2>Day1(0116)</h2><h3>Python源起</h3><p>Python是一種程式語言，起源於1990年代初期由Guido van Rossum所研發，最初的想法為傳承ABC程式語言，Guido認為ABC相當優美與強大，非專業的程式設計人員也能夠使用，而ABC程式語言當初因為非開放而導致沒有獲得廣泛的運用，於是他決定以開放策略研發Python。</p><p><img alt="" height="244" src="/images/icon-python-text-color-horz.png" width="580"></p><p><span>🔼</span>Python 英文原意為蟒蛇，也可發現LOGO由兩隻蟒蛇組成。</p><h3>基本Python程式</h3><p><span>🔽</span>利用下載好的Python IDLE編輯及儲存程式，可存為Python的專用.py檔。</p><p><img alt="" height="596" src="/images/IDLE.png" width="579"></p><p>1.Hello World!!</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print("Hello World!!")</pre><p>2.基礎四則運算</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">print(5-3+2)print(5*3/5)</pre><h3>Python程式碼格式重點</h3><p>1.不能使用class作為定義變數或函式，因為它是用來定義類別的關鍵字。</p><p>2.函式名稱後需加小括號()、字串則使用雙引號"、註解則用井字號#、多行註解則為'''。</p><p>3.Python會將英文大小寫視為不同的識別字，所以編寫時需注意大小寫。</p><p>4.每行最大長度為79個字元，若需要分行則用行接續符號\。</p><p>5.程式每層縮排為4個空白鍵或1個Tab鍵，較推薦使用Tab鍵可一步到位。</p><h3>常見程式設計錯誤(bug)</h3><p>1.語法錯誤</p><p>執行後會出現[SyntaxError: unexpected indent][SyntaxError: EOL while scanning string literal]錯誤</p><p>2.執行期間錯誤</p><p>例如以下程式</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">X=1Y=0print(X/Y)</pre><p>則是因為分母不能為零而發生[ZeroDivisionError: division by zero]錯誤</p><p>3.邏輯錯誤</p><h2>Day2(0117)</h2><h3>型別</h3><p>1.數值型別:int、float、complex、bool。</p><p>&nbsp; &nbsp; (1)int型別:用來表示整數(integer)，正負整數皆包含在內。</p><p><span>&nbsp; &nbsp; (2)float型別:用來表示浮點數(float point number)，有小數部分，精確度取決於作業系統平台。</span></p><p><span>&nbsp; &nbsp; (3)complex型別:用於表示數學中的複數(complex number)，例如5+4j。</span></p><p><span>&nbsp; &nbsp; (4)bool型別:為int型別的子型別，只有True、False兩種值，多用於判斷對與錯、是與否......等等兩種選擇之情形。</span></p><p>2.文字序列型別:str。</p><p>&nbsp; &nbsp; (1)str型別:用於處理文字資料，就是所謂的字串(string)，字串又是由字元(character)所組成。</p><p>&nbsp; &nbsp; &nbsp; &nbsp; a.單引號</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">'Hello World!!'</pre><p>&nbsp; &nbsp; &nbsp; &nbsp; b.雙引號</p><pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">"Hello World!!"</pre><p>&nbsp; &nbsp; &nbsp; &nbsp; c.三個單引號</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print('''Hello World!!!Hello World!!!Hello World!!!''')#下列為結果Hello World!!!Hello World!!!Hello World!!!</pre><p>&nbsp; &nbsp; &nbsp; &nbsp; d.三個雙引號</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; print("""Hello World!!!Hello World!!!Hello World!!!""")#下列為結果Hello World!!!Hello World!!!Hello World!!!</pre><p></p><p>3.二元序列型別:bytes、bytearray、memoryview。</p><p>4.序列型別:list、tuple、range。</p><p>&nbsp; &nbsp; (1)list型別:用來表示串列，由一連串的資料所組成的，有順序且可改變內容(mutable)的序列(sequence)，list內的資料以逗號隔開，串列前後以中括號標示。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">[1,3,5,6]</pre><p>&nbsp; &nbsp; (2)tuple型別:<span>用來表示序對，由一連串的資料所組成的，有順序且不可改變內容(immutable)的序列(sequence</span><span>)，tuple內的資料以逗號隔開，序列前後以小括號標示。</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">(1,3,5,6)</pre><p>5.集合型別:set、frozenset。</p><p>&nbsp; &nbsp; (1)<span>set型別:用來表示集合，包含沒有順序、沒有重複且內容可變得多個資料，前後已大括號表示，資料以逗號隔開。</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">{"a",3,"b",2}</pre><p>6.對映型別:dict。</p><p>&nbsp; &nbsp; (1)<span>dict型別:用來表示字典，包含沒有順序、沒有重複且內容可變得多個資料，前後已大括號表示，資料以逗號隔開。使用鍵(key)作為索引來存取字典中的數值(value)。</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">{"ID":"123456","name":"simon"}</pre><h2>Day3(0118)</h2><h3>變數</h3><p>1.命名規則:</p><p>&nbsp; &nbsp; (1)第一個字元可以是英文字母、底線(_)、或中文，因考慮到國際接軌，建議儘量不要使用中文來命名。</p><p>&nbsp; &nbsp; (2)不能使用關鍵字及內建常數、函式、類別的名稱命名。</p><p>&nbsp; &nbsp; (3)因不能使用空白格，所以建議每換一個單字都以大寫開頭，例如userName。</p><p>&nbsp; &nbsp; (4)可以合理的簡寫來命名。</p><p>&nbsp; &nbsp; (5)命名不能使用特殊符號，除了底線(_)。</p><p>2.指派方式:使用指派運算子(=)(assignment operator)</p><p>&nbsp; &nbsp; (1)例一:定義為str型別</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">myName = "Simon"</pre><p>&nbsp; &nbsp; (2)例二:定義為int型別</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">myPhoneNumber = 1234567890</pre><p>&nbsp; &nbsp; (3)例三:同時指派多個變數</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">X,Y,Z=1,2,"apple"</pre><h2>Day4(0119)</h2><h3>常數</h3><p>常數是一個有意義的名稱，它不會隨程式的執行而改變，同時也無法人為使它改變。例:</p><p>&nbsp; &nbsp; (1)True:bool型別的真(True)值，作為int型別時值為1。</p><p>&nbsp; &nbsp; (2)False<span>:bool型別的假(False)值，作為int型別時值為0。</span></p><p>&nbsp; &nbsp; (3)None:表示空值，若將變數設為None，則表示此變數沒有值。</p><p>使用名詞為常數命名的優點:</p><p>&nbsp; &nbsp; (1)提高程式可讀性。</p><p>&nbsp; &nbsp; (2)若為常用常數，就不必重複輸入其值。</p><p>&nbsp; &nbsp; (3)常數定義需變更時，只需修改一個地方即可。</p><h3>運算子</h3><p>1.算術運算子(arithmetic operator):+、-、*、/、//、%、**。</p><p>2.移位<span>運算子(shifting&nbsp;operator):&lt;&lt;、&gt;&gt;。</span></p><p>3.位元<span>運算子(bitwise&nbsp;operator):~、&amp;、|、^。</span></p><p>4.比較<span>運算子(comparison&nbsp;operator):&gt;、&lt;、&gt;=、&lt;=、==、!=。</span></p><p>5.邏輯<span>運算子(logical&nbsp;operator):and、or、not。</span></p><p>6.指派<span>運算子(assignment&nbsp;operator)=、+=、-=、*=、/=、//=、%=、**=、&lt;&lt;=、&gt;&gt;=、&amp;=、|=、^=。</span></p><p>7.其他特殊符號()、[]、{}、,、:、.、;。</p><p>8.單位運算子:+、-和~，此時的+、-是用來表達正負數值，只有單個運算元，採前置記法，例如:-5、+5。</p><p>9.二元運算子:<span>+、-和~以外的運算子屬於二元運算子，有兩個運算元，採中置記法，例如:1.3*62、60/2.6。</span></p><h2><span>Day5(0120)</span></h2><h3><span>運算子個別解說(一)</span></h3><p><span>1.算數運算子</span></p><p>&nbsp; &nbsp; (1)+[加法]:表示a加b，語法如下</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">1+2</pre><p>&nbsp; &nbsp; 另外+運算子也能用來連接字串，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"5"+"apple"</pre><p>&nbsp; &nbsp; 得到以下結果</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">"5apple"</pre><p>&nbsp; &nbsp; (2)-[減法]:表示a減b，語法如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">2-1</pre><p>&nbsp; &nbsp; (3)*[乘法]:表示a乘b<span>，</span><span>語法如下。</span></p><pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">2*1</pre><p>&nbsp; &nbsp; (4)/[浮點數除法]:表示a除以b，結果為float型別，語法如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">12/3</pre><p>&nbsp; &nbsp; 結果為</p><pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">4.0</pre><p>&nbsp; &nbsp; (5)//[整數除法]:<span>表示a除以b，結果為int型別，小數部分將直接捨去，語法如下。</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">7//3</pre><p>&nbsp; &nbsp; 結果為</p><pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">2</pre><p>&nbsp; &nbsp; (6)%[餘數]:<span>表示a除以b的餘數，語法如下。</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">12%5</pre><p>&nbsp; &nbsp; 結果為</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">2</pre><p>&nbsp; &nbsp; (7)**[指數]:表示a的b次方，語法如下。</p><pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">2**2</pre><p>&nbsp; &nbsp; 結果為</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">4</pre><p>2.位元運算子</p><p>&nbsp; &nbsp; (1)~[位元 NOT]</p><p>&nbsp; &nbsp; (2)&amp;[位元 AND]</p><p>&nbsp; &nbsp; (3)|[位元 OR]</p><p>&nbsp; &nbsp; (4)^[位元 XOR]</p><p>3.比較運算子</p><table height="132" style="width: 542px;"><tbody><tr><td style="width: 86px;">運算子</td><td style="width: 86px;">語法</td><td style="width: 348px;">說明</td></tr><tr><td style="width: 86px;">&gt;</td><td style="width: 86px;">a&gt;b</td><td style="width: 348px;">若a大於b時傳回True，反之則傳回False。</td></tr><tr><td style="width: 86px;">&lt;</td><td style="width: 86px;">a&lt;b</td><td style="width: 348px;"><span>若a小於b時傳回True，反之則傳回False。</span></td></tr><tr><td style="width: 86px;">&gt;=</td><td style="width: 86px;">a&gt;=b</td><td style="width: 348px;"><span>若a大於等於b時傳回True，反之則傳回False。</span></td></tr><tr><td style="width: 86px;">&lt;=</td><td style="width: 86px;">a&lt;=b</td><td style="width: 348px;"><span>若a小於等於</span><span>b</span><span>時傳回True，反之則傳回False。</span></td></tr><tr><td style="width: 86px;">==</td><td style="width: 86px;">a==b</td><td style="width: 348px;"><span>若a等於b</span><span>時傳回True，反之則傳回False。</span></td></tr><tr><td style="width: 86px;">!=</td><td style="width: 86px;">a!=b</td><td style="width: 348px;"><span>若a不等於b</span><span>時傳回True，反之則傳回False。</span></td></tr></tbody></table><h2>Day6(0121)</h2><h3><span>運算子個別解說(二)</span></h3><p><span>4.指派運算子</span></p><table style="width: 538px;"><tbody><tr style="height: 16px;"><td style="width: 85px; height: 16px;">運算子</td><td style="width: 84px; height: 16px;">語法</td><td style="width: 347px; height: 16px;">說明</td></tr><tr style="height: 14.0625px;"><td style="width: 85px; height: 14.0625px;">=</td><td style="width: 84px; height: 14.0625px;">a=b</td><td style="width: 347px; height: 14.0625px;">將b指派給a，將a的值設定為b的值。</td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">+=</td><td style="width: 84px; height: 15px;">a+=b</td><td style="width: 347px; height: 15px;">相當於a=a+b。</td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">-=</td><td style="width: 84px; height: 15px;">a-=b</td><td style="width: 347px; height: 15px;"><span>相當於a=a-b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">*=</td><td style="width: 84px; height: 15px;">a*=b</td><td style="width: 347px; height: 15px;"><span>相當於a=a*b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">/=</td><td style="width: 84px; height: 15px;">a/=b</td><td style="width: 347px; height: 15px;"><span>相當於a=a/b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">//=</td><td style="width: 84px; height: 15px;">a//=b</td><td style="width: 347px; height: 15px;"><span>相當於a=a//b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">%=</td><td style="width: 84px; height: 15px;">a%=b</td><td style="width: 347px; height: 15px;"><span>相當於a=a%b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">**=</td><td style="width: 84px; height: 15px;">a**=b</td><td style="width: 347px; height: 15px;"><span>相當於a=a**b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">&lt;&lt;=</td><td style="width: 84px; height: 15px;"><span>a&lt;&lt;=b</span></td><td style="width: 347px; height: 15px;"><span>相當於a=a&lt;&lt;b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">&gt;&gt;=</td><td style="width: 84px; height: 15px;"><span>a&gt;&gt;=b</span></td><td style="width: 347px; height: 15px;"><span>相當於a=a&gt;&gt;b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">&amp;=</td><td style="width: 84px; height: 15px;"><span>a&amp;=b</span></td><td style="width: 347px; height: 15px;"><span>相當於a=a&amp;b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">|=</td><td style="width: 84px; height: 15px;"><span>a|=b</span></td><td style="width: 347px; height: 15px;"><span>相當於a=a|b。</span></td></tr><tr style="height: 15px;"><td style="width: 85px; height: 15px;">^=</td><td style="width: 84px; height: 15px;"><span>a^=b</span></td><td style="width: 347px; height: 15px;"><span>相當於a=a^b。</span></td></tr></tbody></table><p>5.邏輯運算子</p><p>&nbsp; &nbsp; (1)and:若a and b，<span>表示</span>a與b皆為True則傳回True，反之傳回False。</p><p>&nbsp; &nbsp; (2)or:<span>若a or b，表示a與b皆為False則傳回False，反之傳回True。</span></p><p><span>&nbsp; &nbsp; (3)not:若not a，表示將a進行邏輯否定，若a的值為True，傳回False，反之傳回True。</span></p><h2><span>Day7(0122)</span></h2><h3><span>運算子的優先順序</span></h3><p><span>運算子的優先順序由高到低為:</span></p><p><span>1.()、[]、{}。</span></p><p><span>2.a[i]、a[i:j]、a()、a.b、a.b()。</span></p><p><span>3.a**b。</span></p><p><span>4.+a、-a、~a。</span></p><p><span>5.a*b、a/b、a//b、a%b。</span></p><p><span>6.a+b、a-b。</span></p><p><span>7.a&lt;&lt;b、a&gt;&gt;b。</span></p><p><span>8.a&amp;b。</span></p><p><span>9.a^b。</span></p><p><span>10.a|b。</span></p><p><span>11.&gt;、&lt;、&gt;=、&lt;=、==、!=。</span></p><p><span>12.not a。</span></p><p><span>13.a and b。</span></p><p><span>14.a or b。</span></p><h3><span>輸出</span></h3><p><span>大多數程式在執行完畢後，會將結果輸出到螢幕。可利用Python內建的print()函數來印出指定的字串。</span></p><p>print()函式的語法如下:</p><pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">print(value,...,sep='',end='\n',file=sys.stdout)</pre><p>value:用來設定要印出的值。</p><p>sep:<span>用來設定隔開兩個值的字串，可省略，省略代表使用預設值''(一個空白)</span></p><p><span>end:用來設定印出最後一個值後所要加上的字串，可省略，省略代表使用預設值'\n'(換行)</span></p><p><span>file:用來設定輸出裝置，可省略，省略代表使用預設值sys.stdout(輸出至螢幕)。</span></p><h1><span>W2</span></h1><h2><span>Day8(0123)</span></h2><h3><span>輸入</span></h3><p><span>使用內建的input()函式取得輸入的資料</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;userNumber = input("請輸入學號:")請輸入學號: 40823131##上列按下enter後將會跳回&gt;&gt;&gt;</pre><p><span>之後檢驗</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;userNumber##按下enter後則出現'40823131'&gt;&gt;&gt;</pre><p><span></span>得到上列字串後，若需進行計算則需使用內建的eval()將字串轉換為數值。</p><p>使用上述函式寫出利用輸入半徑，用來計算圓面積的程式，如下。</p><p><a href="https://drive.google.com/file/d/1CqWMW5cUgcQtZOCpCD51S5JBJLnVHr52/view?usp=sharing" title="CircleArea.py">CircleArea.py</a></p><h2>Day9(0124)</h2><h3>常用內建數值函數</h3><p>abs(X):傳回X的絕對值。</p><p>min(X1,X2,X3,......)<span>:傳回參數數值中的最小值。</span></p><p>max(<span>X1,X2,X3,......</span>)<span>:傳回參數數值中的最大值。</span></p><p>hex(<span>X</span>)<span>:傳回整數X參數由十進位轉為十六進位的字串，前面會加上0x。</span></p><p>oct(<span>X</span>)<span>:傳回整數X參數由十進位轉為八進位的字串，前面會加上0o。</span></p><p>bin(<span>X</span>)<span>:傳回整數X參數由十進位轉為二進位的字串<span>，前面會加上0b。</span></span></p><p>int(<span>X</span>)<span>:傳回X的整數部分，小數將被直接捨去。</span></p><p>round(<span>X,precision</span>)<span>:傳回與X最接近的整數(四捨五入)，若要設定精確度到小數點後幾位，可利用選擇性參數precision設定。</span></p><p>pow(<span>X,Y</span>)<span>:傳回X的Y次方值。</span></p><p>float("<span>X</span>)<span>:傳回字串X轉換成浮點數的結果。</span></p><p>complex(<span>X</span>)<span>:傳回字串X轉換成複數的結果。</span></p><h2>Day10(0125)</h2><h3>導入數學模組</h3><p>在Python中若需使用數學函式，需先導入數學模組(module)，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import math</pre><h3>常用數學函式</h3><p>1.math.pi、math.e、math.nan、math.inf:分別表示圓周率、自然對數e、NaN(not a number)、正無限大，負無限大則為-math.inf。</p><p>2.math.ceil(X):傳回<span>大於等於X的最小整數，例如:</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.ceil(8.999)9</pre><p><span>3.math.fabs(X):傳回X的浮點數絕對值，例如:</span></p><pre class="brush:html;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.fabs(-5)5.0</pre><p>4.math.factorial(X):傳回正整數X的階層值，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;math.factorial(4)    #(即為4!=4*3*2*1=24)24</pre><p>5.math.floor(X):傳回<span>小於等於X的最大整數。</span></p><p><span>6.math.radians(X):傳回角度X轉為弳度的結果。</span></p><p><span>7.math.degrees(X):傳回弳度X轉為角度的結果。</span></p><p><span>8.math.sin(X)、math.cos<span>(X)、math.tan<span>(X)、math.as<span>in(X)、math.acos<span>(X)、math.atan<span>(X)三角函式:分別傳回X的正弦值、餘弦值、正切值、反正弦值、反餘弦值、反正切值，需注意的適當中的參數X需為弳度而非角度，可利用上述math.radians函式將角度轉換為弳度。</span></span></span></span></span></span></p><h3>亂數函式</h3><p>首先匯入亂數模組。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import random</pre><p>1.random.randint(X,Y):傳回一個大於等於X並小於等於Y的隨機整數。</p><p>2.<span>random.random():傳回一個大於等於0.0並小於1.0的隨機浮點數。</span></p><p><span>3.random.shuffle(X):將X中的元素進行隨機重排。</span></p><p><span>利用上述函式寫出簡易猜數字的程式如下。</span></p><p><span><a href="https://drive.google.com/file/d/1mG8VUXCxXKMNmqUnpQUgDG3gx7UR2B2M/view?usp=sharing">random.py</a></span></p><h2><span>Day11(0126)</span></h2><h3><span>逸脫序列</span></h3><p><span></span>對於一些無法顯示在螢幕上的符號，可以利用<span>逸脫序列在這些符號前加上反斜線(\)，便能顯示出來。</span></p><table style="width: 524px;"><tbody><tr style="height: 15px;"><td style="width: 105.6px; height: 15px;">逸脫序列</td><td style="width: 403.4px; height: 15px;">意義</td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\\</td><td style="width: 403.4px; height: 14px;">印出反斜線(\)。</td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\'</td><td style="width: 403.4px; height: 14px;"><span>印出單引號(')。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\"</td><td style="width: 403.4px; height: 14px;"><span>印出雙引號(")。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\a</td><td style="width: 403.4px; height: 14px;"><span>響鈴(Bell)。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\b</td><td style="width: 403.4px; height: 14px;"><span>倒退鍵(Backspace)。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\f</td><td style="width: 403.4px; height: 14px;"><span>換頁(Formfeed)。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\n</td><td style="width: 403.4px; height: 14px;"><span>換行(Linefeed)。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\r</td><td style="width: 403.4px; height: 14px;">歸位(Carriage Return)。</td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\t</td><td style="width: 403.4px; height: 14px;"><span>[Tab]鍵(Horizontal)。</span></td></tr><tr style="height: 14.3998px;"><td style="width: 105.6px; height: 14.3998px;">\v</td><td style="width: 403.4px; height: 14.3998px;"><span>垂直定位(Vertical Tab)。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\ooo</td><td style="width: 403.4px; height: 14px;"><span>ASCII字元，ooo為八進位整數。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\x<em><strong>hh</strong></em></td><td style="width: 403.4px; height: 14px;"><span>ASCII字元，<em><strong>hh</strong></em>為十六進位整數。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\N{<em><strong>name</strong></em>}</td><td style="width: 403.4px; height: 14px;"><span>Unicode字元，<em><strong>name</strong></em>為字元名稱。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\u<em><strong>xxxx</strong></em></td><td style="width: 403.4px; height: 14px;"><span>Unicode字元，<em><strong>xxxx</strong></em>為16-bit十六進位整數。</span></td></tr><tr style="height: 14px;"><td style="width: 105.6px; height: 14px;">\U<em><strong>xxxxxxxx</strong></em></td><td style="width: 403.4px; height: 14px;"><span>Unicode字元，<em><strong>xxxxxxxx</strong></em>為32-bit十六進位整數。</span></td></tr></tbody></table><h3>常用內建字串函式</h3><p>1.len(x):傳回s字串的長度，也就是s總共包含幾個字元，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;len("hello")5     #hello總共由5個字元組成</pre><p>2.str(n):傳回數值參數n轉為字串的結果，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;str(125.5)'125.5'</pre><h3>連接運算子</h3><p>1.+運算子可用來將字串串起來，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"我為"+"人人"+"，"+"人人"+"為我"+"。"我為人人，人人為我。</pre><h3>重複運算子</h3><p>1.*運算子可以用來重複字串，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;5 * "wow!"'wow!wow!wow!wow!wow!'</pre><h3>in ,not in運算子</h3><p>1.in運算子:可以利用它來檢查字串中是否有我們指定的字串在其中，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"go" in "good"True</pre><p><span>2.not in運算子:與in運算子相反，可以利用它來檢查字串中是否沒有我們指定的字串在其中，如下。</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"go" not in "good"False</pre><h3>索引運算子[]與片段運算子</h3><p>利用索引運算子[]可以取得字串中的字元，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;s = "Python程式設計"&gt;&gt;&gt;s[3]h</pre><p>也可使用片段運算子來指定範圍索引，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;s = "Python程式設計"&gt;&gt;&gt;s[2:4] #不包含第四字元(只索引2~3字元)th</pre><h2>Day12(0127)</h2><h3>字串處理方法</h3><p>1.id(X):取得X指向之物件的id編號。</p><p>2.type(X):取得X之型別。</p><p>3.print(X):印出X的值。</p><h3>常用字串轉換方法</h3><p>1.str.upper(s):傳回s的所有字元轉為大寫的字串。</p><p>2.str.lower(s):<span>傳回s的所有字元轉為小寫的字串。</span></p><p>3.str.replace(old,new):<span>傳回將字串參數old取代為字串參數new的字串。</span></p><p>4.str.capitalize(s):<span>傳回s的第一個字元轉換為大寫的字串。</span></p><p>5.str.title(s):<span>傳回s的每一個單字的第一個字元</span><span>轉換為大寫的字串。</span></p><h3><span>搜尋字串方法</span></h3><p><span>1.str.count(s):傳回目標字串中出現s字串的次數。</span></p><p><span>2.str.startswith(s):若目標字串中的開頭為s字串傳回True，反之則傳回False。</span></p><p><span>3.str.endswith(s):若目標字串中的結尾為s字串傳回<span>True</span><span>，反之則傳回False。</span></span></p><h3>常用字串測試方法</h3><p>1.str.isalpha(s):若s中所有字元皆為英文字母傳回True，反之則傳回False。</p><p>2.str.isdigit(s):<span>若s中所有字元皆為阿拉伯數字傳回True，反之則傳回False。</span></p><p>3.str.isalnum(s):<span>若s中所有字元皆為英文字母及阿拉伯數字傳回True，反之則傳回False。</span></p><p>4.str.is<span>upper(s):若s中所有字元皆為大寫英文字母傳回True，反之則傳回False。</span></p><p><span>5.str.islower(s):若s中所有字元皆為小寫英文字母傳回True，反之則傳回False。</span></p><p><span></span></p><h2><span><span>Day13(0128)</span></span></h2><p><span><span></span></span></p><h3><span><span>字串格式化方法</span></span></h3><p>1.str.center(w):傳回欄位寬度為w所指定的字元數，並且為置中的字串。</p><p>2.str.ljust(w):<span>傳回欄位寬度為w所指定的字元數，並且為靠左的字串。</span></p><p>3.str.rjust(w):<span>傳回欄位寬度為w所指定的字元數，並且為靠右的字串。</span></p><p><span>4.str.zfill(w):傳回欄位寬度為w所指定的字元數，並且<span>左側填上0、正負號(+,-)皆保留在開頭的字串。</span></span></p><p><span>5.str.format(spec):利用spec所指定的格式將字串格式化。</span></p><h3><span>刪除指定字元方法</span></h3><p>1.str.strip(X):從字串兩側刪除指定字元。</p><p><span><span>2.str.lstrip(X):從字串左側刪除指定字元。</span></span></p><p><span><span>3.str.rstrip(X):從字串右</span></span><span><span>側刪除指定字元。</span></span></p><h2>Day14(0129)</h2><h3>數值與字串格式化</h3><p>使用format()函式將數值與字串格式化，其語法如下，根據選擇性參數spec所指定的格式將參數value格式化。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">format(value,spec)</pre><p>參數spec的格式如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">[[fill]align][sign][#][0][width][,][.precision][type]</pre><p>1.[align]:設定對齊方式，有'&lt;'、'&gt;'、'^'、'='等值，分別表示靠左、靠右、置中、正負符號和數字之間的空位填滿0，數值預設圍靠右，其他資料預設為靠左。</p><p>2.[fill]:設定填滿空位的字元。</p><p>3.[sign]:設定正負符號，只在負數前加上負號、在正數前則加上一個空白，預設為'-'。</p><p>4.[#]:設定在二、八、十六進位數值前加上'0b'、'0o'或'0x'。</p><p>5.[0]:設定用0填滿空位。</p><p>6.[width]:設定欄寬為幾字元。</p><p>7.[,]:設定加上千分位符號。</p><p>8.[.precision]:設定精確度為小數幾位。</p><p>9.[type]:設定表示法類型，有'b'(二進位)、'c'(字元)、'd'(十進位)、'e'(科學記號)、'E'(科學記號)、'f'(小數點，預設精確度為六位)、'F'(<span>小數點)</span>、'g'(一般格式)、'G'<span>(一般格式)</span>、'n'(數值)、'o'(八進位)、's'(字串)、'x'(十六進位)、'X'<span>(十六進位)</span>、'%'(百分比)等值。</p><h1>W3</h1><h2>Day15(0130)</h2><h3>認識流程控制</h3><p>流程控制分成下列兩種類型。</p><p>1.選擇結構:用來判斷條件式，根據結果True或False執行不同的敘述，Python支援的選擇結構為if。</p><p>2.迴圈結構:用於重複執行，Python支援的迴圈函數為for與while。</p><p>流程控制中將下列的值判斷為False，如下。</p><p>1.None</p><p>2.False</p><p>3.等於0的數值</p><p>4.空序列，例如:(''空字串)、([]空串列)、(()空序對)。</p><p>5.空對映，例如({}空集合)。</p><h3>if選擇結構</h3><p>1.單向if:意義為「若...就...」，條件式condition若傳回True，就繼續執行statement(s)。語法如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition:        statement(s)</pre><p>2.雙向if...else:<span>意義為「若...就...否則...」，屬於雙向選擇，若condition傳回True，執行statement1，否則執行statement2。語法如下:</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition:        statements1else:        statements2</pre><p>3.多向if...elif...else:<span>意義為「若...就...否則... 若...」，屬於多向選擇，判斷condition1，若condition1傳回True就執行statement1，否則判斷condition2，若condition2傳回True就執行statement2，否則判斷condition3...依此類推，所以statement1~statementN+1中只有一組會被執行。語法如下:</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">if condition1:        statements1elif condition2:        statements2elif condition3:        statements3...else:        statementsN+1</pre><p>4.巢狀if結構:顧名思義指的是if敘述裡包含其他if敘述，且沒有深度限制，但一般還是較常使用多向if...elif...else來做使用較佳。例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">num = eval(input("請您輸入1~5中的任一整數:"))if num ==1:        print("ONE")else:        if num ==2:                print("TWO")        else:                if num ==3:                        print("THREE")                else:                        if num ==4:                                print("FOUR")                        else:                                if num ==5:                                        print("FIVE")                                else:                                        print("您輸入的資料超過範圍")</pre><h2>Day16(0131)</h2><h3>for迴圈(for loop)</h3><p>for迴圈主要用來解決重複執行的問題。例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for var in iterator:        statements1[else:        statements2]</pre><h3>使用range物件作為迴圈迭代的物件</h3><p>range語法，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">range(stop)range(start,stop,step)</pre><p>1.stop:為終止值。</p><p>2.start:為起始值。</p><p>3.step:為間隔值。</p><p>在for迴圈中使用range進行迭代，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">for i in range(5)        print(i)</pre><p>上述程式結果為</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">01234</pre><h2>Day17(0201)</h2><h3>使用list作為迴圈迭代的物件</h3><p>可以藉由list加上迴圈來算出list內的數字總和，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">list1 = [15,30,40,60]sum = 0for i in list1:        sum = sum + iprint("總合為",sum)</pre><h3>使用字串作為迴圈迭代的物件</h3><p>在for迴圈中使用字串進行迭代，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">str1 = "hello"for i in str1:        print(i)# 結果如下	hello</pre><h3>巢狀for迴圈</h3><p>使用巢狀for迴圈列出九九乘法表，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">result1,result2 = '' , ''for i in range (1,10):	result1 = ''	for j in range(1,10):                result1 = result1 + str(i) + '*' + str(j) + '=' + str(i*j) + '\t'	result2 = result2 + result1 + '\n'	print (result2)</pre><h2>Day18(0202)</h2><h3>while迴圈</h3><p>while迴圈是以條件式是否成立成立作為是否執行迴圈的根據，又稱為條件式迴圈，語法如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">while condition:        statements1[else:        statements2]</pre><p>流程在進入迴圈時會先檢查condition是否成立，若成立則執行迴圈主體statements1，然後再次跳回while檢查condition是否成立，若成立則執行statements1，<span>然後再次跳回while檢查condition是否成立，就如此週而復始，直到condition為不成立時，執行statements2，最後跳出while迴圈。</span></p><p><br><span></span>pass、break與continue敘述</p><p><span>pass：不做任何事情，所有的程式都將繼續。</span></p><p><span>break：強制跳出 [整個] 迴圈。</span></p><p><span>continue：強制跳出 [本次] 迴圈，繼續進入下一圈。</span></p><h2><span>Day19(0203)</span></h2><h3><span>認識函式</span></h3><p><span>函式是將功能或重複使用的敘述寫成獨立之程式單元，然後給予名稱，以利後續呼叫即可使用，使用函式的優點為:</span></p><p><span>1.利用呼叫，可不必重複撰寫相同的敘述。</span></p><p><span>2.使用函式後程式將更加精簡。</span></p><p><span>3.程式可讀性提高。</span></p><p><span>4.邏輯性和正確性提高，較容易理解，也較好除錯、修改及維護。</span></p><p><span>而缺點為:</span></p><p><span>1.使用函是會使程式之執行速度減慢，因為相較直接將敘述寫進程式裡的方式還要再多一道呼叫的手續。</span></p><h3>定義函式</h3><p>除了先前提到的內建函式外，若要客製化的功能需要自定義函式。</p><p>可以利用def關鍵字定義函式，語法如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def functionName(parameters):        statements        [return|return value]        [statements]</pre><p>1.def:此關鍵字表示用來定義函式。</p><p>2.functionName:函式名稱命名，可使用英文字母(大小寫有所區分)及底線(_)、數字及中文，但不建議使用中文命名。</p><p>3.parameters:函式參數，可以有0到無數個，若無參數需保留小括號，若有參數，參數間以逗號(,)隔開，可利用參數傳遞資料給函式。</p><p>4.statements:函式主體，用來執行指定動作。</p><p>5.[return|return value]:若要將程式的控制權由函式內部轉至呼叫函式的地方可使用return敘述。value式函式之傳回值，若程式無傳回值return可省略。</p><h2>Day20(0204)</h2><h3>呼叫函式</h3><p>函式定義後需呼叫才會執行，若函式有參數時，參數數量及順序需正確無誤，即使沒有參數，還是需將小括號()保留，語法如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">functionName(parameters)</pre><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre><h3>函式參數</h3><p>參數(parameter)用來傳遞資料進入函式。</p><p>1.參數傳遞方式</p><p>&nbsp; &nbsp; (1)傳值呼叫:當參數屬於不可改變內容的物件，如數值、字串、tuple(序對)，就會採取傳值呼叫。</p><p>&nbsp; &nbsp; (2)傳址呼叫:<span>當參數屬於可改變內容的物件，如list(串列)、set(集合)、dict(字典)，就會採取傳址呼叫，傳遞給函式的為參數位址，而非參數值。</span></p><p>2.關鍵字引數</p><p>&nbsp; &nbsp; Python內預設採取位置引數，函式呼叫中的引數順序需對應函式定義中的參數順序，如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#定義函式trapezoidAreadef trapezoidArea(top,bottom,height)#呼叫時應該寫為trapezoidArea(10,20,5)#此時的#10為top(上底)#20為bottom(下底)#5為height(高)</pre><p>3.預設引數值</p><p>可以在定義函式時設定預設引數值，當呼叫時沒有提供某個引數時，將採用預先設定好的預設引數值，如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def myName(name,gender = "男"):        print("我的名字是",name,"，性別",gender,"。")myName("Simon")#輸出為我的名字是Simon，性別男。</pre><h2>Day21(0205)</h2><h3>函式的傳回值</h3><p>在def區塊內的敘述執行完畢之前，程式控制權都不會離開函式，若我們可能需要提早離開函式，返回呼叫函式的地方，此時可以使用return敘述或在return後加上傳回值，如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def divmod(a,b)        div = a//b        mod = a%b        return div,modx,y = divmod(300,3)print("300除以3的商數為",x,"，餘數為",y,"。")#得到以下結果#300除以3的商數為100，餘數為0。</pre><h3>全域變數與區域變數</h3><p>變數的有效範圍(scope)，這指的是程式的哪些敘述皆能存取變數的值，大部分的變數都只有一種有效範圍，就是程式所有敘述皆可存取的變數之值，稱為全域變數(global variable)，但在函式內定義的變數則稱為區域變數(local variable)，只有函式內的敘述能夠存取區域變數的值。例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">def f1()        x = 1        print(x)f1()</pre><h1>W4</h1><h2>Day22(0206)</h2><h3>遞迴函式</h3><p>遞迴函式為可以呼叫自己本身的函式，若函式f1()呼叫函式f2()，而函式f2()又在某種情況下呼叫f1()，此情況函式f1()也可算是一個遞迴程式。例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">result = 1for i in range(1,7):        result = result * iprint("5! =",result)</pre><h3>lambda 運算式</h3><p>lambda關鍵字可以用來建立較小的匿名函式，它指的即是沒有名稱的函式，語法如下，arg1,arg2,...的後面須加上括號:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">lambda arg1,arg2,...:expression</pre><p>expression相當於函式定義主體，可在expression中使用arg1,arg2...這些參數，如下為將lambda運算是產生的匿名函式指派給變數<span>mul</span>，此匿名函數將傳回參數x,y相乘的結果:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;mul = lambda x,y:x * y&gt;&gt;&gt;print(add(50,100))5000</pre><h3>日期時間函式(一)</h3><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#導入time模組&gt;&gt;&gt;import time</pre><p>1.time.daylight:此屬性表示本地時間是否使用日光節約時間，1表示是，0表示否，以台灣為例，值為0。</p><p>2.time.timezone:<span>此屬性表示本地時間與UTC時間相差多少秒。</span></p><p>3.time.altzone:<span>此屬性表示本地時間與UTC日光節約時間相差多少秒。</span></p><p>4.time.time():傳回從1970年1月1日上午12時00分到目前的UTC時間總共經過多少秒，Python示已tick作為時間計數單位，1 tick等於1微秒(10^-6秒)。</p><p>5.time.clock():第一次呼叫會傳回此函式的執行時間，第二次呼叫會傳回這一次和上一次呼叫此函數相差多少秒。</p><p>6.time.gmtime:(secs):傳回從<span>1970年1月1日上午12時00分經過time.time()或選擇性參數secs所指定之秒數的時間，即目前的UTC時間。</span></p><h2>Day23(0207)</h2><h3>日期時間函式(二)</h3><p>7.time.localtime(secs):與<span>time.gmtime相似，但傳回的是目前的本地時間。</span></p><p>8.<span>time.asctime(t):以str型別傳回目前的本地時間或選擇性參數t指定的時間。</span></p><p>9.<span>time.ctime(secs):與time.asctime，但選擇性參數secs是從1970年1月1日上午12時00分所經過的秒數。</span></p><p>10.<span>time.mktime(t):傳回從1970年1月1日上午12時00分到參數t指定的時間所經過的秒數。</span></p><p>11.time.sleep(secs):另Python暫停參數secs所指定的秒數。</p><p>12.time.strftime(format,t):根據參數format所指定的格式，將time.gmtime()或time.localtime()函式傳回目前的時間，轉換為字串。</p><h3>calendar模組</h3><p>匯入calendar模組</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import calendar</pre><p>1.<span>calendar.firstweekday():傳回一周的第一個工作天，預設值為0表示星期一。</span></p><p>2.<span>calendar.setfirstweekday(weekday):將一週的第一個工作天設定為參數weekday所指定的日子，0~6表示星期一~星期日，例如:</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#將第一個工作天設為星期二&gt;&gt;&gt;calendar.setfirstweekday(1)&gt;&gt;&gt;calendar.firstweekday()1</pre><p>3.<span>calendar.isleap(year):若指定之year參數為閏年，就傳回True，否則傳回False。</span></p><p>4.<span>calendar.weekday(year,month,day):傳回參數year、month、day所指定的年月日是星期幾，0~6表示星期一到星期日。</span></p><p>5.<span>calendar.monthrange(year,month):傳回兩個整數，第一個整數為year年month月的第一天是星期幾，第二個整數為該月份有幾天。</span></p><p>6.<span>calendar.calendar(year):傳回參數year所指定之年份月曆。</span></p><p><span>7.calendar.month(year,month):傳回參數year和參數month所指定之年份與月份的日曆。</span></p><h2>Day24(0208)</h2><h3>list串列(一)</h3><p>list串列是由一連串資料所組成、有順序且可改變內容(mutable)的序列(sequence)，前後以中括號標示，串列中的資料以逗號分開。</p><p>建立串列:可以使用Python內建的list()函式建立串列，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list1 = list()&gt;&gt;&gt;list1[] #空串列&gt;&gt;&gt;list2 = ([1,2,3])&gt;&gt;&gt;list2[1,2,3]</pre><p>利用range物件建立串列，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list3 = list(range(6))&gt;&gt;&gt;list3[0,1,2,3,4,5]</pre><p>也可使用str.split([sep])方法，根據sep選擇性參數所指定的分隔字串將字串分隔成串列，然後傳回串列，若sep省略則表示分隔字串為空白，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; '1,2,3'.split(',')['1', '2', '3']</pre><p>內建函式</p><p>我在Day9(0124)中有提到過的內建函式中有些亦適用於串列，例如:</p><p>&nbsp; &nbsp; 1.len(L):傳回串列參數L的長度，也就是包含幾個元素。</p><p>&nbsp; &nbsp; 2.max(L):傳回串列<span>參數L中</span>最大的元素。</p><p>&nbsp; &nbsp; 3.min(L)<span>:傳回串列參數L中最小的元素。</span></p><p>&nbsp; &nbsp; 4.sum(L):傳回串列參數L中元素的總和。</p><p>連接運算子</p><p>&nbsp; &nbsp; 1.+運算子可以用來連接串列，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;[1,2,3]+["Taiwan","Japan","Korea"][1,2,3,'Taiwan','Japan','Korea']</pre><p>重複運算子</p><p>&nbsp; &nbsp; 1.*運算子也可以用來重複串列，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;3*[1,2,3][1,2,3,1,2,3,1,2,3]</pre><h2>Day25(0209)</h2><h3>list串列(二)</h3><p>比較運算子</p><p>&nbsp; &nbsp; 1.比較運算子(&gt;、&lt;、&gt;=、&lt;=、==、!=)也可以用來比較兩個串列的串列的大小或相等與否，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;[1,2,3] != [1,2,3,4]True&gt;&gt;&gt;[1,2,3] == [3,2,1]False</pre><p>in &amp; not in運算子</p><p>&nbsp; &nbsp; 1.in運算子:用來檢查某個元素是否存在於串列中，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"Taiwan" in [1,"Taiwan",2]True</pre><p>&nbsp; &nbsp; 2.not&nbsp;<span>in運算子:用來檢查某個元素是否不</span><span>存在於串列中，例如:</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"Thailand" not in [1,Taiwan,2]True</pre><p>索引 &amp; 片段運算子</p><p>&nbsp; &nbsp; 1.索引運算子[]:用於取得串列中的元素，舉例來說，假設變數L值為[1,2,3,4,5]，索引0表示由左端開始，索引-1則由右端開始索引，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5]&gt;&gt;&gt;L[0]1&gt;&gt;&gt;L = [1,2,3,4,5]&gt;&gt;&gt;L[-1]5</pre><p>&nbsp; &nbsp; 2.片段運算子[strat:end]:用來指定索引範圍，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5]&gt;&gt;&gt;L[2:4][3,4]</pre><p>串列處理方法</p><p>&nbsp; &nbsp; 1.list.append(x):將參數x所指定的元素加入串列尾端。</p><p>&nbsp; &nbsp; 2.<span>list.extend(L):將參數L所指定的串列的所有元素加入串列。</span></p><p>&nbsp; &nbsp; 3.<span>list.insert(i,x):將參數x所指定的元素插入串列中所引為參數i的位置。</span></p><p>&nbsp; &nbsp; 4.<span>list.remove(x):從串列中刪除第一個值為參數為x的元素。</span></p><p>&nbsp; &nbsp; 5.<span>list.pop[i]:從串列中刪除索引為選擇型參數i的元素並傳回該元素，若未指定i，則刪除最後一個元素，並傳回該元素。</span></p><p>&nbsp; &nbsp; 6.<span>list.index(x):傳回參數x所指定的元素第一次出現在串列中的索引。</span></p><p>&nbsp; &nbsp; 7.<span>list.count(x):傳回參數x所指定的元素出現在串列中的次數。</span></p><p>&nbsp; &nbsp; 8.<span>list.sort():將串列中的元素由小到大排序。</span></p><p>&nbsp; &nbsp; 9.<span>list.reverse():將串列中元素順序反轉過來。</span></p><p>&nbsp; &nbsp; 10.<span>list.copy():複製串列。</span></p><p><span>&nbsp; &nbsp; 11.list.clear:從串列中刪除所有元素。</span></p><h2><span>Day26(0210)</span></h2><h3>list串列(三)</h3><p>串列解析</p><p>串列解析提供了更簡潔有力的方式來建立串列，利用for or if來進行串列的建立，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;list1 = [i for i in range(10) if i &lt; 8]&gt;&gt;&gt;list1[0,1,2,3,4,5,6,7]</pre><p><strong>del敘述</strong></p><p>del敘述可用來從串列中刪除指定索引之元素，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = [1,2,3,4,5,6,7]&gt;&gt;&gt;del L[0]&gt;&gt;&gt;L[2,3,4,5,6,7]</pre><p>此外del敘述也可用來刪除變數，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; L = [1,2,3,4,5]&gt;&gt;&gt; del L&gt;&gt;&gt; LTraceback (most recent call last):  File "&lt;pyshell#3&gt;", line 1, in &lt;module&gt;    LNameError: name 'L' is not defined</pre><p><strong>二維串列</strong></p><p>二維串列其實就是巢狀串列，串列中的元素也是串列，以下列成績表格為例:</p><table height="84" width="401"><tbody><tr><td style="width: 93.6px;"></td><td style="width: 93.6px;">math</td><td style="width: 93.6px;">english</td><td style="width: 94.4px;"><span>Chinese</span></td></tr><tr><td style="width: 93.6px;">student A</td><td style="width: 93.6px;">90</td><td style="width: 93.6px;">80</td><td style="width: 94.4px;">60</td></tr><tr><td style="width: 93.6px;"><span>student B</span></td><td style="width: 93.6px;">60</td><td style="width: 93.6px;">98</td><td style="width: 94.4px;">97</td></tr><tr><td style="width: 93.6px;"><span>student C</span></td><td style="width: 93.6px;">95</td><td style="width: 93.6px;">75</td><td style="width: 94.4px;">75</td></tr></tbody></table><p></p><p>上列成績表格寫為串列:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;grades = [[90,80,60],[60,98,97],[95,75,75]]</pre><p>若要存取此二維串列，必須使用兩個索引，第一個索引為列索引(row index)，第二個為行索引，如下列表格所示:</p><table height="84" width="401"><tbody><tr><td style="width: 93.6px;"></td><td style="width: 93.6px;">math</td><td style="width: 93.6px;">english</td><td style="width: 94.4px;"><span>Chinese</span></td></tr><tr><td style="width: 93.6px;">student A</td><td style="width: 93.6px;">[0][0]</td><td style="width: 93.6px;">[0][1]</td><td style="width: 94.4px;">[0][2]</td></tr><tr><td style="width: 93.6px;"><span>student B</span></td><td style="width: 93.6px;">[1][0]</td><td style="width: 93.6px;">[1][1]</td><td style="width: 94.4px;">[1][2]</td></tr><tr><td style="width: 93.6px;"><span>student C</span></td><td style="width: 93.6px;">[2][0]</td><td style="width: 93.6px;">[2][1]</td><td style="width: 94.4px;">[2][2]</td></tr></tbody></table><p>利用此二索引檢驗是否正確，如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;grades = [[90,80,60],[60,98,97],[95,75,75]]&gt;&gt;&gt;grades[0][90,80,60]&gt;&gt;&gt;grades[0][0]90</pre><h2><span>Day27(0211)</span></h2><h3><span>tuple序對</span></h3><p>tuple序對是由一連串資料所組成、不可改變內容(immutable)且有順序的序列(sequence)。序對中的資料以逗號隔開，前後已中括號標示，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;(1,"Taiwan",2,"Japan")(1,'Taiwan',2,'Japan')</pre><p><strong>建立序對</strong></p><p>利用Python內建的tuple()函式來建立序對，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;tuple1 = tuple()&gt;&gt;&gt;tuple1()&gt;&gt;&gt;tuple2 = tuple((1,2,3))&gt;&gt;&gt;tuple2(1,2,3)</pre><p><strong>序對的運算</strong></p><p>序對支援所有共同的序列運算，len()、max()、min()和sum()等內建函式均適用於序對，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;L = (1,2,3,4,5)&gt;&gt;&gt;len(L)5 #序對參數L長度為5</pre><p>另外也可利用連接運算子(+)、重複運算子(*)、比較運算子<span>(&gt;、&lt;、&gt;=、&lt;=、==、!=)、in &amp; not in運算子、索引運算子([])、片段運算子([start:end])，例如:</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;(1,2,3)+("Taiwan","Japan","Korea")(1,2,3,'Taiwan','Japan','Korea')&gt;&gt;&gt;&gt;&gt;&gt;5*(1,2,3)(1,2,3,1,2,3,1,2,3,1,2,3,1,2,3)&gt;&gt;&gt;&gt;&gt;&gt;(1,2,3) == (3,2,1)False&gt;&gt;&gt;&gt;&gt;&gt;(1,2,3) != (1,2,3,4)Ture&gt;&gt;&gt;&gt;&gt;&gt;(1,2,3) &lt; (1,2,3,4)Ture&gt;&gt;&gt;&gt;&gt;&gt;"Taiwan" in (1,"Taiwan",2)True&gt;&gt;&gt;&gt;&gt;&gt;"Thailand" not in (1,Taiwan,2)True&gt;&gt;&gt;&gt;&gt;&gt;L = (1,2,3,4,5)&gt;&gt;&gt;L[0]1&gt;&gt;&gt;L[1:3](2,3)</pre><p>序對亦支援如下方法:</p><p>1.tuple.index(x):傳回參數x所指定的元素第一次出現在序對中的索引，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;T = (1,2,3,4,5,6,7,8,9,10)&gt;&gt;&gt;T.index(3)2</pre><p>2.<span>tuple.count(x):傳回參數x所指定的元素第一次出現在序對中的次數，例如:</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;T = (1,2,3,2,5,6,2,8,9,2)&gt;&gt;&gt;T.count(2)4</pre><h2><span>Day28(0212)</span></h2><h3><span>set集合(一)</span></h3><p>set型別用來表示集合，包含無順序不重複且可改變內容的多個資料，前後以大括號標示，資料以逗號隔開，資料型別可以不同，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;{1,"apple",2,"banana"}{1,2,"apple","banana"}&gt;&gt;&gt;{2,1,"banana","apple"}{1,2,"apple","banana"}</pre><p>set集合及list串列一樣可以用來存放多個資料，差別在於集合並無順序且不可重，執行效率較list串列好。</p><h4><strong>建立集合</strong></h4><p>可使用Python內建set()函式或{}建立集合，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;set1 = set({1,2,3})&gt;&gt;&gt;set1{1,2,3}&gt;&gt;&gt;set2 = set(range(6))&gt;&gt;&gt;set2{0,1,2,3,4,5}</pre><h4><strong>內建函式</strong></h4><p><span>之前介紹過的len()、max()、min()和sum()等內建函式皆適用於集合，例如:</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; S = {1,2,3,4}&gt;&gt;&gt;len(S)4&gt;&gt;&gt;&gt;&gt;&gt;max(S)4&gt;&gt;&gt;&gt;&gt;&gt;min(S)1&gt;&gt;&gt;&gt;&gt;&gt;sum(S)10</pre><h4><strong>運算子</strong></h4><p>集合僅支援in &amp; not in、比較運算子，其餘不支援，原因為集合無順序之分，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;"Taiwan" in {"Taiwan",1,2}True&gt;&gt;&gt; 3 not in {"Taiwan",1,2}True</pre><p>而比較運算子在此處有不同的定義，如下:</p><p>&nbsp; &nbsp; 1.S1 == S2:若S1與S2包含的元素相同，將傳回True，否則傳回False。</p><p>&nbsp; &nbsp; 2.S1 != S2:<span>若S1與S2包含的元素不同，將傳回True，</span><span>否則傳回False。</span></p><p>&nbsp; &nbsp; 3.S1 &lt;= S2:<span>若S1是S2的子集合(subset)，將傳回True，</span><span>否則傳回False。</span></p><p><span>&nbsp; &nbsp; 4.S1 &lt; S2:<span>若S1是S2的真子集合(proper subset)，將傳回True，</span><span>否則傳回False。</span></span></p><p><span>&nbsp; &nbsp; 5.S1 &gt;= S2:<span>若S1是S2的超集合(superset)，將傳回True，</span><span>否則傳回False。</span></span></p><p><span>&nbsp; &nbsp; 6.S1&nbsp;&gt; S2:<span>若S1是S2的真超集合(proper superset)，將傳回True，</span><span>否則傳回False。</span></span></p><h1><span><span>W5</span></span></h1><h2><span><span>Day29(0213)</span></span></h2><h3><span>set集合(二)</span></h3><p><strong>集合處理方法</strong></p><p><span>集合隸屬於set類別，常用之處理方式如下:</span></p><h4><strong>新增/刪除/複製</strong></h4><p>&nbsp; &nbsp; 1.set.add(x):將參數x指定之元素加入集合。</p><p>&nbsp; &nbsp; 2.set.remove(x):從集合中刪除x所指定之元素。</p><p>&nbsp; &nbsp; 3.set.pop():從集合中隨機刪除一個元素，並傳回該元素。</p><p>&nbsp; &nbsp; 4.set.copy():傳回集合的複本，和原來的集合為兩個不同的物件。</p><p>&nbsp; &nbsp; 5.set.clear():刪除集合中的所有元素。</p><h4><strong>子集合/超集合</strong></h4><p><b>&nbsp; &nbsp; </b>1.set.issubset(S):若集合為參數S的子集合，<span>將傳回True，</span><span>否則傳回False。</span></p><p>&nbsp; &nbsp; 2.<span>set.issuperset(S):若集合為參數S的超集合，<span>將傳回True，</span><span>否則傳回False。</span></span></p><h4><strong>常用集合運算</strong></h4><p><strong><span>&nbsp; &nbsp;</span></strong> 1.set.isdisjoint(S):<span>若集合和參數S所指定的集合沒有相同的元素，</span><span>將傳回True，</span><span>否則傳回False。</span></p><p>&nbsp; &nbsp; 2.<span>set.update(S):將</span><span>集合和參數S所指定的集合進行聯集，結果將更新到集合。</span></p><p>&nbsp; &nbsp; 3.<span>set.intersection_update(S):將</span><span>集合和參數S所指定的集合進行交集，結果將更新到集合。</span></p><p>&nbsp; &nbsp; 4.<span>set.difference_update(S):將</span><span>集合和參數S所指定的集合進行差集，結果將更新到集合。</span></p><h2><span>Day30(0214)</span></h2><h3><span>dict字典(一)</span></h3><p>dict型別用來表示字典，包含無順序、無重複且可改變內容的多個鍵:值對(key:value pair)，簡單來說就是以鍵做為索引來取得字典裡的值，字典前後以大括號標示，各個鍵:值對以逗號隔開，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;{"ID":"40823131","name":"Simon"}{'ID':'40823131','name':'Simon'}</pre><p><strong>建立字典</strong></p><p>可使用Python內建的dict()函式或{}建立字典，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;A = {"one":1,"two":2,"three":3}&gt;&gt;&gt;B = dict({"one":1,"two":2,"three":3})   #同上&gt;&gt;&gt;C = dict(one=1,two=2,three=3)   #同上&gt;&gt;&gt;D = {}   #空字典</pre><p><strong>取得/新增/變更/刪除鍵:值對</strong></p><p>&nbsp; &nbsp; 1.取得:建立字典後可利用鍵取得對映的值，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;A = {"one":1,"two":2,"three":3}&gt;&gt;&gt;x = A["one"]&gt;&gt;&gt;x1</pre><p>&nbsp; &nbsp; 2.新增/變更:當key尚未存在於字典時，就新增一個鍵為key、值為value的鍵:值對;相反的，當key已經存在時則改變鍵:值隊的值為value，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3})&gt;&gt;&gt; B["three"] = 4&gt;&gt;&gt; B{'one': 1, 'two': 2, 'three': 4}&gt;&gt;&gt; B["four"] = 4 #新增鍵:值對&gt;&gt;&gt; B["three"] = 3 #變更&gt;&gt;&gt; B{'one': 1, 'two': 2, 'three': 3, 'four': 4}&gt;&gt;&gt; </pre><p>&nbsp; &nbsp; 3.刪除:可利用del敘述刪除鍵為key的鍵:值對，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3,"four":4})&gt;&gt;&gt; del B["four"]&gt;&gt;&gt; B{'one': 1, 'two': 2, 'three': 3}</pre><p><strong>內建函式</strong></p><p>眾多內建函式僅有len()函式適用於字典，用於傳回字典包含幾個鍵:值對，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3,"four":4})&gt;&gt;&gt;len(B)4</pre><h4><strong>運算子</strong></h4><p>字典僅支援in &amp; not in及部分比較運算子(==、!=)，例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; B = dict({"one":1,"two":2,"three":3,"four":4})&gt;&gt;&gt;"two" in BTrue&gt;&gt;&gt;"five" not in BTrue&gt;&gt;&gt; A = dict({"one":1,"two":2,"three":3,"four":4,"five":5})&gt;&gt;&gt; A == BFalse&gt;&gt;&gt; A != BTrue</pre><h2><span>Day31(0215)</span></h2><h3><span>dict字典(二)</span></h3><p><strong>字典處理方法</strong></p><p><strong>&nbsp; </strong>&nbsp; 1.dict.get(key,default):傳回字典中鍵為key所對映的值，若該件不存在，則傳回選擇性參數default，若無<span>default參數，</span><span>則傳回None。</span></p><p><strong>&nbsp;<span>&nbsp;</span></strong><span>&nbsp; 2.dict.pop(key,default):從字典中刪除鍵為key的鍵:值對並傳回所對映的值，若該件不存在，則傳回選擇性參數default，若無<span>default參數，會發生KeyError。</span></span></p><p><span><strong>&nbsp;&nbsp;</strong><span>&nbsp; 3.dict.popitem():從字典中隨機刪除一個鍵:值對並傳回該鍵:值對，<span>若要刪除的目標是空字典，會發生KeyError。</span></span></span></p><p><span><span><strong>&nbsp;&nbsp;</strong><span>&nbsp; 4.dict.keys():傳回字典所有的鍵。</span></span></span></p><p><span><span><span><strong>&nbsp;&nbsp;</strong><span>&nbsp; 5.dict.values():傳回字典所有的值。</span></span></span></span></p><p><span><span><span><span><strong>&nbsp;&nbsp;</strong><span>&nbsp; 6.dict.items():傳回字典所有的鍵:值對。</span></span></span></span></span></p><p><span><span><span><span><span><strong>&nbsp;&nbsp;</strong><span>&nbsp; 7.dict.copy():傳回字典的複本。</span></span></span></span></span></span></p><p><span><span><span><span><span><span><strong>&nbsp;&nbsp;</strong><span>&nbsp; 8.dict.clear():從字典中刪除所有鍵:值對。</span></span></span></span></span></span></span></p><p><span><span><span><span><span><span><span><strong>&nbsp;&nbsp;</strong><span>&nbsp; 9.dict.update(other):根據參數other所指定的字典更新目前的字典，將兩個字典合併，若有重複的鍵，將以參數other中的鍵:值對取代。</span></span></span></span></span></span></span></span></p><h2><span>Day32(0216)</span></h2><h3>turtle模組繪圖(一)</h3><p>匯入turtle模組，如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;import turtle</pre><p>輸入以下指令，會出現視窗如圖(一)，起始之中心點箭頭代表海龜，座標為(0,0)，方向向右。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;turtle.showturtle()</pre><p><img alt="" height="853" src="/images/showturtle.png" width="961"></p><h4 style="text-align: center;">圖(一)</h4><p>基本turtle指令如下:</p><p>&nbsp; &nbsp; 1.turtle.forward(x):向前走x步，即是向前x像素。</p><p>&nbsp; &nbsp; 2.<span>turtle.left(x):向左轉x度。</span></p><p>&nbsp; &nbsp; 3.turtle.right<span>(x):向右轉<span>x度。</span></span></p><p>&nbsp; &nbsp; 4.<span>turtle.hideturtle():隱藏箭頭。</span></p><p>&nbsp; &nbsp; 5.<span>turtle.showturtle():顯示箭頭。</span></p><p>&nbsp; &nbsp; 6.<span>turtle.clear():清除圖形。</span></p><p>&nbsp; &nbsp; 7.<span>turtle.reset():重設為起始狀態，包含清除圖形及箭頭復歸。</span></p><p><strong>控制箭頭與畫圖</strong></p><p>判斷箭頭狀態</p><p>turtle模組提供了一些方法用來判斷箭頭目前的狀態，常用的如下:</p><p>&nbsp; &nbsp; 1.<span>turtle.position()、turtle.pos():傳回箭頭座標。</span></p><p>&nbsp; &nbsp; 2.<span>turtle.xcor():傳回箭頭在X軸的座標。</span></p><p>&nbsp; &nbsp; 3.<span>turtle.ycor():傳回箭頭在Y軸的座標。</span></p><p>&nbsp; &nbsp; 4.<span>turtle.heading():傳回箭頭的方向。</span></p><p>&nbsp; &nbsp; 5.<span>turtle.towards(x,y):傳回從箭頭的位置到參數(x,y)所指定的位置之間的角度。</span></p><p>&nbsp; &nbsp; 6.<span>turtle.distance(x,y):傳回從箭頭的位置到參數(x,y)所指定的位置之間的距離。</span></p><p><span>移動箭頭與畫圖</span></p><p>&nbsp; &nbsp; 1.<span>turtle.forward(x):向前走x步，即是向前x像素，x若為負數則向後退。</span></p><p>&nbsp; &nbsp; 2.<span>turtle.back(x):向後</span><span>走x步，即是向後x像素，x若為負數則向前進。</span></p><p>&nbsp; &nbsp; 3.<span>turtle.left(x)、turtle.lt(x):向左轉<span>x度。</span></span></p><p>&nbsp; &nbsp; 4.<span>turtle.right</span><span>(x)、<span>turtle.rt(x)</span>:向右轉<span>x度。</span></span></p><p>&nbsp; &nbsp; 5.<span>turtle.home</span><span>():將箭頭移至座標(0,0)，方向為向右。</span></p><p>&nbsp; &nbsp; 6.<span>turtle.undo(</span><span>):取消箭頭上一個工作。</span></p><p>&nbsp; &nbsp; 7.<span>turtle.setx(x</span><span>):將箭頭移至X軸上參數x所指定的位置，Y軸保持不變。</span></p><p>&nbsp; &nbsp; 8.<span>turtle.sety(y</span><span>):將箭頭移至Y軸上參數y所指定的位置，X軸保持不變。</span></p><p>&nbsp; &nbsp; 9.turtle.goto(x,y)、turtle.setpos(x,y)、turtle.setposition(x,y):將箭頭移至(x,y)，箭頭方向保持不變。</p><p>&nbsp; &nbsp; 10.<span>turtle.setheading(x):將箭頭的方向設定為參數x所指定的角度，0表示東方，90表示北方，180表示西方，270表示南方。</span></p><p>&nbsp; &nbsp; 11.<span>turtle.speed(x</span><span>):使用參數x設定箭頭的移動速度，範圍為1~10數字愈大，速度愈快，若未設定參數x則傳回目前箭頭的移動速度。</span></p><p>&nbsp; &nbsp; 12.<span>turtle.dot(size,color</span><span>):根據參數size所指定的畫筆寬度及參數color所指定的顏色畫出原點。</span></p><p>&nbsp; &nbsp; 13.<span>turtle.circle(rad,extent = None,steps = None</span><span>):根據參數畫圓，其中參數rad是圓的半徑；選擇性參數extent是角度，用來決定畫出圓的哪些部分，未指定則畫出全圓；選擇性參數steps是邊數，決定要在圓內畫出幾邊形，若未指定，則表示僅畫圓。</span></p><h2><span>Day33(0217)</span></h2><h3>turtle模組繪圖(二)</h3><p><strong>控制畫筆、色彩與填滿色彩</strong></p><p>主要為如何提起畫筆、放下畫筆、設定畫筆寬度、畫筆色彩、填充色彩和畫文字。</p><p><strong>設定畫筆狀態</strong></p><p>turtle模組提供了一些方法用來設定畫筆狀態，常用的如下:</p><p>&nbsp; &nbsp; 1.turtle.pensize(width = None)、turtle.width(width = None):根據參數width設定畫筆寬度，若沒有指定參數width，則傳回目前畫筆的寬度。</p><p>&nbsp; &nbsp; 2.<span>turtle.penup()、</span><span>turtle.up():提起畫筆，在移動箭頭時不畫線。</span></p><p>&nbsp; &nbsp; 3.<span>turtle.pendown()、turtle.down():放下畫筆，接下來移動則會畫線。</span></p><p>&nbsp; &nbsp; 4.<span>turtle.isdown():若畫筆是放下的，就傳回True、否則傳回False。</span></p><p><strong>設定色彩</strong></p><p><span>常用的畫筆色彩與填滿色彩設定如下:</span></p><p>&nbsp; &nbsp; 1.<span>turtle.pencolor(r,g,b)、turtle.pencolor("ColorName"):根據參數設定畫筆色彩，若未設定則傳回目前畫筆的色彩，(r,g,b)中的三個字母分別代表(紅,綠,藍)。</span></p><p>&nbsp; &nbsp; 2.turtle.fillcolor():根據參數填滿色彩，參數指定方式與<span>turtle.pencolor()相同。</span></p><p>&nbsp; &nbsp; 3.<span>turtle.color():根據參數設定畫筆色彩與填滿色彩<span>，若未指定則傳回目前畫筆的色彩及填滿色彩。</span></span></p><p><strong>填滿色彩</strong></p><p>turtle模組提供了一些方法用來填滿色彩，常用的如下:</p><p>&nbsp; &nbsp; 1.turtle.filling():傳回填滿色彩狀態，True表示正在填滿色彩，False表示否。</p><p>&nbsp; &nbsp; 2.turtle.begin_fill():在開始填滿色彩之前要呼叫此方法。</p><p>&nbsp; &nbsp; 3.<span>turtle.end_fill():在結束填滿色彩之前要呼叫此方法。</span></p><p><strong>畫文字</strong></p><p>我們可以使用turtle模組提供的turtle.write()方法畫文字，其語法如下。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">turtle.write(arg,move = False,align = "left",font = ("Arial",8,"normal"))</pre><p>&nbsp; &nbsp; 1.arg:設定要畫的文字。</p><p>&nbsp; &nbsp; 2.move:設定是否將箭頭移到文字的右下角，預設值為False，表示不移動箭頭。</p><p>&nbsp; &nbsp; 3.align:設定對齊方式，有"left"、"center"或"right"，預設值為"left"</p><p>&nbsp; &nbsp; 4.font:設定文字的字型、大小與樣式，預設值為("arial",8,"normal")</p><h2><span>Day34(0218)</span></h2><h3><strong>檔案存取(一)</strong></h3><h4><span>寫入檔案</span></h4><p><span>使用內建的open()函式建立檔案物件。語法如下，建立成功時，會傳回檔案物件，相反的，建立失敗時，會發生錯誤:</span></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">open(file,mode)</pre><p>1.file:設定欲存取的檔案，包含檔案路徑及名稱。</p><p>2.mode:設定檔案物件的存取模式，常用的如下表:</p><table height="307" style="width: 732px;"><tbody><tr><td style="width: 78.9091px;">模式</td><td style="width: 638.909px;">說明</td></tr><tr><td style="width: 78.9091px;">"r"</td><td style="width: 638.909px;">讀取模式開啟檔案，檔案指標指向檔案開頭，若檔案不存在，會發生錯誤，此為預設值。</td></tr><tr><td style="width: 78.9091px;">"w"</td><td style="width: 638.909px;">寫入模式開啟檔案並清除原先檔案內容<span>，檔案指標指向檔案開頭</span>，若檔案不存在，則建立新檔案。</td></tr><tr><td style="width: 78.9091px;">"a"</td><td style="width: 638.909px;"><span>寫入模式開啟檔案</span><span>，檔案指標指向檔案結尾，寫入的資料會新增至原檔案內容後面</span><span>，若檔案不存在，則建立新檔案。</span></td></tr><tr><td style="width: 78.9091px;">"r+"</td><td style="width: 638.909px;"><span>讀寫模式開啟檔案，檔案指標指向檔案開頭，寫入資料會覆蓋原先檔案的內容，若檔案不存在，就會建立新檔案。</span></td></tr><tr><td style="width: 78.9091px;">"w+"</td><td style="width: 638.909px;"><span>讀寫模式開啟檔案並清除原先檔案內容</span><span>，檔案指標指向檔案開頭</span><span>，若檔案不存在，則建立新檔案。</span></td></tr><tr><td style="width: 78.9091px;">"a+"</td><td style="width: 638.909px;"><span>讀寫模式開啟檔案</span><span>，檔案指標指向檔案結尾，寫入的資料會新增至原檔案內容後面</span><span>，若檔案不存在，則建立新檔案。</span></td></tr></tbody></table><p><strong>將資料寫入檔案</strong></p><p>1.開啟檔案:使用open()函式建立檔案物件。</p><p>2.寫入檔案:使用write(s)方法將參數s所指定的的字串寫進檔案，後傳回寫入文字的個數。</p><p>3.關閉檔案:使用close()方法關閉檔案。</p><p>例如:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","w")  #開啟檔案或新增檔案&gt;&gt;&gt; fileObject.write("白日依山盡")  #寫入檔案5&gt;&gt;&gt; fileObject.close()  #關閉檔案&gt;&gt;&gt;</pre><h2>Day35(0219)</h2><h3>檔案存取(二)</h3><p><strong>讀取檔案</strong></p><p>1.<span>開啟檔案:使用open()函式建立檔案物件。</span></p><p>2.<span>寫入檔案:使用read()、readline()或readlines()方法讀取資料。</span></p><p>3.關閉檔案:<span>使用close()方法關閉檔案。</span></p><p><strong>使用read()方法從檔案讀取資料</strong></p><p>利用read()方法讀取資料，語法如下，將從檔案指標處讀取參數n所指定之數量的文字，若n未指定，則傳回所有資料。</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">read(n)</pre><p>實際使用例子如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","r")&gt;&gt;&gt; content = fileObject.read()&gt;&gt;&gt; print(content)登鸛雀樓白日依山盡，黃河入海流。欲窮千里目，更上一層樓。&gt;&gt;&gt; content1 = fileObject.read(4)&gt;&gt;&gt; print(content1)登鸛雀樓&gt;&gt;&gt; fileObject.close()&gt;&gt;&gt;</pre><p><strong>移動檔案指標</strong></p><p>檔案指標會指向目前讀取或星增至哪個位置，若要自行移動需使用seek(offset)方法，將指標移至offset+1個位元組，例如seek(2)是將檔案指標移至第3個位元組，實例如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("C:\\test.txt","r")&gt;&gt;&gt; fileObject.seek(0)0&gt;&gt;&gt; fileObject.read(1)白</pre><h1>W6</h1><h2>Day36(0220)</h2><h3>檔案存取(三)</h3><p><strong>使用readline()方法從檔案讀取資料</strong></p><p>可利用使用readline()方法從檔案讀取一行資料，然後傳回該字串，若傳回空字串，表示抵達檔案結尾，實例如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">fileObject = open("test1.txt","r")line = fileObject.readline()while line != '':        print(line)        line = fileObject.readline()fileObject.close()</pre><p></p><p>使用<strong>readlines()方法從檔案讀取資料</strong></p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt; fileObject = open("test.txt","r")&gt;&gt;&gt; content = fileObject.readline()&gt;&gt;&gt; print(content)['登鸛雀樓\n','白日依山盡，黃河入海流。\n','欲窮千里目，更上一層樓。']&gt;&gt;&gt; for line in content:               print(line)登鸛雀樓白日依山盡，黃河入海流。欲窮千里目，更上一層樓。&gt;&gt;&gt; fileObject.close()&gt;&gt;&gt;</pre><p><strong>檢查檔案是否存在</strong></p><p>可利用os.path模組提供的isfile(file)函式檢查參數file所指定的檔案是否存在，是就傳回True，否則傳回False。實例如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">#匯入 os.path 模組import os.path#檢查檔案是否存在，是就讀取所有內容，否則印出「此檔案不存在」if os.path.isfile("test.txt"):        fileObject = open("test.txt","r")        for line in fileObject:                print(line)        fileObject.close()else:        print("此檔案不存在")</pre><p><strong>with敘述</strong></p><p>利用with敘述可自動關閉檔案無須額外呼叫close()，語法如下:</p><pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">with open(file,mode) as 檔案物件名稱:        ......         #存取檔案的動作</pre><h1>資料參考</h1><p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a>&nbsp;</p>
