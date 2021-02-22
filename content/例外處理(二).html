@@ -133,11 +133,31 @@ img.add_border {
           </div>
           
         </header>
-    <div id="tipue_search_content">Day20(0204) << <a href='Day20(0204).html'>Previous</a> <a href='函式參數.html'>Next</a> >> 函式參數<br /><h1>呼叫函式</h1>
-<p>函式定義後需呼叫才會執行，若函式有參數時，參數數量及順序需正確無誤，即使沒有參數，還是需將小括號()保留，語法如下:</p>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">functionName(parameters)</pre>
-<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false"></pre>
-<br />Day20(0204) << <a href='Day20(0204).html'>Previous</a> <a href='函式參數.html'>Next</a> >> 函式參數</div>
+    <div id="tipue_search_content">Day38(0222) << <a href='Day38(0222).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考<br /><h1>例外處理(二)</h1>
+<p><b>try...except</b></p>
+<p><b>可以利用try...except敘述處理例外，語法如下:</b></p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">try:
+        try_statements
+except [exceptionType [as identifier]]:
+        except_statements
+[else:
+        else_statements]
+[finally:
+        finally_statements]</pre>
+<p>1.try子句:try...except必須放在可能發生例外的敘述周圍，而try_statements就是可能發生例外的敘述。</p>
+<p>2.except<span>子句:用來捕捉指定的例外，一旦捕捉到，就執行except_statements，這是用來處理例外的敘述。若要用來對不同例外做不同的處理，可使用多個except<span>子句，其中exceptionType是欲捕捉的例外型別，若無指定，表示為預設型別BaseException。</span></span></p>
+<p>3.else<span>子句:當try_statements未發生例外時，會跳過except子句，然後執行else_statements。else為選擇性敘述，可指定或省略。</span></p>
+<p>4.finally<span>子句:當要離開try...except時，不論是否發生例外，都會執行finally_statements，內容可能為一些用來消除錯誤或者是收尾的敘述。</span></p>
+<p></p>
+<p><strong>自行丟出例外</strong></p>
+<p>可以利用raise敘述自行丟出指定的例外，如下，敘述會丟出一個NameError例外，相關訊息為"HiThere":</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;raise NameError("HiThere")
+Traceback (most recent call last):
+    File "&lt;pyshell#3&gt;", line1 , in &lt;module&gt;
+        raise NameError("HiThere")
+NameError: HiThere
+</pre>
+<br />Day38(0222) << <a href='Day38(0222).html'>Previous</a> <a href='資料參考.html'>Next</a> >> 資料參考</div>
         
     <!-- footer -->
       <div class="container">
