@@ -1309,7 +1309,6 @@ except [exceptionType [as identifier]]:
 <p>2.except<span>子句:用來捕捉指定的例外，一旦捕捉到，就執行except_statements，這是用來處理例外的敘述。若要用來對不同例外做不同的處理，可使用多個except<span>子句，其中exceptionType是欲捕捉的例外型別，若無指定，表示為預設型別BaseException。</span></span></p>
 <p>3.else<span>子句:當try_statements未發生例外時，會跳過except子句，然後執行else_statements。else為選擇性敘述，可指定或省略。</span></p>
 <p>4.finally<span>子句:當要離開try...except時，不論是否發生例外，都會執行finally_statements，內容可能為一些用來消除錯誤或者是收尾的敘述。</span></p>
-<p></p>
 <p><strong>自行丟出例外</strong></p>
 <p>可以利用raise敘述自行丟出指定的例外，如下，敘述會丟出一個NameError例外，相關訊息為"HiThere":</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;raise NameError("HiThere")
@@ -1318,5 +1317,14 @@ Traceback (most recent call last):
         raise NameError("HiThere")
 NameError: HiThere
 </pre>
+<h2>Day39(0223)</h2>
+<h3>物件導向</h3>
+<p>物件導向是軟體發展過程中極具影響性的突破，愈來愈多程式語言強調其物件導向的特性，Python也不例外。</p>
+<p><strong>物件(object)或實體(instence)</strong>就像生活中看到的各種物體，而物件可能又是由許多物件所組成，在Python中，物件為資料與程式碼組成，它可以是整個應用程式或應用程式的一部份。</p>
+<p><strong>屬性(attribute)或成員變數(member variable)</strong>用來描述物件的特質，比方說Windows作業系統中的視窗是一種物件，而它的大小、位置等就是用來描述這個物件的屬性。</p>
+<p><strong>方法(method)或成員函式(menber funtion)</strong>是用來定義物件的動作，例如手機為一個物件，而開機、關機、執行應用程式等動作就是這個物件的方法。</p>
+<p><strong>類別(class)</strong>是物件的分類，為物件的藍圖或樣板，隸屬於相同類別的物件具有相同屬性及方法，但屬性的值則不一定相同，例如，汽車為一個類別，它具有廠牌、顏色、型號等屬性，以一部白色BMW520來說，本身為汽車類別的物件，廠牌屬性的值為BMW，顏色屬性值為白色，型號屬性的值為520，至於其他車種則為汽車類別的其他物件。</p>
+<p><strong></strong></p>
+<p></p>
 <h1>資料參考</h1>
 <p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
