@@ -1309,7 +1309,6 @@ except [exceptionType [as identifier]]:
 <p>2.except<span>子句:用來捕捉指定的例外，一旦捕捉到，就執行except_statements，這是用來處理例外的敘述。若要用來對不同例外做不同的處理，可使用多個except<span>子句，其中exceptionType是欲捕捉的例外型別，若無指定，表示為預設型別BaseException。</span></span></p>
 <p>3.else<span>子句:當try_statements未發生例外時，會跳過except子句，然後執行else_statements。else為選擇性敘述，可指定或省略。</span></p>
 <p>4.finally<span>子句:當要離開try...except時，不論是否發生例外，都會執行finally_statements，內容可能為一些用來消除錯誤或者是收尾的敘述。</span></p>
-<p></p>
 <p><strong>自行丟出例外</strong></p>
 <p>可以利用raise敘述自行丟出指定的例外，如下，敘述會丟出一個NameError例外，相關訊息為"HiThere":</p>
 <pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">&gt;&gt;&gt;raise NameError("HiThere")
@@ -1318,5 +1317,25 @@ Traceback (most recent call last):
         raise NameError("HiThere")
 NameError: HiThere
 </pre>
+<h2>Day39(0223)</h2>
+<h3>物件導向</h3>
+<p>物件導向是軟體發展過程中極具影響性的突破，愈來愈多程式語言強調其物件導向的特性，Python也不例外。</p>
+<p><strong>物件(object)或實體(instence)</strong>就像生活中看到的各種物體，而物件可能又是由許多物件所組成，在Python中，物件為資料與程式碼組成，它可以是整個應用程式或應用程式的一部份。</p>
+<p><strong>屬性(attribute)或成員變數(member variable)</strong>用來描述物件的特質，比方說Windows作業系統中的視窗是一種物件，而它的大小、位置等就是用來描述這個物件的屬性。</p>
+<p><strong>方法(method)或成員函式(menber funtion)</strong>是用來定義物件的動作，例如手機為一個物件，而開機、關機、執行應用程式等動作就是這個物件的方法。</p>
+<p><strong>類別(class)</strong>是物件的分類，為物件的藍圖或樣板，隸屬於相同類別的物件具有相同屬性及方法，但屬性的值則不一定相同，例如，汽車為一個類別，它具有廠牌、顏色、型號等屬性，以一部白色BMW520來說，本身為汽車類別的物件，廠牌屬性的值為BMW，顏色屬性值為白色，型號屬性的值為520，至於其他車種則為汽車類別的其他物件。</p>
+<br/><br/><strong></strong>Day40(0224)
+<h3>物件導向程式設計(OPP)</h3>
+<p><strong>封裝 (Encapsulation)</strong></p>
+<p>即是將物件內部的資料隱藏起來，只能透過物件本身所提供的介面(interface)取得物件內部屬性或者方法，物件內部的細節資料或者邏輯則隱藏起來，其他物件即無法瞭解此物件的內部細節，若不經過允許之窗口(即此物件提供之方法)便無從更動此物件內之資料。</p>
+<p><strong>繼承 (Inheritance)</strong></p>
+<p><span>在某種情況下，一個類別會有「子類別」。子類別比父類別更加具體化，子類別繼承了父類別的屬性及方法。例：Cat(子類別)繼承了Animal(父類別)原有的屬性以及方法，也新增了自己的特質以及動作，例如貓會玩毛線球。</span></p>
+<p><strong>多型 (Polymorphism)</strong></p>
+<p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph="" id="b015">簡單來說就是多個相同名稱的方法(Method)，藉由傳入不同的參數，自動執行不同的敘述<strong class="il cu">。</strong>多型(Polymorphism)則包含多載(Overloading)和複寫(Overriding)。</p>
+<p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph="" id="e681"><strong class="il cu">多載(Overloading)</strong></p>
+<p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph="">是指在相同類別中，定義名稱相同，但參數個數不同或參數型態不同的函式，此時可利用參數個數或者參數型態，呼叫到對應的方法。例如：一個計算面積的方法，如果傳入一個參數，就當正方形來算面積；傳入兩個參數，就當成長方形來算面積。</p>
+<p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph=""><strong class="il cu">複寫(Overriding)</strong></p>
+<p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph=""><span>為利用子類別覆寫掉父類別中的函式。</span></p>
+<figure class="jl jm jn jo jp hh"></figure>
 <h1>資料參考</h1>
-<p><a href="https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp">https://developer.mozilla.org/zh-TW/docs/Learn/Getting_started_with_the_web&amp;nbsp</a> </p>
+<p><a href="https://medium.com/@totoroLiu/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91-object-oriented-programming-%E6%A6%82%E5%BF%B5-5f205d437fd6">https://medium.com/@totoroLiu/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91-object-oriented-programming-%E6%A6%82%E5%BF%B5-5f205d437fd6</a> </p>
