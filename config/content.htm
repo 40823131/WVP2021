@@ -1344,7 +1344,22 @@ NameError: HiThere
 <p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph=""><span>1.id(x):取得參數x指定的id編號。</span></p>
 <p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph=""><span>2.type(x):取得參數x指定的物件型別。</span></p>
 <p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph=""><span>3.print(x):印出<span>參數x指定的物件值。</span></span></p>
-<p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph=""><span><span></span></span></p>
+<h2>Day42(0226)</h2>
+<h3 class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk"><strong>定義類別</strong></h3>
+<p class="ii ij fo il b im jg io ip iq jh is it iu ji iw ix iy jj ja jb jc jk je jf ie dh gk" data-selectable-paragraph="">我們可以使用class關鍵字定義類別，其語法如下，類別的名稱後面要加上冒號:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class ClassName:
+        statement(s)</pre>
+<p>1.class:這個關鍵字用來表示要定義類別。</p>
+<p>2.ClassName:這是類別的名稱，命名規則與變數相同。</p>
+<p>3.statement(s):這是類別的主體，用來定義變數或函式，其中的變數稱為屬性(attribute)，而函式則稱為方法(method)。</p>
+<p>以下為定義一個名稱為Circle的類別，用來表示圓形:</p>
+<pre class="brush:py;auto-links:false;toolbar:false" contenteditable="false">class Circle:
+        PI = 3.14 #定義PI，初始值為3.14的屬性，表示圓周率。
+        radius = 1 #定義radius，初始值為1的屬性，表示半徑。
+
+        def getArea(self):
+                return self.PI * self.radius * self.radius
+#計算圓面積</pre>
 <figure class="jl jm jn jo jp hh"></figure>
 <h1>資料參考</h1>
 <p><a href="https://medium.com/@totoroLiu/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91-object-oriented-programming-%E6%A6%82%E5%BF%B5-5f205d437fd6">https://medium.com/@totoroLiu/%E7%89%A9%E4%BB%B6%E5%B0%8E%E5%90%91-object-oriented-programming-%E6%A6%82%E5%BF%B5-5f205d437fd6</a> </p>
